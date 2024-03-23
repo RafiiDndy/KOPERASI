@@ -20,6 +20,21 @@
             </div>
 
             <div class="mt-4">
+                <x-label for="nik" value="{{ __('NIK') }}" />
+                <x-input id="nik" class="block mt-1 w-full" type="number" name="nik" :value="old('nik')" required autocomplete="nik" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="no_hp" value="{{ __('No Handphone') }}" />
+                <x-input id="no_hp" class="block mt-1 w-full" type="number" name="no_hp" :value="old('no_hp')" required autocomplete="phonenumber" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="tanggal_lahir" value="{{ __('Tanggal Lahir') }}" />
+                <x-input id="tanggal_lahir" class="block mt-1 w-full" type="date" name="tanggal_lahir" :value="old('tanggal_lahir')" />
+            </div>
+
+            <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
