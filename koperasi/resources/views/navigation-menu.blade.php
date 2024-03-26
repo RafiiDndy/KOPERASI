@@ -16,10 +16,21 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-
+                @if(Auth::user()->role === 'Pengurus')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link href="{{ route('Anggota.index') }} " :active="request()->routeIs('Anggota.index')">
+                        {{ __('Manage Anggota') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('Simpanan.manage') }}" :active="request()->routeIs('Simpanan.manage')">
+                        {{ __('Manage Simpanan') }}
+                    </x-nav-link>
+                </div>
+                @endif
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('Simpanan.index') }}" :active="request()->routeIs('Simpanan.index')">
+                        {{ __('Simpanan') }}
                     </x-nav-link>
                 </div>
             </div>
