@@ -5,11 +5,9 @@ use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\SimpananController;
 use App\Http\Controllers\RecapitulationController;
 
-
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 Route::middleware([
     'auth:sanctum',
