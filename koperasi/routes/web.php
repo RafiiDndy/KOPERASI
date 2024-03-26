@@ -18,6 +18,7 @@ Route::middleware([
     })->name('dashboard');
   
     Route::get('/anggota',[AnggotaController::class, 'index'])->name('Anggota.index');
+    Route::get('/anggota/{id}',[AnggotaController::class, 'detail'])->name('Anggota.detail');
     Route::get('/simpanan',[SimpananController::class, 'index'])->name('Simpanan.index');
     Route::get('/manage-simpanan',[SimpananController::class, 'manage'])->name('Simpanan.manage');
 
