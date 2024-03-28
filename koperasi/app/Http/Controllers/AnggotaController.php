@@ -11,8 +11,4 @@ class AnggotaController extends Controller
 
         return view('anggota.index');
     }
-  
-    public function detail($id){
-        return view('anggota.detail',compact('id'));
-    }
 }
