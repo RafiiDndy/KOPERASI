@@ -9,7 +9,6 @@
             </div>
             </div class="grid grid-cols-2 gap-8">
                 @livewire('simpanan.add', ['id' => Auth::user()->id])
-                @livewire('simpanan.withdraw', ['id' => Auth::user()->id])
         </div>
     </div>
 </x-app-layout>
