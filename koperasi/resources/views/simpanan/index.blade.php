@@ -7,9 +7,13 @@
             <div class="text-center mb-8 text-xl font-bold">
                 Nama: {{ Auth::user()->name }}
             </div>
-            </div class="grid grid-cols-2 gap-8">
+            <div class="grid grid-cols-2 gap-8">
                 @livewire('simpanan.add', ['id' => Auth::user()->id])
                 @livewire('simpanan.withdraw', ['id' => Auth::user()->id])
+            </div>
+            <div>
+                @livewire('simpanan.catatan', ['id' => Auth::user()->id])
+            </div>
         </div>
     </div>
 </x-app-layout>
