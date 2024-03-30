@@ -169,5 +169,4 @@
             </div>
         </div>
     </body>
-</html>
-<?php /**PATH D:\PROJECT RPL\Koperasi Main\koperasi\resources\views/welcome.blade.php ENDPATH**/ ?>
+</html><?php /**PATH D:\PROJECT RPL\Koperasi Main\koperasi\resources\views/welcome.blade.php ENDPATH**/ ?>

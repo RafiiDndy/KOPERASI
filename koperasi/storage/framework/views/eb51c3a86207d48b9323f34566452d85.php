@@ -129,6 +129,7 @@
 <?php endif; ?>
                 </div>
             </div>
+
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <!-- Teams Dropdown -->
                 <!--[if BLOCK]><![endif]--><?php if(Laravel\Jetstream\Jetstream::hasTeamFeatures()): ?>
@@ -615,5 +616,4 @@
             </div>
         </div>
     </div>
-</nav>
-<?php /**PATH D:\PROJECT RPL\Koperasi Main\koperasi\resources\views/navigation-menu.blade.php ENDPATH**/ ?>
+</nav><?php /**PATH D:\PROJECT RPL\Koperasi Main\koperasi\resources\views/navigation-menu.blade.php ENDPATH**/ ?>

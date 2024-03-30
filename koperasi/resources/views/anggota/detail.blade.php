@@ -9,6 +9,10 @@
             </div>
             <div class="grid grid-cols-2 gap-8">
                 @livewire('simpanan.add',['id' => $id])
+                @livewire('simpanan.withdraw',['id' => $id])
+            </div>
+            <div>
+                @livewire('simpanan.catatan',['id' => $id])
             </div>
         </div>
     </div>
