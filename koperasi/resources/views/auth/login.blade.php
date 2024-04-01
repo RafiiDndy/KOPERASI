@@ -1,5 +1,3 @@
-@vite(['resources/css/apps.css'])
-
 <x-guest-layout>
     <x-slot name="logo">
         <x-authentication-card-logo />
