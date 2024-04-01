@@ -1,4 +1,5 @@
 <div class="container mx-auto mt-8">
+    @include('components.alert')
     <div class="overflow-x-auto">
         <table class="min-w-full divide-y divide-gray-200 rounded-lg overflow-hidden">
             <thead class="bg-gray-50">
@@ -6,8 +7,6 @@
                     <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
                     <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
                     <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">NIK</th>
-                    <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No Handphone</th>
-                    <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Umur</th>
                     <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status Anggota</th>
                     <th scope="col" class="px-6 py-4">
                         <span class="sr-only">Actions</span>
@@ -20,13 +19,15 @@
                     <td class="px-6 py-4 whitespace-nowrap">{{ $user->name }}</td>
                     <td class="px-6 py-4 whitespace-nowrap">{{ $user->email }}</td>
                     <td class="px-6 py-4 whitespace-nowrap">{{ $user->nik }}</td>
-                    <td class="px-6 py-4 whitespace-nowrap">{{ $user->no_hp }}</td>
-                    <td class="px-6 py-4 whitespace-nowrap">{{ $user->umur }} Tahun</td>
                     <td class="px-6 py-4 whitespace-nowrap">{{ $user->status_anggota }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-center items-center">
-                    <a href="{{ route('Anggota.detail', $user->id) }}" class="rounded-full border border-blue-500 bg-blue-500 px-5 py-2.5 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-blue-700 hover:bg-blue-700 focus:ring focus:ring-blue-200 disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300">
-                        View
-                    </a>
+                        <button class="bg-green-100 text-green-600 px-4 py-2 rounded-full hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 transition-colors duration-200" wire:click="verify_anggota({{ $user->id }})">
+                            Verifikasi
+                        </button>
+                        <div class="w-4"></div>
+                        <button class="bg-red-100 text-red-600 px-4 py-2 rounded-full hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-50 transition-colors duration-200" wire:click="reject_anggota({{ $user->id }})">
+                            Reject
+                        </button>
                     </td>
                 </tr>
                 @endforeach
