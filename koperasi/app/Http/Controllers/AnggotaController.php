@@ -15,7 +15,7 @@ class AnggotaController extends Controller
     public function verifikasi(){
         return view('anggota.verifikasi');
     }
-
+  
     public function detail($id){
         return view('anggota.detail',compact('id'));
     }
