@@ -10,69 +10,36 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
         <!-- Scripts -->
-        <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
+        <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css','resources/css/apps.css', 'resources/js/app.js', 'resources/js/apps.js']); ?>
 
         <!-- Styles -->
         <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::styles(); ?>
 
     </head>
     <body class="font-sans antialiased">
-        <?php if (isset($component)) { $__componentOriginalff9615640ecc9fe720b9f7641382872b = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalff9615640ecc9fe720b9f7641382872b = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.banner','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('banner'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginalff9615640ecc9fe720b9f7641382872b)): ?>
-<?php $attributes = $__attributesOriginalff9615640ecc9fe720b9f7641382872b; ?>
-<?php unset($__attributesOriginalff9615640ecc9fe720b9f7641382872b); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalff9615640ecc9fe720b9f7641382872b)): ?>
-<?php $component = $__componentOriginalff9615640ecc9fe720b9f7641382872b; ?>
-<?php unset($__componentOriginalff9615640ecc9fe720b9f7641382872b); ?>
-<?php endif; ?>
+        <div class="flex h-screen">
+            <?php echo $__env->make('navigation-menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <div class="flex flex-col flex-1 w-full">
+                <?php echo $__env->make('top-navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <!-- Page Content -->
+                <main class="h-full overflow-y-auto">
+                    <!-- Page Heading -->
+                    <?php if(isset($header)): ?>
+                        <header class="bg-white shadow">
+                            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                                <?php echo e($header); ?>
 
-        <div class="min-h-screen bg-gray-100">
-            <?php
-$__split = function ($name, $params = []) {
-    return [$name, $params];
-};
-[$__name, $__params] = $__split('navigation-menu');
+                            </div>
+                        </header>
+                    <?php endif; ?>
+                    
+                    <?php echo e($slot); ?>
 
-$__html = app('livewire')->mount($__name, $__params, 'lw-1888475436-0', $__slots ?? [], get_defined_vars());
-
-echo $__html;
-
-unset($__html);
-unset($__name);
-unset($__params);
-unset($__split);
-if (isset($__slots)) unset($__slots);
-?>
-
-            <!-- Page Heading -->
-            <?php if(isset($header)): ?>
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        <?php echo e($header); ?>
-
-                    </div>
-                </header>
-            <?php endif; ?>
-
-            <!-- Page Content -->
-            <main>
-                <?php echo e($slot); ?>
-
-            </main>
+                </main>
+            </div>
         </div>
 
         <?php echo $__env->yieldPushContent('modals'); ?>
