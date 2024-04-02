@@ -1,5 +1,4 @@
 <x-app-layout>
-@livewire('Anggota.verifikasi')
     <div class="flex flex-wrap justify-center gap-5 mt-8">
         <a href="{{ route('Anggota.index') }}">
             <button class="animated-button">
@@ -18,5 +17,5 @@
             </button>
         </a>
     </div>
-    
+    @livewire('Anggota.verifikasi')
 </x-app-layout>
