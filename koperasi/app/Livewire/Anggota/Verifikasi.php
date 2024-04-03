@@ -43,4 +43,3 @@ class Verifikasi extends Component
     {
         return view('livewire.anggota.verifikasi', ['users' => $this->users]);
     }
-}
