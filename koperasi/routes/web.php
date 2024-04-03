@@ -3,10 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\SimpananController;
+use App\Http\Controllers\RecapitulationController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/recapitulation',[RecapitulationController::class, 'index']);
 
 Route::middleware([
     'auth:sanctum',
