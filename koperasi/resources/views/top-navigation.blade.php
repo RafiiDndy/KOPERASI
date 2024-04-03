@@ -1,5 +1,5 @@
-<nav class="bg-gray-800">
-  <div class="container mx-auto px-4">
+<nav class="bg-top-nav">
+  <div class="container-top-nav mx-auto px-4">
     <div class="flex justify-between items-center py-4 px-8">
       <div class="flex items-center">
         <a class="button-top-nav" href="{{ route('dashboard') }}" data-text="Awesome">
