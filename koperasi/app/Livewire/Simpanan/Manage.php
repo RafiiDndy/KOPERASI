@@ -18,7 +18,6 @@ class Manage extends Component
 
         $this->simpananUsers = User::join('catatan_simpanans', 'users.id', '=', 'catatan_simpanans.user_id')
             ->where('users.status_anggota','Aktif')
-            ->where('users.id','!=', auth()->user()->id)
             ->where('catatan_simpanans.status','menunggu verifikasi')
             ->select('users.id', 'users.name', 'catatan_simpanans.jumlah','catatan_simpanans.jenis_simpanan','catatan_simpanans.status','catatan_simpanans.created_at', 'catatan_simpanans.id as id_simpanan')->get();
     }

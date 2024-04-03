@@ -9,12 +9,22 @@ class Add extends Component
     public $id;
     public $jumlah;
     public $jenis_simpanan;
+    
+    public $isWajibDeposit;
+    public $isPokok;
 
     public function mount()
     {
         if (!(auth()->user())) {
             abort(403, 'Kamu bukan '.auth()->user()->name);
         }
+        $this->isWajibDeposit = CatatanSimpanan::where('user_id', $this->id)
+                                                ->where('jenis_simpanan', 'Wajib')
+                                                ->where('status','Verified')
+                                                ->whereMonth('created_at', now()->month)->exists();
+        $this->isPokok = CatatanSimpanan::where('user_id', $this->id)
+                                        ->where('jenis_simpanan', 'Pokok')
+                                        ->where('status','Verified')->exists();
     }
 
     public function deposit(){
@@ -41,6 +51,6 @@ class Add extends Component
     }
 
     public function render(){
-        return view('livewire.simpanan.add');
+        return view('livewire.simpanan.add',['isWajibDeposit' => $this->isWajibDeposit, 'isPokok'=>$this->isPokok]);
     }
 }

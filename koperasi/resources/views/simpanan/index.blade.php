@@ -11,7 +11,7 @@
                 @livewire('simpanan.add', ['id' => Auth::user()->id])
                 @livewire('simpanan.withdraw', ['id' => Auth::user()->id])
             </div>
-            <div>
+            <div class="flex mt-6">
                 @livewire('simpanan.catatan', ['id' => Auth::user()->id])
             </div>
         </div>

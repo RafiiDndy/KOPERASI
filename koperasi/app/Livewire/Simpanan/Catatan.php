@@ -3,23 +3,45 @@
 namespace App\Livewire\Simpanan;
 use App\Models\CatatanSimpanan;
 use Livewire\Component;
+use Illuminate\Http\Request;
+use Livewire\WithPagination;
 
 class Catatan extends Component
 {
     public $id;
     public $simpanan;
 
+    public $sortColumn = 'created_at';
+    public $sortDirection = 'desc';
+    public $search = '';
+
+    use WithPagination;
+
     public function mount()
     {
         if (!(auth()->user())) {
             abort(403, 'Kamu bukan '. auth()->user()->name);
         }
+    }
 
-        $this->simpanan = CatatanSimpanan::where('user_id', $this->id)->get();
+    public function sort($column)
+    {
+        $this->sortColumn = $column;
+        $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
     }
 
     public function render()
     {
-        return view('livewire.simpanan.catatan',['simpanans' => $this->simpanan]);
+        $simpanans = CatatanSimpanan::where('user_id', $this->id)
+                            ->where(function ($query) {
+                                $query->where('jumlah', 'like', '%' . $this->search . '%')
+                                    ->orWhere('jenis_simpanan', 'like', '%' . $this->search . '%')
+                                    ->orWhere('status', 'like', '%' . $this->search . '%')
+                                    ->orWhere('created_at', 'like', '%' . $this->search . '%');})
+                            ->orderBy($this->sortColumn, $this->sortDirection)
+                            ->paginate(10);
+    
+        return view('livewire.simpanan.catatan',compact('simpanans'));
     }
+
 }
