@@ -3,6 +3,7 @@
 namespace App\Livewire\Simpanan;
 use App\Models\CatatanSimpanan;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class Withdraw extends Component
 {
@@ -12,6 +13,12 @@ class Withdraw extends Component
     public $available_balance_pokok = 0;
     public $available_balance_wajib = 0;
     public $available_balance_sukarela = 0;
+    public $withdrawalAmount;
+
+    use LivewireAlert;
+    protected $listeners = [
+        'confirmed'
+    ];
     
     public function mount()
     {
@@ -68,7 +75,7 @@ class Withdraw extends Component
             'jenis_simpanan' => 'required|string',
         ]);
 
-        $withdrawalAmount = $this->jumlah;
+        $this->withdrawalAmount = $this->jumlah;
 
         switch ($this->jenis_simpanan) {
             case 'Pokok':
@@ -84,31 +91,52 @@ class Withdraw extends Component
                 $availableBalance = 0;
         }
     
-        if ($withdrawalAmount > $availableBalance) {
-            session()->flash('error', 'Jumlah penarikan melebihi saldo yang tersedia!');
+        if ($this->withdrawalAmount > $availableBalance) {
+
+            $this->flash('error','Jumlah penarikan melebihi saldo yang tersedia!', [
+                'position' => 'center',
+                'timer' => '2000',
+                'toast' => false,
+                'timerProgressBar' => true,
+                ]);
             
-            if (auth()->user()->id == $this->id){
-                return redirect()->route('Simpanan.index', ['id'=>$this->id]);
-            } else if (auth()->user()->role == 'Pengurus'){
-                return redirect()->route('Anggota.detail', ['id'=>$this->id]);
-            }
+            return redirect(request()->header('Referer'));
         }
 
+        $this->alert('info', 'Confirm Withdrawal?', [
+            'position' => 'center',
+            'timer' => '',
+            'toast' => true,
+            'showConfirmButton' => true,
+            'onConfirmed' => 'confirmed',
+            'showCancelButton' => true,
+            'onDismissed' => '',
+            'confirmButtonText' => 'Confirm',
+            'text' => 'Are you sure to Withdraw Rp.'.$this->jumlah,
+            'cancelButtonText' => 'Cancel',
+            'width' => '320',
+            ]);
+    }
+
+    public function confirmed()
+    {
         CatatanSimpanan::create([
-            'jumlah' => -$withdrawalAmount,
+            'jumlah' => -$this->withdrawalAmount,
             'jenis_simpanan' => $this->jenis_simpanan,
             'user_id' => $this->id,
             'status' => 'menunggu verifikasi'
         ]);
 
-        session()->flash('info', 'Berhasil melakukan withdraw.');
+        $this->flash('success','Withdraw Rp. '.$this->jumlah.' Success!', [
+            'position' => 'center',
+            'timer' => '2000',
+            'toast' => false,
+            'timerProgressBar' => true,
+            ]);
+
         $this->reset(['jumlah', 'jenis_simpanan']);
 
-        if (auth()->user()->id == $this->id){
-            return redirect()->route('Simpanan.index', ['id'=>$this->id]);
-        } else if (auth()->user()->role == 'Pengurus'){
-            return redirect()->route('Anggota.detail', ['id'=>$this->id]);
-        }
+        return redirect(request()->header('Referer'));
     }
 
     public function render()

@@ -3,6 +3,8 @@
 namespace App\Livewire\Simpanan;
 use App\Models\CatatanSimpanan;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
+use RalphJSmit\Livewire\Urls\Facades\Url;
 
 class Add extends Component
 {
@@ -10,21 +12,28 @@ class Add extends Component
     public $jumlah;
     public $jenis_simpanan;
     
-    public $isWajibDeposit;
-    public $isPokok;
+    public $isWajibPaid;
+    public $isPokokPaid;
+
+    use LivewireAlert;
+    protected $listeners = [
+        'confirmed'
+    ];
 
     public function mount()
     {
         if (!(auth()->user())) {
             abort(403, 'Kamu bukan '.auth()->user()->name);
         }
-        $this->isWajibDeposit = CatatanSimpanan::where('user_id', $this->id)
+        $this->isWajibPaid = CatatanSimpanan::where('user_id', $this->id)
                                                 ->where('jenis_simpanan', 'Wajib')
                                                 ->where('status','Verified')
-                                                ->whereMonth('created_at', now()->month)->exists();
-        $this->isPokok = CatatanSimpanan::where('user_id', $this->id)
+                                                ->whereMonth('created_at', now()->month)
+                                                ->sum('jumlah') >= 100000;
+        $this->isPokokPaid = CatatanSimpanan::where('user_id', $this->id)
                                         ->where('jenis_simpanan', 'Pokok')
-                                        ->where('status','Verified')->exists();
+                                        ->where('status','Verified')
+                                        ->sum('jumlah') >= 1000000;
     }
 
     public function deposit(){
@@ -32,7 +41,24 @@ class Add extends Component
             'jumlah' => 'required|digits_between:1,16',
             'jenis_simpanan' => 'required|string',
         ]);
+            
+        $this->alert('info', 'Confirm Deposit?', [
+            'position' => 'center',
+            'timer' => '',
+            'toast' => true,
+            'showConfirmButton' => true,
+            'onConfirmed' => 'confirmed',
+            'showCancelButton' => true,
+            'onDismissed' => '',
+            'confirmButtonText' => 'Confirm',
+            'text' => 'Are you sure to deposit Rp.'.$this->jumlah,
+            'cancelButtonText' => 'Cancel',
+            'width' => '320',
+            ]);
+    }
 
+    public function confirmed()
+    {
         CatatanSimpanan::create([
             'jumlah' => $this->jumlah,
             'jenis_simpanan' => $this->jenis_simpanan,
@@ -40,17 +66,19 @@ class Add extends Component
             'status' => 'menunggu verifikasi'
         ]);
 
-        session()->flash('success', 'Berhasil melakukan deposit!');
-        $this->reset(['jumlah', 'jenis_simpanan']);
+        $this->flash('success','Deposit Rp.'.$this->jumlah.' Success!', [
+            'position' => 'center',
+            'timer' => '2000',
+            'toast' => false,
+            'timerProgressBar' => true,
+            ]);
 
-        if (auth()->user()->id == $this->id){
-            return redirect()->route('Simpanan.index', ['id'=>$this->id]);
-        } else if (auth()->user()->role == 'Pengurus'){
-            return redirect()->route('Anggota.detail', ['id'=>$this->id]);
-        }
+        $this->reset(['jumlah', 'jenis_simpanan']);
+        
+        return redirect(request()->header('Referer'));
     }
 
     public function render(){
-        return view('livewire.simpanan.add',['isWajibDeposit' => $this->isWajibDeposit, 'isPokok'=>$this->isPokok]);
+        return view('livewire.simpanan.add',['isWajibPaid' => $this->isWajibPaid, 'isPokokPaid'=>$this->isPokokPaid]);
     }
 }

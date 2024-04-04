@@ -1,3 +1,4 @@
+
 .login {
     position: relative;
     z-index: 1000;
@@ -298,8 +299,8 @@
   }
   
   .card-deposit {
-    width: flex;
-    height: flex;
+    width: 22em;
+    height: 24em;
     border-radius: 20px;
     background: #f5f5f5;
     position: relative;
@@ -307,14 +308,16 @@
     border: 2px solid #c3c6ce;
     transition: 0.5s ease-out;
     overflow: visible;
+    
    }
    
    .card-details-deposit {
     color: black;
     height: 100%;
     gap: .5em;
-    display: grid;
     place-content: center;
+    display: flex; 
+    flex-direction: column;
    }
    
    .card-button-deposit {
@@ -335,6 +338,7 @@
    
    .text-body-deposit {
     color: rgb(134, 134, 134);
+    flex-grow: 1;
    }
    
    /*Text*/
@@ -355,8 +359,8 @@
    }
 
    .card-withdraw {
-    width: flex;
-    height: flex;
+    width: 22em;
+    height: 24em;
     border-radius: 20px;
     background: #f5f5f5;
     position: relative;
@@ -372,6 +376,8 @@
     gap: .5em;
     display: grid;
     place-content: center;
+    display: flex; 
+    flex-direction: column;
    }
    
    .card-button-withdraw {
@@ -392,6 +398,7 @@
    
    .text-body-withdraw {
     color: rgb(134, 134, 134);
+    flex-grow: 1;
    }
    
    /*Text*/

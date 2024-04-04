@@ -1,19 +1,21 @@
 <x-app-layout>
     <div class="container mx-auto px-4 py-8">
         <div class="max-w-3xl mx-auto">
-            <div class="mb-8">
-                @include('components.alert')
+            <div class="text-center mb-12 text-4xl font-bold">
+                <div class="text-gray-500">Welcome,</div>
+                {{ Auth::user()->name }}
             </div>
-            <div class="text-center mb-8 text-xl font-bold">
-                Nama: {{ Auth::user()->name }}
+            <div class="flex flex-wrap -mx-3">
+                <div class="lg:w-1/2 px-3 mb-6 lg:mb-0">
+                    @livewire('simpanan.add', ['id' => Auth::user()->id])
+                </div>
+                <div class="lg:w-1/2 px-3">
+                    @livewire('simpanan.withdraw', ['id' => Auth::user()->id])
+                </div>
             </div>
-            <div class="grid grid-cols-2 gap-8">
-                @livewire('simpanan.add', ['id' => Auth::user()->id])
-                @livewire('simpanan.withdraw', ['id' => Auth::user()->id])
-            </div>
-            <div class="flex mt-6">
-                @livewire('simpanan.catatan', ['id' => Auth::user()->id])
-            </div>
+        </div>
+        <div class="mt-8">
+            @livewire('simpanan.catatan', ['id' => Auth::user()->id])
         </div>
     </div>
 </x-app-layout>
