@@ -56,24 +56,6 @@
   transform: rotate(45deg);
 }
 
-.wave-container {
-  position: absolute;
-  top: 450;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.wave-container-2 {
-  position: absolute;
-  top: 490;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
 .login {
     position: relative;
     z-index: 1000;
@@ -136,11 +118,12 @@
   z-index: 2;
   top: 0;
   left: 0;
-  height: 100%;
+  height: auto;
   width: 100%;
   max-width: 550px;
+  min-height : 100%;
   padding: 80px 80px;
-  background: #65bad2;
+  background: #6eafc9;
   background-image: radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0);
   background-size: 30px 30px;
   background-position: -5px -5px;
@@ -175,7 +158,6 @@
   padding: 0 20px 0 20px;
   height: 40px;
   border-radius: 10px;
-  overflow: hidden;
   background-color: #F3F3F3;
   border-radius: 10px;
   transition: all 0.5s;
