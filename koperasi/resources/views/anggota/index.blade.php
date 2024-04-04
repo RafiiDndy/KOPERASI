@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="flex flex-wrap justify-center gap-5 mt-8">
+    <div class="flex flex-wrap justify-center gap-5 mt-8 animate__animated animate__fadeInUp">
         <a href="{{ route('VerifikasiAnggota') }}">
             <button class="animated-button">
                 <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
