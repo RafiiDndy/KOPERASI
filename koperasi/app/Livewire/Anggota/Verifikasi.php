@@ -73,4 +73,3 @@ class Verifikasi extends Component
                         ->paginate(10);
         return view('livewire.anggota.verifikasi', compact('users'));
     }
-}
