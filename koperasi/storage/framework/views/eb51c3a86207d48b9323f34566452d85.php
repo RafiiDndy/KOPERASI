@@ -1,5 +1,5 @@
-<aside >
-  <div class="flex justify-start h-full w-full bg-gradient-to-r from-blue-900 to-gray-800 flex-col">
+<aside>
+  <div class="flex justify-start h-full w-full bg-side-nav flex-col">
     <div class="p-4 flex justify-center">
       <a href="<?php echo e(route('profile.show')); ?>">
         <img src="<?php echo e(Auth::user()->profile_photo_url); ?>" alt="<?php echo e(Auth::user()->name); ?>" class="rounded-full mx-auto object-cover" style="width: 100px; height: 100px;" />

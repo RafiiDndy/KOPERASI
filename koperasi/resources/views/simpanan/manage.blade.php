@@ -4,8 +4,9 @@
             <div class="mb-8">
                 @include('components.alert')
             </div>
-            <div class="mb-8">
-                @livewire('simpanan.manage')
+        </div>
+        <div class="mb-8">
+            @livewire('simpanan.manage')
         </div>
     </div>
 </x-app-layout>

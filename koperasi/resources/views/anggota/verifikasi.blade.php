@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="flex flex-wrap justify-center gap-5 mt-8">
+    <div class="flex justify-center gap-5 mt-8 animate__animated animate__fadeInUp">
         <a href="{{ route('Anggota.index') }}">
             <button class="animated-button">
                 <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
@@ -16,6 +16,11 @@
                 </svg>
             </button>
         </a>
+    </div>
+    <div class="max-w-3xl mx-auto">
+        <div class="mt-8">
+            @include('components.alert')
+        </div>
     </div>
     @livewire('Anggota.verifikasi')
 </x-app-layout>

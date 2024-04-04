@@ -243,7 +243,7 @@
   }
   
   .menu-item:hover {
-    background-color: rgba(250, 250, 250, 0.8); /* Adjusted blue color */
+    background-color: #094141; /* Adjusted blue color */
   }
   
   .menu-icon {
@@ -253,9 +253,20 @@
   .menu-item:hover .menu-icon {
     transform: translateX(-5px);
   }
+
+  .bg-side-nav{
+    color: #fdfdff;
+    background-image: linear-gradient(to right, #008080, #094141);
+    background-size: 100% 100%;
+  }
+  .bg-top-nav{
+    color: #fdfdff;
+    background-image: linear-gradient(to right, #094141 50%, #008080);
+    background-size: 100% 100%;
+  }
   
   /* Top Nav */
-  .container {
+  .container-top-nav {
     max-width: 6xl;
   }
   
@@ -272,7 +283,7 @@
   }
 
 .active {
-    background-color: rgb(15, 107, 245);
+    background-color: #008080;
     color: white;
 }
   
@@ -290,7 +301,7 @@
   .button-top-nav {
     --border-right: 6px;
     --text-stroke-color: rgba(255,255,255,0.6);
-    --animation-color: #37b6ff;
+    --animation-color: #fefecd;
     --fs-size: 2em;
     letter-spacing: 3px;
     text-decoration: none;
@@ -398,8 +409,8 @@
     background-color: inherit;
     border-radius: 100px;
     font-weight: 600;
-    color: rgb(0, 0, 0);
-    box-shadow: 0 0 0 2px rgb(47, 154, 255);
+    color: #008080;
+    box-shadow: 0 0 0 2px #008080;
     cursor: pointer;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -408,7 +419,7 @@
   .animated-button svg {
     position: absolute;
     width: 24px;
-    fill: rgb(47, 154, 255);
+    fill: #008080;
     z-index: 9;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   }
@@ -428,7 +439,7 @@
     transform: translate(-50%, -50%);
     width: 20px;
     height: 20px;
-    background-color: rgb(0, 82, 158);
+    background-color: #008080;
     border-radius: 50%;
     opacity: 0;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -465,7 +476,7 @@
   
   .animated-button:active {
     scale: 0.95;
-    box-shadow: 0 0 0 4px rgb(13, 154, 248);
+    box-shadow: 0 0 0 4px #008080;
   }
   
   .animated-button:hover .circle {
@@ -474,3 +485,146 @@
     opacity: 1;
   }
   
+  .card-deposit {
+    width: 22em;
+    height: 24em;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    
+   }
+   
+   .card-details-deposit {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    place-content: center;
+    display: flex; 
+    flex-direction: column;
+   }
+   
+   .card-button-deposit {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #00af2c;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+   
+   .text-body-deposit {
+    color: rgb(134, 134, 134);
+    flex-grow: 1;
+   }
+   
+   /*Text*/
+   .text-title-deposit {
+    font-size: 1.5em;
+    font-weight: bold;
+   }
+   
+   /*Hover*/
+   .card-deposit:hover {
+    border-color: #00af2c;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+   }
+   
+   .card-deposit:hover .card-button-deposit {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+   }
+
+   .card-withdraw {
+    width: 22em;
+    height: 24em;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+   }
+   
+   .card-details-withdraw {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+    display: flex; 
+    flex-direction: column;
+   }
+   
+   .card-button-withdraw {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #c90d00;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+   
+   .text-body-withdraw {
+    color: rgb(134, 134, 134);
+    flex-grow: 1;
+   }
+   
+   /*Text*/
+   .text-title-withdraw {
+    font-size: 1.5em;
+    font-weight: bold;
+   }
+   
+   /*Hover*/
+   .card-withdraw:hover {
+    border-color: #c90d00;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+   }
+   
+   .card-withdraw:hover .card-button-withdraw {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+   }
+
+.verified-row {
+    background-color: #d4edda;
+}
+
+.verified-row td {
+    color: #155724;
+}
+
+.pending-row {
+    background-color: #fff3cd;
+}
+
+.pending-row td {
+    color: #856404;
+}
+
+.rejected-row {
+    background-color: #f8d7da;
+}
+
+.rejected-row td {
+    color: #721c24;
+}
