@@ -52,7 +52,7 @@
 </div>
 
 
-<div id="role-section" class="section bg-blue-200 py-16">
+<div id="role-section" class="section bg-blue-400 py-16">
     <div class="container mx-auto px-4 text-black">
         <h2 class="text-4xl font-bold text-center mb-8">Role</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
