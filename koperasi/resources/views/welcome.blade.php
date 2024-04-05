@@ -52,21 +52,22 @@
 </div>
 
 
-    <div id="role-section" class="section bg-blue-200 flex items-center justify-center py-16">
-        <div class="max-w-4xl mx-auto text-center text-black">
-            <h2 class="text-4xl font-bold mb-8">Role</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-2xl font-bold mb-4">Anggota</h3>
-                    <p class="text-lg">Deskripsi singkat tentang Simpanan Pokok.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-2xl font-bold mb-4">Pengurus</h3>
-                    <p class="text-lg">Deskripsi singkat tentang Simpanan Wajib.</p>
-                </div>
+<div id="role-section" class="section bg-blue-200 py-16">
+    <div class="container mx-auto px-4 text-black">
+        <h2 class="text-4xl font-bold text-center mb-8">Role</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-2xl font-bold mb-4">Anggota</h3>
+                <p class="text-lg">Dapat melakukan simpanan, melihat jumlah dan status pada data simpanan.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-2xl font-bold mb-4">Pengurus</h3>
+                <p class="text-lg">Dapat melakukan simpanan, melihat rekapitulasi data simpanan serta melakukan manage data anggota yang telah masuk.</p>
             </div>
         </div>
     </div>
+</div>
+
 
     <div id="simpanan-section" class="section bg-gray-200 flex items-center justify-center py-16">
         <div class="max-w-4xl mx-auto text-center text-black">
@@ -74,15 +75,15 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 transition-colors duration-200">
                     <h3 class="text-2xl font-bold mb-4">Simpanan Pokok</h3>
-                    <p class="text-lg">Deskripsi singkat tentang Simpanan Pokok.</p>
+                    <p class="text-lg">Simpanan yang harus dibayar oleh setiap anggota dan pengurus saat pertama kali bergabung dengan koperasi.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 transition-colors duration-200">
                     <h3 class="text-2xl font-bold mb-4">Simpanan Wajib</h3>
-                    <p class="text-lg">Deskripsi singkat tentang Simpanan Wajib.</p>
+                    <p class="text-lg">Simpanan yang harus dibayar secara berkala oleh setiap anggota dan pengurus selama menjadi anggota koperasi.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 transition-colors duration-200">
                     <h3 class="text-2xl font-bold mb-4">Simpanan Sukarela</h3>
-                    <p class="text-lg">Deskripsi singkat tentang Simpanan Sukarela.</p>
+                    <p class="text-lg">Simpanan yang dibayar oleh anggota dan pengurus koperasi secara sukarela di luar simpanan pokok dan wajib.</p>
                 </div>
             </div>
         </div>
