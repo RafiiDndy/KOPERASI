@@ -16,9 +16,7 @@
                 @if (Route::has('login'))
                     <div class="space-x-4">
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="text-white">Dashboard</a>
-                        @else
-                            <a href="{{ route('login') }}" class="text-white bg-blue p-3 rounded shadow hover:bg-blue-500">Login</a>
+                            <a href="{{ route('login') }}" class="text-white bg-blue p-3 rounded shadow hover:bg-blue-500">login</a>
 
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}" class="text-white bg-blue p-3 rounded shadow hover:bg-red-500">Register</a>
@@ -87,7 +85,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>
     <script>
         const text = "Koperasi";
         let index = 1; 
