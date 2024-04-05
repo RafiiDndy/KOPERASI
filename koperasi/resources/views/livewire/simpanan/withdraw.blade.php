@@ -4,9 +4,9 @@
     @if (Auth::user()->status_anggota != 'Not_verified' || Auth::user()->role == 'Pengurus')
     <div>
         Jumlah yang bisa diambil <br> 
-        Pokok = Rp.{{ $available_balance_pokok }} <br>
-        Wajib = Rp.{{ $available_balance_wajib }} <br>
-        Sukarela = Rp.{{ $available_balance_sukarela }}
+        Pokok = Rp.{{ number_format($available_balance_pokok,2) }} <br>
+        Wajib = Rp.{{ number_format($available_balance_wajib,2) }} <br>
+        Sukarela = Rp.{{ number_format($available_balance_sukarela,2) }}
     </div>    
     <form wire:submit.prevent class="text-body-withdraw">
         <div class="mb-4">
@@ -31,9 +31,9 @@
     @else
     <div>
         Jumlah yang bisa diambil <br> 
-        Pokok = Rp.{{ $available_balance_pokok }} <br>
-        Wajib = Rp.{{ $available_balance_wajib }} <br>
-        Sukarela = Rp.{{ $available_balance_sukarela }}
+        Pokok = Rp.{{ number_format($available_balance_pokok,2) }} <br>
+        Wajib = Rp.{{ number_format($available_balance_wajib,2) }} <br>
+        Sukarela = Rp.{{ number_format($available_balance_sukarela,2) }}
     </div>    
     <form wire:submit.prevent class="text-body-withdraw">
         <div class="mb-4">

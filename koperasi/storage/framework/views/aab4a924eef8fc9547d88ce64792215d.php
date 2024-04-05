@@ -7,11 +7,8 @@
             <div class="flex">
                 <div class="relative"> 
                     <input wire:model.lazy="search" type="text" class="bg-gray-200 border-0 py-2 px-4 pr-16 rounded-lg text-sm focus:outline-none focus:ring-0 focus:ring-offset-0 focus:bg-white" placeholder="Search...">
-                    <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"> 
-                        <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="none" stroke="currentColor">
-                            <path d="M9 11L15 15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-                            <path d="M15 9H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-                        </svg> 
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                        <ion-icon name="search-outline"></ion-icon>
                     </div>
                 </div>
             </div>

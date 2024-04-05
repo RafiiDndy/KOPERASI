@@ -16,7 +16,10 @@
         <!-- Scripts -->
         <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css','resources/css/apps.css', 'resources/js/app.js', 'resources/js/apps.js']); ?>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="<?php echo e(asset('vendor/livewire-alert/livewire-alert.js')); ?>"></script> 
+        <script src="<?php echo e(asset('vendor/livewire-alert/livewire-alert.js')); ?>"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- Styles -->
         <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::styles(); ?>
@@ -45,11 +48,12 @@
 <?php endif; ?>
         <div class="flex h-screen">
             <?php echo $__env->make('navigation-menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            <div class="flex flex-col flex-1 w-full">
+            <div class="flex flex-col flex-1 w-0 overflow-hidden">
                 <?php echo $__env->make('top-navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                <!-- Page Content -->
-                <main class="h-full overflow-y-auto">
-                    <!-- Page Heading -->
+                <main class="relative flex-1 overflow-y-auto focus:outline-none">
+                <div class="py-6">
+                    <div class="px-4 mx-auto 2xl:max-w-7xl sm:px-6 md:px-8">
+                    <!-- Content === -->
                     <?php if(isset($header)): ?>
                         <header class="bg-white shadow">
                             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -61,13 +65,17 @@
                     
                     <?php echo e($slot); ?>
 
+
+                    </div>
+                </div>
+                <?php echo $__env->make('footer-main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 </main>
             </div>
         </div>
-
         <?php echo $__env->yieldPushContent('modals'); ?>
 
         <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::scripts(); ?>
+
 
     </body>
 </html>
