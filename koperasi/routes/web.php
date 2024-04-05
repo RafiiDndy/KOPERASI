@@ -9,8 +9,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/recapitulation',[RecapitulationController::class, 'index']);
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -25,5 +23,6 @@ Route::middleware([
     Route::get('/verifikasi-anggota',[AnggotaController::class, 'verifikasi'])->name('VerifikasiAnggota');
     Route::get('/simpanan',[SimpananController::class, 'index'])->name('Simpanan.index');
     Route::get('/manage-simpanan',[SimpananController::class, 'manage'])->name('Simpanan.manage');
+    Route::get('/recapitulation',[RecapitulationController::class, 'index'])->name('Recapitulation.index');
 
 });

@@ -68,4 +68,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function catatan_simpanans()
+    {
+        return $this->hasMany(CatatanSimpanan::class);
+    }
 }

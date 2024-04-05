@@ -2,7 +2,7 @@
     <div class="container mx-auto px-4 py-8">
         <div class="max-w-3xl mx-auto">
             <div class="text-center mb-12 text-4xl font-bold">
-                <div class="text-gray-500">Welcome,</div>
+                <div class="text-gray-500">Simpanan,</div>
                 {{ Auth::user()->name }}
             </div>
             <div class="flex flex-wrap -mx-3">
