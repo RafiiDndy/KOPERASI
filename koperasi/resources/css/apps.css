@@ -1,5 +1,5 @@
 .custom-register-login-button {
-  background: linear-gradient(to bottom, #a1d2db 0%,#67b5cb 100%);
+  background: linear-gradient(to bottom, #008DDA 0%,#378CE7 100%);
   border-radius: 25px;
   padding: 0.8em 1.2em;
   display: flex;
@@ -127,13 +127,10 @@
   width: 100%;
   max-width: 550px;
   min-height : 100%;
-  padding: 80px 80px;
-  background: #6eafc9;
-  background-image: radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0);
-  background-size: 30px 30px;
-  background-position: -5px -5px;
-  animation: slide-in 1s ease-out forwards;
-  transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 100px 80px;
+  background: linear-gradient(#40A2D8, #40679E);
+  animation: slide-in 1s ease-in forwards;
+  transition: border-radius 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .input-signup-container {
@@ -164,8 +161,8 @@
 }
 
 .boxx input {
-  border: 2px solid transparent;
-  padding: 0 20px 0 20px;
+  border-color: white;
+  padding: 0 15px 0 20px;
   height: 45px;
   border-radius: 10px;
   background-color: #F3F3F3;
@@ -204,13 +201,11 @@
 
 .boxx input:hover,
 .boxx input:focus {
-  border: 2px solid #b9d1d4;
-  box-shadow: 0px 0px 0px 5px rgba(152, 186, 195, 0.988);
   background-color: white;
 }
 
 .boxx input:focus {
-  border-color: #000000;
+  border-color: #ffffff;
 }
 
 .boxx :is(input:focus, input:valid) ~ span {
