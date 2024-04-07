@@ -3,7 +3,7 @@
         <x-authentication-card-logo />
     </x-slot>
 
-    <div class="flex flex-col items-center justify-center min-h-screen">
+    <div class="flex flex-col items-center justify-center min-h-screen min-w-screen">
         <div class="cincin">
             <i style="--clr:#00ff0a;"></i>
             <i style="--clr:#ff0057;"></i>
