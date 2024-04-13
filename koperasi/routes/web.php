@@ -24,5 +24,4 @@ Route::middleware([
     Route::get('/simpanan',[SimpananController::class, 'index'])->name('Simpanan.index');
     Route::get('/manage-simpanan',[SimpananController::class, 'manage'])->name('Simpanan.manage');
     Route::get('/recapitulation',[RecapitulationController::class, 'index'])->name('Recapitulation.index');
-
 });
