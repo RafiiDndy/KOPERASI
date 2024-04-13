@@ -51,7 +51,7 @@
             <div class="flex flex-col flex-1 w-0 overflow-hidden">
                 <?php echo $__env->make('top-navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 <main class="relative flex-1 overflow-y-auto focus:outline-none">
-                <div class="py-6">
+                <div class="pt-6">
                     <div class="px-4 mx-auto 2xl:max-w-7xl sm:px-6 md:px-8">
                     <!-- Content === -->
                     <?php if(isset($header)): ?>

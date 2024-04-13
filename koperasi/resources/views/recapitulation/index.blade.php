@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 ">
         <div class="max-w-3xl mx-auto">
             <div class="text-center mb-12 text-4xl font-bold">
                 <div class="text-gray-500">Recapitulation</div>
