@@ -1,3 +1,9 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+
 <style>
 .background {
   position: relative;
@@ -62,7 +68,7 @@
             </x-slot>
             
             <div class="signup shadow h-full w-full">
-                <h2>Sign Up</h2>
+                <h2>Sign Up <span class="grey-text">to Koperasi</span></h2>
                 
                 <form class="form" method="POST" action="{{ route('register') }}">
                     @csrf
@@ -138,8 +144,8 @@
                                     <x-checkbox name="terms" id="terms" required />
                                     <div class="ms-2 text-base">
                                         {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                                'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-base text-gray-800 hover:text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Terms of Service').'</a>',
-                                                'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-base text-gray-800 hover:text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Privacy Policy').'</a>',
+                                                'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-base text-gray-800 hover:text-black">'.__('Terms of Service').'</a>',
+                                                'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-base text-gray-800 hover:text-black">'.__('Privacy Policy').'</a>',
                                         ]) !!}
                                     </div>
                                 </div>
@@ -148,7 +154,7 @@
                     @endif
 
                 <div class="flex justify-between items-center mt-10">
-                    <a class="underline text-base text-gray-800 hover:text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                    <a class="underline text-base text-gray-800 hover:text-black" href="{{ route('login') }}">
                         {{ __('Already registered?') }}
                     </a>
 

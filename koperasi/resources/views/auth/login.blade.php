@@ -3,11 +3,11 @@
         <x-authentication-card-logo />
     </x-slot>
 
-    <div class="flex flex-col items-center justify-center min-h-screen min-w-screen">
+    <div class="flex flex-col items-center justify-center min-h-screen min-w-screen bg-cover bg-center" style="background-image: url({{ asset('img/white-abstract-background-vector.jpg') }});">
         <div class="cincin">
-            <i style="--clr:#00ff0a;"></i>
-            <i style="--clr:#ff0057;"></i>
-            <i style="--clr:#fffd44;"></i>
+            <i style="--clr:#008DDA;"></i>
+            <i style="--clr:#41C9E2;"></i>
+            <i style="--clr:#ACE2E1;"></i>
             
             <div class="login mx-auto max-w-md rounded-lg bg-white shadow p-8">
                 <h2 class="text-center" style="font-size: 20px; font-weight: bold;">LOGIN</h2>

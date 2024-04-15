@@ -75,16 +75,16 @@
     transition: transform 0.5s ease;
 }
 .cincin i:nth-child(1) {
-    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-    animation: rotate 9s linear infinite;
+    border-radius: 48% 62% 63% 47% / 51% 54% 56% 59%;
+    animation: rotate 12s linear infinite;
 }
 .cincin i:nth-child(2) {
     border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-    animation: rotate 7s linear infinite;
+    animation: rotate 10s linear infinite;
 }
 .cincin i:nth-child(3) {
     border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-    animation: rotate-back 5s linear infinite;
+    animation: rotate-back 8s linear infinite;
 }
 .cincin i {
     border: 6px solid var(--clr);
@@ -128,8 +128,8 @@
   max-width: 550px;
   min-height : 100%;
   padding: 100px 80px;
-  background: linear-gradient(#40A2D8, #40679E);
-  animation: slide-in 1s ease-in forwards;
+  background: linear-gradient(#0083ca9f, #4870aaa9);
+  animation: slide-in 1.5s ease-out forwards;
   transition: border-radius 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -150,9 +150,24 @@
 
 .signup > h2 {
   font-size: 32px;
-  text-align: center;
-  font-weight: 450;
+  text-align: left;
   color: rgb(0, 0, 0);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight:600;
+}
+
+.signup > h2 span.grey-text {
+  color: rgb(217, 214, 214);
+  animation: colorChange 3s infinite alternate;
+}
+
+@keyframes colorChange {
+  0% {
+    color: rgb(217, 214, 214);
+  }
+  100% {
+    color: #835300;
+  }
 }
 
 .boxx {
@@ -161,6 +176,7 @@
 }
 
 .boxx input {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   border-color: white;
   padding: 0 15px 0 20px;
   height: 45px;
@@ -170,6 +186,7 @@
 }
 
 .boxx span {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   padding: 0 0 0 9px;
   position: absolute;
   top: 50%;
@@ -181,6 +198,7 @@
 }
 
 .boxx label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   position: absolute;
   bottom: 5%;
   left: 16px;
