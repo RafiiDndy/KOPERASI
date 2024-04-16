@@ -4,18 +4,22 @@ namespace App\Livewire\Simpanan;
 use App\Models\CatatanSimpanan;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
-use RalphJSmit\Livewire\Urls\Facades\Url;
+use Livewire\WithFileUploads;
 
 class Add extends Component
 {
     public $id;
     public $jumlah;
     public $jenis_simpanan;
+    public $bukti_transfer;
+    public $path_bukti_transfer;
     
     public $isWajibPaid;
     public $isPokokPaid;
 
     use LivewireAlert;
+    use WithFileUploads;
+
     protected $listeners = [
         'confirmed'
     ];
@@ -40,7 +44,19 @@ class Add extends Component
         $this->validate([
             'jumlah' => 'required|digits_between:1,16',
             'jenis_simpanan' => 'required|string',
+            'bukti_transfer' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
+
+        if ($this->bukti_transfer->isValid()) {
+            $this->path_bukti_transfer = $this->bukti_transfer->store('bukti_transfer','public');
+        } else {
+            $this->flash('error','Invalid file uploaded!', [
+                'position' => 'center',
+                'timer' => '2000',
+                'toast' => false,
+                'timerProgressBar' => true,
+                ]);
+        }
             
         $this->alert('info', 'Confirm Deposit?', [
             'position' => 'center',
@@ -63,7 +79,8 @@ class Add extends Component
             'jumlah' => $this->jumlah,
             'jenis_simpanan' => $this->jenis_simpanan,
             'user_id' => $this->id,
-            'status' => 'menunggu verifikasi'
+            'status' => 'menunggu verifikasi',
+            'bukti_transfer' => $this->path_bukti_transfer
         ]);
 
         $this->flash('success','Deposit Rp.'.$this->jumlah.' Success!', [

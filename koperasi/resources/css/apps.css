@@ -1,61 +1,3 @@
-.custom-register-login-button {
-  background: linear-gradient(to bottom, #008DDA 0%,#378CE7 100%);
-  border-radius: 25px;
-  padding: 0.8em 1.2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: inherit;
-  font-size: 18px;
-  border: none;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
-}
-
-.custom-register-login-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-}
-
-.custom-register-login-button:active {
-  transform: scale(0.95);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.custom-register-login-button span {
-  display: block;
-  margin-left: 0.4em;
-  transition: all 0.3s;
-}
-
-.custom-register-login-button svg {
-  width: 18px;
-  height: 18px;
-  fill: white;
-  transition: all 0.3s;
-}
-
-.custom-register-login-button .svg-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin-right: 0.5em;
-  transition: all 0.3s;
-}
-
-.custom-register-login-button:hover .svg-wrapper {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.custom-register-login-button:hover svg {
-  transform: rotate(45deg);
-}
-
 .login {
     position: relative;
     z-index: 1000;
@@ -491,7 +433,7 @@
   
   .card-deposit {
     width: 22em;
-    height: 24em;
+    height: 28em;
     border-radius: 20px;
     background: #f5f5f5;
     position: relative;
@@ -551,7 +493,7 @@
 
    .card-withdraw {
     width: 22em;
-    height: 24em;
+    height: 28em;
     border-radius: 20px;
     background: #f5f5f5;
     position: relative;
@@ -705,3 +647,203 @@
   }
 }
 
+.background-wavy {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.wave-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 100%;
+  transform: scaleY(3) scaleX(2.25);
+  transform-origin: bottom;
+  box-sizing: border-box;
+  display: block;
+  pointer-events: none;
+}
+
+.footer-bg-wavy {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 70vh;
+}
+
+.footer-bg-wavy-for-footer {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 40vh;
+}
+
+@media (width > 420px) {
+  section {
+    align-items: center;
+    padding-left: 0;
+    gap: 20px;
+  }
+  .links {
+    gap: 20px;
+  }
+}
+
+.bg-gray-semi-transparent {
+  background-color: rgba(255,255,255,0.7);
+}
+
+.bg-semi-transparent-footer {
+  background-color: rgba(240, 240, 240, 0.6);
+}
+
+.error-message {
+  font-size: 12px;
+  color: #ff3333;
+  position: relative;
+  top: 100%;
+  left: 0;
+  margin-top: 2px;
+  font-size: 15px;
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+}
+
+/* card dashboard */
+.notification-card-dashboard {
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  position: relative;
+  width: 18rem;
+  height: 8rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  --gradient: linear-gradient(to bottom, #456bb1, #1caab4, #1bffbb);
+  --color: #456bb1;
+  box-shadow: 20px 25px 50px #bebebe,20px -20px 60px #ffffff;
+}
+
+.notification-card-dashboard:before {
+  position: absolute;
+  content: "";
+  inset: 0.0625rem;
+  border-radius: 0.9375rem;
+  background: #ffffff;
+  z-index: 2
+}
+
+.notification-card-dashboard:after {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  inset: 0.65rem auto 0.65rem 0.5rem;
+  border-radius: 0.125rem;
+  background: var(--gradient);
+  transition: transform 300ms ease;
+  z-index: 4;
+}
+
+.notification-card-dashboard:hover:after {
+  transform: translateX(0.15rem)
+}
+
+.notititle-card-dashboard {
+  color: var(--color);
+  padding: 1.5rem 0.25rem 0.4rem 2rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+}
+
+.notification-card-dashboard:hover .notititle-card-dashboard {
+  transform: translateX(0.15rem)
+}
+
+.notibody-card-dashboard {
+  color: #0aa879;
+  padding: 0.5rem 0 0 2rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+}
+
+.notification-card-dashboard:hover .notibody-card-dashboard {
+  transform: translateX(0.25rem)
+}
+
+.notiglow-card-dashboard,
+.notiborderglow-card-dashboard {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle closest-side at center, white, transparent);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.notiglow-card-dashboard {
+  z-index: 3;
+}
+
+.notiborderglow-card-dashboard {
+  z-index: 1;
+}
+
+.notification-card-dashboard:hover .notiglow-card-dashboard {
+  opacity: 0.1
+}
+
+.notification-card-dashboard:hover .notiborderglow-card-dashboard {
+  opacity: 0.1
+}
+
+.modal-image {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-image img {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+.close-image {
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close-image:hover,
+.close-image:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}

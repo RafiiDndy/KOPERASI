@@ -12,7 +12,10 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css','resources/css/apps.css', 'resources/js/app.js']); ?>
+        <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css','resources/css/apps.css', 'resources/js/app.js', 'resources/js/apps.js']); ?>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- Styles -->
         <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::styles(); ?>
