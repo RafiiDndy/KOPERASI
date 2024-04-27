@@ -1,4 +1,4 @@
-<div class="container mx-auto px-4 animate__animated animate__fadeInUp">
+<div class="container mx-auto px-4 pb-8 animate__animated animate__fadeInUp">
     <div class="bg-white shadow-md rounded p-6 animate__animated animate__zoomIn">
         <div class="flex justify-between items-center mb-4">
             <div class="flex-1">
@@ -21,6 +21,7 @@
                         <th class="py-2 px-4 text-left"> <a wire:click.prevent="sort('email')" class="cursor-pointer"> Email @if($sortColumn === 'email') @if($sortDirection === 'asc') &#8593; @else &#8595; @endif @endif </a> </th>
                         <th class="py-2 px-4 text-left"> <a wire:click.prevent="sort('nik')" class="cursor-pointer"> NIK @if($sortColumn === 'nik') @if($sortDirection === 'asc') &#8593; @else &#8595; @endif @endif </a> </th>
                         <th class="py-2 px-4 text-left"> <a wire:click.prevent="sort('no_hp')" class="cursor-pointer"> No Handphone @if($sortColumn === 'no_hp') @if($sortDirection === 'asc') &#8593; @else &#8595; @endif @endif </a> </th>
+                        <th class="py-2 px-4 text-left"> <a wire:click.prevent="sort('status_anggota')" class="cursor-pointer"> Status Anggota @if($sortColumn === 'no_hp') @if($sortDirection === 'asc') &#8593; @else &#8595; @endif @endif </a> </th>
                         <th scope="col" class="px-6 py-4">
                             <span class="sr-only">Actions</span>
                         </th>
@@ -32,6 +33,7 @@
                         <td class="py-2 px-4">{{ $user->name }}</td>
                         <td class="py-2 px-4">{{ $user->email }}</td>
                         <td class="py-2 px-4">{{ $user->nik }}</td>
+                        <td class="py-2 px-4">{{ $user->no_hp }}</td>
                         <td class="py-2 px-4">{{ $user->status_anggota }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-center items-center">
                             <button class="bg-green-100 text-green-600 px-4 py-2 rounded-full hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 transition-colors duration-200" wire:click="verify_anggota({{ $user->id }})">

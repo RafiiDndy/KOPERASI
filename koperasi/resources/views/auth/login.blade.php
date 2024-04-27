@@ -3,7 +3,7 @@
         <x-authentication-card-logo />
     </x-slot>
 
-    <div class="flex flex-col items-center justify-center min-h-screen min-w-screen bg-cover bg-center" style="background-image: url({{ asset('img/white-abstract-background-vector.jpg') }});">
+    <div class="flex flex-col items-center justify-center min-h-screen min-w-screen bg-cover bg-center overflow-hidden" style="background-image: url({{ asset('img/white-abstract-background-vector.jpg') }});">
         <div class="cincin">
             <i style="--clr:#008DDA;"></i>
             <i style="--clr:#41C9E2;"></i>
