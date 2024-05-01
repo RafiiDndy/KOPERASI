@@ -17,6 +17,7 @@ return new class extends Migration
             $table->decimal('jumlah',16,2);
             $table->string('jenis_simpanan');
             $table->string('status');
+            $table->string('bukti_transfer');
             $table->timestamps();
         });
     }

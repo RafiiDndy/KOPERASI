@@ -75,7 +75,7 @@ class Manage extends Component
     {
         $catatanSimpananUsers =  User::join('catatan_simpanans', 'users.id', '=', 'catatan_simpanans.user_id')
                                     ->where('catatan_simpanans.status','menunggu verifikasi')
-                                    ->select('users.id', 'users.name', 'catatan_simpanans.jumlah','catatan_simpanans.jenis_simpanan','catatan_simpanans.status','catatan_simpanans.created_at', 'catatan_simpanans.id as id_simpanan')
+                                    ->select('users.id', 'users.name', 'catatan_simpanans.jumlah','catatan_simpanans.jenis_simpanan','catatan_simpanans.status','catatan_simpanans.created_at', 'catatan_simpanans.id as id_simpanan', 'catatan_simpanans.bukti_transfer')
                                     ->where(function ($query) {
                                         $query->where('users.id', 'like', '%' . $this->search . '%')
                                             ->orWhere('name', 'like', '%' . $this->search . '%')
