@@ -8,14 +8,14 @@
                         <span class="text-gray-600"> to Koperasi</span>
                     </h1>
                 </div>
-                <form class="form" method="POST" action="{{ route('register') }}">
+                <form enctype="multipart/form-data" class="form" method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="space-y-3 mt-8">
                         <div>
                             <label for="name" class="block mb-3 text-sm font-medium text-black">
-                                {{ __('Nama') }}
+                                {{ __('Nama') }} *
                             </label>
-                            <input type="text" id="name" name="name" placeholder="Nama" :value="old('name')" required autofocus autocomplete="name" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
+                            <input type="text" id="name" name="name" placeholder="Nama" value="{{ old('name') }}" required autofocus autocomplete="name" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
                             @error('name')
                             <div class="text-sm text-red-600">{{ $message }}</div>
                             @enderror
@@ -23,18 +23,18 @@
                         <div class="flex space-x-3">
                             <div class="flex-1">
                                 <label for="email" class="block mb-3 text-sm font-medium text-black">
-                                    {{ __('Email') }}
+                                    {{ __('Email') }} *
                                 </label>
-                                <input type="email" id="email" name="email" placeholder="Email" :value="old('email')" required autofocus autocomplete="email" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
+                                <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus autocomplete="email" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
                                 @error('email')
                                 <div class="text-sm text-red-600">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="flex-1">
                                 <label for="nik" class="block mb-3 text-sm font-medium text-black">
-                                    {{ __('NIK') }}
+                                    {{ __('NIK') }} *
                                 </label>
-                                <input type="number" id="nik" name="nik" placeholder="NIK (Nomor Induk Kependudukan)" :value="old('nik')" required autofocus autocomplete="nik" min="1" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
+                                <input type="number" id="nik" name="nik" placeholder="NIK (Nomor Induk Kependudukan)" value="{{ old('nik') }}"  required autofocus autocomplete="nik" min="1" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
                                 @error('nik')
                                 <div class="text-sm text-red-600">{{ $message }}</div>
                                 @enderror
@@ -43,40 +43,53 @@
                         <div class="flex space-x-3">
                             <div class="flex-1">
                                 <label for="no_hp" class="block mb-3 text-sm font-medium text-black">
-                                    {{ __('No Handphone') }}
+                                    {{ __('No Handphone') }} *
                                 </label>
-                                <input type="tel" id="no_hp" name="no_hp" placeholder="Nomor Handphone" :value="old('no_hp')" required autofocus autocomplete="no_hp" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
+                                <input type="tel" id="no_hp" name="no_hp" placeholder="Nomor Handphone" value="{{ old('no_hp') }}" required autofocus autocomplete="phone" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
                                 @error('no_hp')
                                 <div class="text-sm text-red-600">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="flex-1">
                                 <label for="tanggal_lahir" class="block mb-3 text-sm font-medium text-black">
-                                    {{ __('Tanggal Lahir') }}
+                                    {{ __('Tanggal Lahir') }} *
                                 </label>
-                                <input type="date" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" :value="old('tanggal_lahir')" required autofocus autocomplete="tanggal_lahir" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
+                                <input type="date" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" value="{{ old('tanggal_lahir') }}" required autofocus autocomplete="tanggal_lahir" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
                                 @error('tanggal_lahir')
                                 <div class="text-sm text-red-600">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
                         <div class="col-span-full">
-                            <label for="password" class="block mb-3 text-sm font-medium text-black">
-                                {{ __('Password') }}
-                            </label>
-                            <input id="password" name="password" required autocomplete="password" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm" placeholder="Password" type="password">
-                            @error('password')
-                            <div class="text-sm text-red-600">{{ $message }}</div>
-                            @enderror
+                            <div class="mb-4" x-data="{ isUploading: false, progress: 0 }" x-on:livewire-upload-start="isUploading = true" x-on:livewire-upload-finish="isUploading = false" x-on:livewire-upload-error="isUploading = false" x-on:livewire-upload-progress="progress = $event.detail.progress">
+                                <label for="foto_ktp" class="block mb-3 text-sm font-medium text-black">Upload Foto KTP *</label>
+                                <input type="file" id="foto_ktp" wire:model="foto_ktp" name="foto_ktp" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
+                                @error('foto_ktp') <span class="error text-sm text-red-600">{{ $message }}</span> @enderror
+                                <div x-show="isUploading">
+                                    <progress max="100" x-bind:value="progress"></progress>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-span-full">
-                            <label for="password_confirmation" class="block mb-3 text-sm font-medium text-black">
-                                {{ __('Confirm Password') }}
-                            </label>
-                            <input id="password_confirmation" name="password_confirmation" required autocomplete="password" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm" placeholder="Confirm Password" type="password">
-                            @error('password_confirmation')
-                            <div class="text-sm text-red-600">{{ $message }}</div>
-                            @enderror
+                        <div class="flex space-x-3">
+                            <div class="flex-1">
+
+                                <label for="password" class="block mb-3 text-sm font-medium text-black">
+                                    {{ __('Password') }} *
+                                </label>
+                                <input id="password" name="password" required autocomplete="password" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm" placeholder="Password" type="password">
+                                @error('password')
+                                <div class="text-sm text-red-600">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="flex-1">
+                                <label for="password_confirmation" class="block mb-3 text-sm font-medium text-black">
+                                    {{ __('Confirm Password') }} *
+                                </label>
+                                <input id="password_confirmation" name="password_confirmation" required autocomplete="password" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm" placeholder="Confirm Password" type="password">
+                                @error('password_confirmation')
+                                <div class="text-sm text-red-600">{{ $message }}</div>
+                                @enderror
+                            </div>
                         </div>
                         @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                         <div class="mt-3">

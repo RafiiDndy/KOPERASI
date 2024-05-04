@@ -7,13 +7,17 @@ use Illuminate\Support\Facades\DB;
 use Livewire\WithPagination;
 use Carbon\Carbon;
 
-class Report extends Component
+class ReportWajib extends Component
 {
     use WithPagination;
 
     public $sortColumn = 'id';
-    public $sortDirection = 'desc';
+    public $sortDirection = 'asc';
     public $search = '';
+    public $monthStart = '';
+    public $yearStart = '';
+    public $monthEnd = '';
+    public $yearEnd = '';
     public $dateStart = '';
     public $dateEnd = '';
 
@@ -23,8 +27,10 @@ class Report extends Component
             abort(403, 'Kamu bukan pengurus!');
         }
 
-        $this->dateStart = Carbon::now()->subDays(30)->format('Y-m-d');
-        $this->dateEnd = Carbon::now()->format('Y-m-d');
+        $this->yearStart = Carbon::now()->year;
+        $this->monthStart = Carbon::now()->month;
+        $this->yearEnd = Carbon::now()->year;
+        $this->monthEnd = Carbon::now()->month;
     }
 
     public function sort($column)
@@ -35,12 +41,15 @@ class Report extends Component
 
     public function render()
     {
+        $this->dateStart = Carbon::parse($this->yearStart."-".$this->monthStart)->startOfMonth()->format('Y-m-d');
+        $this->dateEnd = Carbon::parse($this->yearEnd."-".$this->monthEnd)->endOfMonth()->format('Y-m-d');
+
+
         $reports = DB::table('users AS u')
         ->leftJoinSub(
             DB::table('catatan_simpanans AS cs')
                 ->select('user_id', 
-                    DB::raw('SUM(CASE WHEN cs.status = "Verified" AND cs.jenis_simpanan = "Pokok" THEN cs.jumlah ELSE 0 END) AS total_pokok'),
-                    DB::raw('SUM(CASE WHEN cs.status = "Verified" AND cs.jenis_simpanan = "Wajib" AND cs.created_at BETWEEN ? AND ? THEN cs.jumlah ELSE 0 END) AS total_wajib')
+                   DB::raw('SUM(CASE WHEN cs.status = "Verified" AND cs.jenis_simpanan = "Wajib" AND cs.created_at BETWEEN ? AND ? THEN cs.jumlah ELSE 0 END) AS total_wajib')
                 )
                 ->whereRaw('cs.status = "Verified"')
                 ->groupBy('user_id'),
@@ -48,12 +57,7 @@ class Report extends Component
         )
         ->select(
             'u.*',
-            DB::raw('COALESCE(cs.total_pokok, 0) AS total_pokok'),
             DB::raw('COALESCE(cs.total_wajib, 0) AS total_wajib'),
-            DB::raw('CASE
-                WHEN COALESCE(cs.total_pokok, 0) >= 1000000 THEN "Paid"
-                ELSE "Unpaid"
-            END AS status_pokok'),
             DB::raw('CASE
                 WHEN COALESCE(cs.total_wajib, 0) >= 100000 THEN "Paid"
                 ELSE "Unpaid"
@@ -64,8 +68,9 @@ class Report extends Component
                 $query->where('u.id', 'like', '%' . $this->search . '%')
                     ->orWhere('name', 'like', '%' . $this->search . '%')
                     ->orWhere('email', 'like', '%' . $this->search . '%');})
+        ->orderBy($this->sortColumn, $this->sortDirection)
         ->paginate(10);
 
-        return view('livewire.recapitulation.report', compact('reports'));
+        return view('livewire.recapitulation.report-wajib', compact('reports'));
     }
 }

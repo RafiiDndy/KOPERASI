@@ -8,8 +8,12 @@ use Illuminate\Http\Request;
 class SimpananController extends Controller
 {
     public function index(){
+        if (auth()->user()->status_anggota == "Verified" || auth()->user()->status_anggota == "Tidak Aktif" || auth()->user()->role == "Pengurus") {
+            return view('simpanan.index');
+        } else {
+            return view('simpanan.indexNotVerified');
+        }
 
-        return view('simpanan.index');
     }
 
     public function manage(){
