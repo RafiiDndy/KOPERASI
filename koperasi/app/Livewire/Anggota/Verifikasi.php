@@ -3,10 +3,17 @@
 namespace App\Livewire\Anggota;
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithPagination;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class Verifikasi extends Component
 {
-    public $users;
+    public $sortColumn = 'name';
+    public $sortDirection = 'asc';
+    public $search = '';
+
+    use WithPagination;
+    use LivewireAlert;
 
     public function mount()
     {
@@ -14,7 +21,6 @@ class Verifikasi extends Component
             abort(403, 'Kamu bukan pengurus!');
         }
 
-        $this->users = User::where('status_anggota', 'not_verified')->where('id','!=',auth()->id())->get();
     }
 
     public function verify_anggota($id)
@@ -23,9 +29,14 @@ class Verifikasi extends Component
         $user->status_anggota = 'Aktif';
         $user->save();
         
-        session()->flash('success', 'Anggota '.$user->name.' berhasil di verifikasi!');
-        
-        return redirect()->to('/verifikasi-anggota');
+        $this->flash('success','Anggota '.$user->name.' berhasil di verifikasi!', [
+            'position' => 'top-end',
+            'timer' => '2000',
+            'toast' => true,
+            'timerProgressBar' => true,
+            ]);
+
+        return redirect(request()->header('Referer'));
     }
 
     public function reject_anggota($id)
@@ -34,13 +45,32 @@ class Verifikasi extends Component
         $user->status_anggota = 'Rejected';
         $user->save();
         
-        session()->flash('info', 'Anggota '.$user->name.' berhasil di reject!');
+        $this->flash('info','Anggota '.$user->name.' berhasil di reject!', [
+            'position' => 'top-end',
+            'timer' => '2000',
+            'toast' => true,
+            'timerProgressBar' => true,
+            ]);
 
-        return redirect()->to('/verifikasi-anggota');
+        return redirect(request()->header('Referer'));
+    }
+
+    public function sort($column)
+    {
+        $this->sortColumn = $column;
+        $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
     }
 
     public function render()
     {
-        return view('livewire.anggota.verifikasi', ['users' => $this->users]);
+        $users = User::where('id','!=',auth()->id())->where('status_anggota', 'not_verified')
+                        ->where(function ($query) {
+                            $query->where('name', 'like', '%' . $this->search . '%')
+                                ->orWhere('email', 'like', '%' . $this->search . '%')
+                                ->orWhere('nik', 'like', '%' . $this->search . '%')
+                                ->orWhere('status_anggota', 'like', '%' . $this->search . '%');})
+                        ->orderBy($this->sortColumn, $this->sortDirection)
+                        ->paginate(10);
+        return view('livewire.anggota.verifikasi', compact('users'));
     }
 }

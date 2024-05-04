@@ -1,11 +1,16 @@
-<div class="container mx-auto px-4 py-8">
-    <div class="max-w-md mx-auto bg-white shadow-md rounded px-8 py-6">
-        @if (Auth::user()->status_anggota == 'Not_verified')
-        <div class='mb-8'>
-            Silahkan Lakukan Deposit Simpanan Pokok Sebesar Rp.100.000 untuk Anggota Baru!
+<div class="card-deposit animate__animated animate__bounceInLeft">
+    <div class="card-details-deposit px-4 py-4">
+        <p class="text-title-deposit text-xl mb-4">Deposit</p>
+        @if (!$isPokokPaid)
+        <div>
+            Silahkan Lakukan Deposit Simpanan Pokok Sebesar Rp.1.000.000 untuk Anggota Baru!
+        </div>
+        @elseif (!$isWajibPaid)
+        <div>
+            Silahkan Lakukan Deposit Simpanan Wajib Sebesar Rp.100.000 untuk bulan ini!
         </div>
         @endif
-        <form wire:submit.prevent>
+        <form enctype="multipart/form-data" class="text-body-deposit mt-6">
             <div class="mb-4">
                 <label for="jumlah" class="block text-sm font-medium text-gray-700">Jumlah:</label>
                 <input type="text" id="jumlah" wire:model="jumlah" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
@@ -14,14 +19,27 @@
                 <label for="jenis_simpanan" class="block text-sm font-medium text-gray-700">Jenis Simpanan:</label>
                 <select id="jenis_simpanan" wire:model="jenis_simpanan" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
                     <option hidden>Silahkan pilih jenis simpanan!</option>
+                    @if (Auth::user()->status_anggota != 'Tidak Aktif')
+                    @if (!$isPokokPaid)
                     <option value="Pokok">Pokok</option>
+                    @elseif (!$isWajibPaid)
                     <option value="Wajib">Wajib</option>
                     <option value="Sukarela">Sukarela</option>
+                    @else
+                    <option value="Sukarela">Sukarela</option>
+                    @endif
+                    @endif
                 </select>
             </div>
-            <div class="flex justify-end">
-                <button type="button" wire:click="deposit" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md mr-2">Deposit</button>
+            <div class="mb-4" x-data="{ isUploading: false, progress: 0 }" x-on:livewire-upload-start="isUploading = true" x-on:livewire-upload-finish="isUploading = false" x-on:livewire-upload-error="isUploading = false" x-on:livewire-upload-progress="progress = $event.detail.progress">
+                <label for="bukti_transfer" class="block text-sm font-medium text-gray-700">Upload Bukti Transfer:</label>
+                <input type="file" id="bukti_transfer" wire:model="bukti_transfer" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                @error('bukti_transfer') <span class="error">{{ $message }}</span> @enderror
+                <div x-show="isUploading">
+                    <progress max="100" x-bind:value="progress"></progress>
+                </div>
             </div>
+            <button class="card-button-deposit" type="button" wire:click="deposit" data-confirm-delete>Deposit</button>
         </form>
     </div>
 </div>

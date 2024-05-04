@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\SimpananController;
+use App\Http\Controllers\RecapitulationController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,5 +23,5 @@ Route::middleware([
     Route::get('/verifikasi-anggota',[AnggotaController::class, 'verifikasi'])->name('VerifikasiAnggota');
     Route::get('/simpanan',[SimpananController::class, 'index'])->name('Simpanan.index');
     Route::get('/manage-simpanan',[SimpananController::class, 'manage'])->name('Simpanan.manage');
-
+    Route::get('/recapitulation',[RecapitulationController::class, 'index'])->name('Recapitulation.index');
 });
