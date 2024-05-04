@@ -33,6 +33,7 @@ class User extends Authenticatable
         'umur',
         'tanggal_lahir',
         'status_anggota',
+        'ktp_photo_path'
     ];
 
     /**
@@ -67,5 +68,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function catatan_simpanans()
+    {
+        return $this->hasMany(CatatanSimpanan::class);
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
 use Carbon\Carbon;
+use Illuminate\Validation\ValidationException;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -27,11 +28,16 @@ class CreateNewUser implements CreatesNewUsers
             'no_hp' => ['required'],
             'tanggal_lahir' => ['required'],
             'password' => $this->passwordRules(),
+            'foto_ktp' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
       
         $tanggal_lahir = Carbon::createFromFormat('Y-m-d', $input['tanggal_lahir']);
         $umur = $tanggal_lahir->age;
+
+        $request = request();
+        $fotoKtp = $request->file('foto_ktp');
+        $path_foto_ktp = $fotoKtp->store('foto_ktp','public');
 
         return User::create([
             'name' => $input['name'],
@@ -42,6 +48,7 @@ class CreateNewUser implements CreatesNewUsers
             'umur' => $umur,
             'password' => Hash::make($input['password']),
             'role' => 'Anggota',
+            'ktp_photo_path' => $path_foto_ktp,
         ]);
     }
 }
