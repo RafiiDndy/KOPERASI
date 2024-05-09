@@ -19,6 +19,10 @@
                 <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">{{$user->nik}}</dd>
             </div>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">No Handphone</dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">{{$user->no_hp}}</dd>
+            </div>
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-gray-500">Status Anggota</dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">{{$user->status_anggota}}</dd>
             </div>
