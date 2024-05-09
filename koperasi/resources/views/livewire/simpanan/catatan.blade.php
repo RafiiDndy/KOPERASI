@@ -10,7 +10,7 @@
             </div>
             <div class="flex">
                 <div class="relative">
-                    <input wire:model.lazy="search" type="text" class="bg-gray-200 border-0 py-2 px-4 pr-16 rounded-lg text-sm focus:outline-none focus:ring-0 focus:ring-offset-0 focus:bg-white" placeholder="Search...">
+                    <input wire:model.lazy="search" type="text" class="bg-gray-200 border-0 py-2 px-4 pr-16 rounded-lg text-sm focus:outline-none focus:ring-0 focus:ring-offset-0 focus:bg-gray" placeholder="Search...">
                     <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                         <ion-icon name="search-outline"></ion-icon>
                     </div>

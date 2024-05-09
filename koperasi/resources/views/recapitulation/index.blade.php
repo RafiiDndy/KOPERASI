@@ -9,6 +9,15 @@
         @livewire('recapitulation.show')
     </div>
     <div class="mt-8">
-        @livewire('recapitulation.report')
+        @livewire('recapitulation.report-pokok')
+    </div>
+    <div class="mt-8">
+        @livewire('recapitulation.report-wajib')
+    </div>
+    <div class="mt-8">
+        @livewire('recapitulation.report-sukarela')
+    </div>
+    <div class="mt-8">
+        @livewire('recapitulation.unpaid-list')
     </div>
 </x-app-layout>

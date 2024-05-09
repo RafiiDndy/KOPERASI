@@ -1,7 +1,7 @@
 <div class="px-8 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl bg-semi-transparent-footer">
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
         <div>
-            <p class="text-2xl font-bold uppercase">Koperasi</p>
+            <p class="text-2xl font-black uppercase">Koperasi</p>
             <p class="mt-2 text-sm font-medium text-gray-500 lg:w-4/5">
                 Koperasi adalah suatu organisasi kekeluargaan yang bergerak pada bidang ekonomi dan sosial.
             </p>
@@ -94,7 +94,7 @@
         <div class="background-wavy">
             <svg class="wave-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1600 900">
                 <defs>
-                    <path id="wave" fill="rgba(0, 209, 235, 0.8)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+                    <path id="wave" fill="#249dc5" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
           s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
                 </defs>
                 <g>

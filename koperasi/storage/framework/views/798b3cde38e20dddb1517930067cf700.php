@@ -1,11 +1,11 @@
 <?php if (isset($component)) { $__componentOriginal9ac128a9029c0e4701924bd2d73d7f54 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal9ac128a9029c0e4701924bd2d73d7f54 = $attributes; } ?>
-<?php $component = App\View\Components\AppLayout::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component = App\View\Components\AppLayout::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('app-layout'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\View\Components\AppLayout::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\AppLayout::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
     <div class="text-center mb-12 text-4xl font-bold">
@@ -20,8 +20,12 @@
                     <div class="notiglow-card-dashboard"></div>
                     <div class="notiborderglow-card-dashboard"></div>
                     <div class="notititle-card-dashboard">Total Anggota</div>
+                    <?php if(Auth::user()->role == 'Pengurus'): ?>
                     <div class="notibody-card-dashboard"><?php echo e(@App\Models\User::query()->where('status_anggota','Aktif')->count()); ?> Anggota Aktif</div>
                     <div class="notibody-card-dashboard"><?php echo e(@App\Models\User::query()->where('status_anggota','Tidak Aktif')->count()); ?> Anggota Tidak Aktif</div>
+                    <?php else: ?>
+                    <div class="notibody-card-dashboard mt-3"><?php echo e(@App\Models\User::query()->where('status_anggota','Aktif')->count()); ?> Anggota Aktif</div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div>
