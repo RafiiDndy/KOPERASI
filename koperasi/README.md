@@ -64,3 +64,33 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Contributor
+
+1.Rafii Dandy Adithya
+
+2.Abiyoga Dhaniswara
+
+3.Subhil Ma'ruf L. Bilondatu
+
+4.Zulfa Ikhsanuddin Hakim
+
+5.Tasya Ramdani
+
+6.Anggiat Pandu Daniel Siregar
+
+## Application
+
+Aplikasi koperasi adalah aplikasi yang dibuat untuk memenuhi kebutuhan koperasi tanpa menyulitkan anggota koperasi dengan menggunakan sistem automatisasi pada aplikasi
+
+## Fiture
+
+1.Login & Logout
+
+2.Approval Registration
+
+3.Noting Resignation
+
+4.record savings
+
+5.Rekapitulation
