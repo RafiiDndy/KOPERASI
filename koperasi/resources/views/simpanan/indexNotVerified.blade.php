@@ -3,7 +3,7 @@
         <div class="container mx-auto p-5 text-center">
             <div class="bg-white rounded-xl shadow-2xl p-8 max-w-md mx-auto">
                 <h1 class="text-4xl font-bold mb-4 text-indigo-800 animate-pulse">Waiting for Verification</h1>
-                <p class="text-gray-600 mb-8">Please wait while we verify your information.</p>
+                <p class="text-gray-600 mb-7">Please wait while we verify your information.</p>
                 <div class="flex justify-center">
                     <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-indigo-500"></div>
                 </div>

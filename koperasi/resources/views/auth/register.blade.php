@@ -34,7 +34,7 @@
                                 <label for="nik" class="block mb-3 text-sm font-medium text-black">
                                     {{ __('NIK') }} *
                                 </label>
-                                <input type="number" id="nik" name="nik" placeholder="NIK (Nomor Induk Kependudukan)" value="{{ old('nik') }}"  required autofocus autocomplete="nik" min="1" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
+                                <input type="number" id="nik" name="nik" placeholder="NIK (Nomor Induk Kependudukan)" value="{{ old('nik') }}" maxlength="24" required autofocus autocomplete="nik" min="1" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
                                 @error('nik')
                                 <div class="text-sm text-red-600">{{ $message }}</div>
                                 @enderror
@@ -45,7 +45,7 @@
                                 <label for="no_hp" class="block mb-3 text-sm font-medium text-black">
                                     {{ __('No Handphone') }} *
                                 </label>
-                                <input type="tel" id="no_hp" name="no_hp" placeholder="Nomor Handphone" value="{{ old('no_hp') }}" required autofocus autocomplete="phone" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
+                                <input type="tel" id="no_hp" name="no_hp" placeholder="Nomor Handphone" value="{{ old('no_hp') }}" maxlength="13" required autofocus autocomplete="phone" class="block w-full h-12 px-4 py-2 text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm">
                                 @error('no_hp')
                                 <div class="text-sm text-red-600">{{ $message }}</div>
                                 @enderror
@@ -148,3 +148,12 @@
         </div>
     </div>
 </x-guest-layout>
+<script>
+  const nikInput = document.getElementById('nik');
+
+  nikInput.addEventListener('input', function() {
+    if (this.value.length > 23) {
+      this.value = this.value.slice(0, 23);
+    }
+  });
+</script>
