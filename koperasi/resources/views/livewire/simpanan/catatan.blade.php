@@ -36,7 +36,13 @@
                         <td class="py-2 px-4">{{ $simpanan->status }}</td>
                         <td class="py-2 px-4">{{ $simpanan->created_at }}</td>
                         <td class="px-4 py-2 whitespace-nowrap text-right text-sm font-medium flex justify-center items-center">
+<<<<<<< HEAD
                             <a class="view-image" href="storage/{{ $simpanan->bukti_transfer }}">View</a>
+=======
+                            <a href="storage/{{ $simpanan->bukti_transfer }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 view-image">
+                                View
+                            </a>
+>>>>>>> 44ab0b14b1d71924d596eda4f1361aeda9115285
                         </td>
                     </tr>
                     @endforeach
@@ -73,4 +79,8 @@
             }
         });
     });
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> 44ab0b14b1d71924d596eda4f1361aeda9115285
