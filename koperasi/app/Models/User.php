@@ -33,6 +33,7 @@ class User extends Authenticatable
         'umur',
         'tanggal_lahir',
         'status_anggota',
+        'ktp_photo_path'
     ];
 
     /**
