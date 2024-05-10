@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="relative flex justify-center max-h-full overflow-hidden lg:px-0 bg-gray-100">
-        <div class="relative z-10 flex flex-col mr-full px-12 py-10 bg-gray-semi-transparent lg:border-r  sm:justify-center">
+        <div class="relative z-10 flex flex-col mr-full px-12 py-10 bg-gray-semi-transparent lg:border-r sm:justify-center">
             <div class="w-full mx-auto mr-44 md:px-0 sm:px-4">
                 <div class="flex flex-col">
                     <h1 class="text-3xl font-semibold tracking-tighter text-gray-900">
