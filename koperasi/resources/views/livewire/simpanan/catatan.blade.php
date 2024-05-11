@@ -36,7 +36,7 @@
                         <td class="py-2 px-4">{{ $simpanan->status }}</td>
                         <td class="py-2 px-4">{{ $simpanan->created_at }}</td>
                         <td class="px-4 py-2 whitespace-nowrap text-right text-sm font-medium flex justify-center items-center">
-                            <a class="view-image" href="storage/{{ $simpanan->bukti_transfer }}">View</a>
+                            <a class="view-image" href="/storage/{{ $simpanan->bukti_transfer }}">View</a>
                         </td>
                     </tr>
                     @endforeach
