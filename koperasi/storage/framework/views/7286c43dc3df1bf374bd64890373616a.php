@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                     <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $catatanSimpananUsers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <tr class="border-b">
+                    <tr wire:key='<?php echo e($user->id); ?>' class="border-b">
                         <td class="py-2 px-4"><?php echo e($user->id); ?></td>
                         <td class="py-2 px-4"><?php echo e($user->name); ?></td>
                         <td class="py-2 px-4">Rp.<?php echo e(number_format($user->jumlah,2)); ?></td>
