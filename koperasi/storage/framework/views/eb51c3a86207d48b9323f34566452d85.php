@@ -82,6 +82,12 @@
                     <span class="ml-4"> Recapitulation </span>
                     </a>
                 </li>
+                <li>
+                    <a href="<?php echo e(route('Anggota.expense')); ?>" :active="request()->routeIs('Anggota.expense')" class="inline-flex items-center w-full px-4 py-2 mt-1 text-sm text-white-500 transition duration-200 ease-in-out transform rounded-lg focus:shadow-outline hover:bg-gray-100 hover:scale-95 hover:text-blue-500">
+                    <ion-icon name="cash-outline"></ion-icon>
+                    <span class="ml-4"> Expenses </span>
+                    </a>
+                </li>
                 <?php endif; ?>
                 </ul>
             </nav>
