@@ -39,7 +39,7 @@
                     <div class="notiglow-card-dashboard"></div>
                     <div class="notiborderglow-card-dashboard"></div>
                     <div class="notititle-card-dashboard">Total SHU</div>
-                    <div class="notibody-card-dashboard mt-3">Rp.{{ number_format($shu, 0, ',') }}</div>
+                    <div class="notibody-card-dashboard mt-3">Rp.{{ number_format($shu) }}</div>
                 </div>
             </div>
             <div>
