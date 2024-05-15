@@ -15,11 +15,9 @@ class SHUController extends Controller
         $totalSimpananSeluruhAnggota = CatatanSimpanan::where('status', 'Verified')->sum('jumlah');
         $totalHarga = AnggotaActivity::sum('total_harga');
         
-        if ($totalSimpananSeluruhAnggota > 0) {
-            $shu = ($totalSimpanan / $totalSimpananSeluruhAnggota) * $totalHarga;
-        } else {
-            $shu = 0;
-        }
+        
+        $shu = ($totalSimpanan / $totalSimpananSeluruhAnggota) * $totalHarga;
+
         return view('dashboard', ['shu' => $shu]);
     }
 }
