@@ -25,7 +25,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-black">
+                        <a href="https://www.linkedin.com/in/anggiat-pandu-daniel-898697289" class="hover:text-black">
                             Anggiat Pandu Daniel Siregar
                         </a>
                     </li>
@@ -60,8 +60,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="hover:text-black">
-                            @
+                        <a href="https://www.instagram.com/pdniell/" class="hover:text-black">
+                            @pdniell
                         </a>
                     </li>
                     <li>

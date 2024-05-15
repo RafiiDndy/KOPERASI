@@ -23,7 +23,23 @@
                     <div class="notiglow-card-dashboard"></div>
                     <div class="notiborderglow-card-dashboard"></div>
                     <div class="notititle-card-dashboard">Total Simpanan</div>
+                    <div class="notibody-card-dashboard mt-3">Rp.{{ number_format(@App\Models\CatatanSimpanan::query()->where('user_id', Auth::user()->id)->where('status','Verified')->sum('jumlah')) }}</div>
+                </div>
+            </div>
+            <div>
+                <div class="notification-card-dashboard">
+                    <div class="notiglow-card-dashboard"></div>
+                    <div class="notiborderglow-card-dashboard"></div>
+                    <div class="notititle-card-dashboard">Total Simpanan Keseluruhan</div>
                     <div class="notibody-card-dashboard mt-3">Rp.{{ number_format(@App\Models\CatatanSimpanan::query()->where('status','Verified')->sum('jumlah')) }}</div>
+                </div>
+            </div>
+            <div>
+                <div class="notification-card-dashboard">
+                    <div class="notiglow-card-dashboard"></div>
+                    <div class="notiborderglow-card-dashboard"></div>
+                    <div class="notititle-card-dashboard">Total SHU</div>
+                    <div class="notibody-card-dashboard mt-3">Rp.{{ number_format($shu, 0, ',', '.') }}</div>
                 </div>
             </div>
             <div>
