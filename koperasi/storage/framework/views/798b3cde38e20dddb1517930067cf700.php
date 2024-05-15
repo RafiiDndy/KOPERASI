@@ -40,8 +40,12 @@
                 <div class="notification-card-dashboard">
                     <div class="notiglow-card-dashboard"></div>
                     <div class="notiborderglow-card-dashboard"></div>
-                    <div class="notititle-card-dashboard">Status Anggota</div>
+                    <div class="notititle-card-dashboard">Status</div>
+                    <?php if(Auth::user()->role == 'Anggota'): ?>
                     <div class="notibody-card-dashboard mt-3"><?php echo e(@App\Models\User::query()->where('id',Auth::user()->id)->first(['status_anggota'])->status_anggota); ?></div>
+                    <?php else: ?>
+                    <div class="notibody-card-dashboard mt-3"><?php echo e(@App\Models\User::query()->where('id',Auth::user()->id)->first(['role'])->role); ?></div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

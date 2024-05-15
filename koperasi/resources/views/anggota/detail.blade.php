@@ -13,8 +13,16 @@
                 </div>
             </div>
         </div>
+        <div class="mt-12">
+            <div class="flex justify-center">
+                @livewire('anggota.activity', ['id' => $id])
+            </div>
+        </div>
         <div class="mt-8">
-        @livewire('simpanan.catatan', ['id' => $id])
+            @livewire('simpanan.catatan', ['id' => $id])
+        </div>
+        <div class="mt-8">
+            @livewire('anggota.list-activity', ['id' => $id])
         </div>
     </div>
 </x-app-layout>

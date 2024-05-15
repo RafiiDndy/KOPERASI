@@ -19,4 +19,7 @@ class AnggotaController extends Controller
     public function detail($id){
         return view('anggota.detail',compact('id'));
     }
+    public function expense(){
+        return view('anggota.expense');
+    }
 }

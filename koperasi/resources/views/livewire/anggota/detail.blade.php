@@ -5,7 +5,11 @@
             <h3 class="text-lg font-semibold">Profile Information</h3>
             <p class="mt-1 text-sm opacity-80">Personal details and application.</p>
         </div>
+<<<<<<< HEAD
         <div id="imageModal" class="modal-image hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 z-50 overflow-auto">
+=======
+        <div id="imageKtp" class="modal-image hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 z-50 overflow-auto">
+>>>>>>> 969ec6ec70ff2562a6f157cef7e2998ad3b6429a
             <span class="close-image absolute top-4 right-4 text-white text-2xl cursor-pointer transition-colors duration-200 hover:text-red-500">&times;</span>
             <img src="" id="imageSrc" alt="Cannot Load Image" class="max-w-full h-auto mx-auto mt-12 rounded-lg shadow-lg animate__animated animate__zoomIn">
         </div>
@@ -45,7 +49,11 @@
                 </div>
                 @endif
                 <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+<<<<<<< HEAD
                     <a class="view-image text-white bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none transition-colors duration-200 transform hover:scale-105" href="/storage/{{$user->ktp_photo_path}}">View KTP</a>
+=======
+                    <a class="view-image-ktp text-white bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none transition-colors duration-200 transform hover:scale-105" href="/storage/{{$user->ktp_photo_path}}">View KTP</a>
+>>>>>>> 969ec6ec70ff2562a6f157cef7e2998ad3b6429a
                 </div>
             </dl>
         </div>
@@ -55,11 +63,19 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+<<<<<<< HEAD
         var imageModal = document.getElementById('imageModal');
         var closeImage = imageModal.querySelector('.close-image');
         var imageSrc = imageModal.querySelector('#imageSrc');
 
         document.querySelectorAll('.view-image').forEach(function(link) {
+=======
+        var imageModal = document.getElementById('imageKtp');
+        var closeImage = imageModal.querySelector('.close-image');
+        var imageSrc = imageModal.querySelector('#imageSrc');
+
+        document.querySelectorAll('.view-image-ktp').forEach(function(link) {
+>>>>>>> 969ec6ec70ff2562a6f157cef7e2998ad3b6429a
             link.addEventListener('click', function(event) {
                 event.preventDefault();
                 var imageUrl = this.getAttribute('href');
