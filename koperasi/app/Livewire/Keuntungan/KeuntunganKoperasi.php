@@ -14,8 +14,8 @@ class KeuntunganKoperasi extends Component
 
     public function mount()
     {
-        if (auth()->user()->role !== 'Pengurus') {
-            abort(403, 'Kamu bukan pengurus!');
+        if (!(auth()->user())) {
+            abort(403, 'Kamu bukan '.auth()->user()->name);
         }
 
         $this->year = Carbon::now()->year;

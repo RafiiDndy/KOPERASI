@@ -1,5 +1,4 @@
-<div class="px-8 pb-12 mx-auto md:px-12 lg:px-32 max-w-7xl animate__animated animate__fadeInD">
-  <div class="notification-card-dashboard">
+  <div class="notification-card-dashboard ">
     <div class="notiglow-card-dashboard"></div>
     <div class="notiborderglow-card-dashboard"></div>
     <div class="notititle-card-dashboard flex justify-between items-center">
@@ -21,4 +20,3 @@
     </div>
     <div class="notibody-card-dashboard">Rp. {{ number_format($totalharga,2) }}</div>
   </div>
-</div>
