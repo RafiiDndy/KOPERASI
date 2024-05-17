@@ -16,8 +16,11 @@ class SHUController extends Controller
         $totalHarga = AnggotaActivity::sum('total_harga');
         
         
-        $shu = ($totalSimpanan / $totalSimpananSeluruhAnggota) * $totalHarga;
-
+        if ($totalSimpananSeluruhAnggota > 0 && $totalSimpanan > 0) {
+            $shu = ($totalSimpanan / $totalSimpananSeluruhAnggota) * $totalHarga;
+        } else {
+            $shu = 0;
+        }
         return view('dashboard', ['shu' => $shu]);
     }
 }
