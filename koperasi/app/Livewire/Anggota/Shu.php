@@ -13,6 +13,7 @@ class Shu extends Component
 {
     public $userId;
     public $shu;
+    public $totalSimpanan;
 
     public function mount($userId)
     {
@@ -22,19 +23,22 @@ class Shu extends Component
 
     private function calculateShu()
     {
-        $totalSimpanan = CatatanSimpanan::where('user_id', $this->userId)->where('status', 'Verified')->sum('jumlah');
+        $this->totalSimpanan = CatatanSimpanan::where('user_id', $this->userId)->where('status', 'Verified')->sum('jumlah');
         $totalSimpananSeluruhAnggota = CatatanSimpanan::where('status', 'Verified')->sum('jumlah');
         $totalHarga = AnggotaActivity::sum('total_harga');
         
         
 
-        if ($totalSimpananSeluruhAnggota > 0 && $totalSimpanan > 0) {
-            $this->shu = ($totalSimpanan / $totalSimpananSeluruhAnggota) * $totalHarga;
+        if ($totalSimpananSeluruhAnggota > 0 && $this->totalSimpanan > 0) {
+            $this->shu = ($this->totalSimpanan / $totalSimpananSeluruhAnggota) * $totalHarga;
         } else {
             $this->shu = 0;
         }
     }
-
+    public function getTotalSimpananProperty()
+    {
+        return $this->totalSimpanan;
+    }
     public function render()
     {
         return view('livewire.anggota.shu');

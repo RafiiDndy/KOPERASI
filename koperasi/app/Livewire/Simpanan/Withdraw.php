@@ -124,7 +124,8 @@ class Withdraw extends Component
             'jumlah' => -$this->withdrawalAmount,
             'jenis_simpanan' => $this->jenis_simpanan,
             'user_id' => $this->id,
-            'status' => 'menunggu verifikasi'
+            'status' => 'menunggu verifikasi',
+            'bukti_transfer' => '' // Atau masukkan nilai default yang sesuai
         ]);
 
         $this->flash('success','Withdraw Rp. '.$this->jumlah.' Success!', [
@@ -141,6 +142,10 @@ class Withdraw extends Component
 
     public function render()
     {
-        return view('livewire.simpanan.withdraw',['available_balance_pokok'=>$this->available_balance_pokok,'available_balance_wajib'=>$this->available_balance_wajib,'available_balance_sukarela'=>$this->available_balance_sukarela]);
+        return view('livewire.simpanan.withdraw', [
+            'available_balance_pokok' => $this->available_balance_pokok,
+            'available_balance_wajib' => $this->available_balance_wajib,
+            'available_balance_sukarela' => $this->available_balance_sukarela
+        ]);
     }
 }
