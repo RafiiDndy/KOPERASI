@@ -125,7 +125,7 @@ class Withdraw extends Component
             'jenis_simpanan' => $this->jenis_simpanan,
             'user_id' => $this->id,
             'status' => 'menunggu verifikasi',
-            'bukti_transfer' => '' // Atau masukkan nilai default yang sesuai
+            'bukti_transfer' => '' 
         ]);
 
         $this->flash('success','Withdraw Rp. '.$this->jumlah.' Success!', [
