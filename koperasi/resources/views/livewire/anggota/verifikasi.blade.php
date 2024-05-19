@@ -36,7 +36,7 @@
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
-                    <tr class="border-b ">
+                    <tr wire:key="{{$user->id}}" class="border-b ">
                         <td class="py-2 px-4">{{ $user->name }}</td>
                         <td class="py-2 px-4">{{ $user->email }}</td>
                         <td class="py-2 px-4">{{ $user->nik }}</td>
@@ -47,7 +47,7 @@
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-center items-center">
                             <button class="bg-green-100 text-green-600 px-4 py-2 rounded-full hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 transition-colors duration-200" wire:click="verify_anggota({{ $user->id }})">
-                                Verifikasi
+                                Approve
                             </button>
                             <div class="w-4"></div>
                             <button class="bg-red-100 text-red-600 px-4 py-2 rounded-full hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-50 transition-colors duration-200" wire:click="reject_anggota({{ $user->id }})">
