@@ -24,7 +24,7 @@ class UserFactory extends Factory
            'name' => $this->faker->name(),
            'email' => $this->faker->email(),
            'role' => 'Anggota',
-           'nik' => $this->faker->randomNumber(9,true),
+           'nik' => $this->faker->nik(),
            'no_hp' => $this->faker->randomNumber(9,true),
            'umur' => $this->faker->randomNumber(2),
            'tanggal_lahir' => $this->faker->date('Y-m-d'),
