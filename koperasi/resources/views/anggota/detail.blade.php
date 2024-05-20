@@ -4,6 +4,11 @@
             <div class="mb-8">
                 @livewire('anggota.detail',['id' => $id])
             </div>
+        <div class="mt-8">
+            <div class="flex justify-center">
+                @livewire('anggota.shu', ['userId' => $id])
+            </div>
+        </div class="mt-8">
             <div class="flex flex-wrap -mx-3">
                 <div class="lg:w-1/2 px-3 mb-6 lg:mb-0">
                     @livewire('simpanan.add', ['id' => $id])

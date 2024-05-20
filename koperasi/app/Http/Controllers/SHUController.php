@@ -17,13 +17,12 @@ class SHUController extends Controller
             ->sum('jumlah');
 
         $totalHarga = AnggotaActivity::sum('total_harga');
-
-        if ($totalSimpananSeluruhAnggota == 0) {  
-            $shu = 0;
-        } else {
+        
+        if ($totalSimpananSeluruhAnggota > 0 && $totalSimpanan > 0) {
             $shu = ($totalSimpanan / $totalSimpananSeluruhAnggota) * $totalHarga;
+        } else {
+            $shu = 0;
         }
-
         return view('dashboard', ['shu' => $shu]);
     }
 }
