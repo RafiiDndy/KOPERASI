@@ -27,6 +27,11 @@ class ReportPokok extends Component
         $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
     }
 
+    public function updatingsearch(): void
+    {
+        $this->gotoPage(1);
+    }
+
     public function render()
     {
         $reports = DB::table('users AS u')
