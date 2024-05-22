@@ -35,10 +35,15 @@ class Show extends Component
         $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
     }
 
+    public function updatingsearch(): void
+    {
+        $this->gotoPage(1);
+    }
+
     public function render()
     {
         $recapitulation = User::join('catatan_simpanans', 'users.id', '=', 'catatan_simpanans.user_id')
-                                    ->select('users.id', 'users.name', 'users.email', 'users.role', 'catatan_simpanans.jumlah','catatan_simpanans.jenis_simpanan','catatan_simpanans.status','catatan_simpanans.created_at', 'catatan_simpanans.id as id_simpanan')
+                                    ->select('users.id', 'users.name', 'users.email', 'users.role', 'catatan_simpanans.jumlah','catatan_simpanans.created_at','catatan_simpanans.jenis_simpanan','catatan_simpanans.status','catatan_simpanans.bulan', 'catatan_simpanans.id as id_simpanan')
                                     ->where('status','Verified')
                                     ->where(function ($query) {
                                     $query->where('users.id', 'like', '%' . $this->search . '%')
@@ -48,22 +53,22 @@ class Show extends Component
                                         ->orWhere('jumlah', 'like', '%' . $this->search . '%')
                                         ->orWhere('jenis_simpanan', 'like', '%' . $this->search . '%')
                                         ->orWhere('status', 'like', '%' . $this->search . '%')
-                                        ->orWhere('catatan_simpanans.created_at', 'like', '%' . $this->search . '%');})
-                                    ->whereBetween('catatan_simpanans.created_at', [$this->dateStart . ' 00:00:00', $this->dateEnd . ' 23:59:59'])
+                                        ->orWhere('catatan_simpanans.bulan', 'like', '%' . $this->search . '%');})
+                                    ->whereBetween('catatan_simpanans.bulan', [$this->dateStart . ' 00:00:00', $this->dateEnd . ' 23:59:59'])
                                     ->orderBy($this->sortColumn, $this->sortDirection)
                                     ->paginate(20);
                                     
         $totalPokok = CatatanSimpanan::where('status','Verified')
                             ->where('jenis_simpanan', 'Pokok')
-                            ->whereBetween('catatan_simpanans.created_at', [$this->dateStart . ' 00:00:00', $this->dateEnd . ' 23:59:59'])
+                            ->whereBetween('catatan_simpanans.bulan', [$this->dateStart . ' 00:00:00', $this->dateEnd . ' 23:59:59'])
                             ->sum('jumlah');
         $totalWajib = CatatanSimpanan::where('status','Verified')
                             ->where('jenis_simpanan', 'Wajib')
-                            ->whereBetween('catatan_simpanans.created_at', [$this->dateStart . ' 00:00:00', $this->dateEnd . ' 23:59:59'])
+                            ->whereBetween('catatan_simpanans.bulan', [$this->dateStart . ' 00:00:00', $this->dateEnd . ' 23:59:59'])
                             ->sum('jumlah');
         $totalSukarela = CatatanSimpanan::where('status','Verified')
                             ->where('jenis_simpanan', 'Sukarela')
-                            ->whereBetween('catatan_simpanans.created_at', [$this->dateStart . ' 00:00:00', $this->dateEnd . ' 23:59:59'])
+                            ->whereBetween('catatan_simpanans.bulan', [$this->dateStart . ' 00:00:00', $this->dateEnd . ' 23:59:59'])
                             ->sum('jumlah');
         $dateStarts = date('d-m-Y', strtotime($this->dateStart));
         $dateEnds  = date('d-m-Y', strtotime($this->dateEnd));

@@ -2,13 +2,9 @@
     <div class="bg-white shadow-md rounded p-6 animate__animated animate__zoomIn">
         <div class="flex flex-col md:flex-row justify-between items-center mb-4">
             <div class="mb-4 md:mb-0">
-                <h2 class="text-2xl font-bold text-gray-800">List Unpaid</h2>
+                <h2 class="text-2xl font-bold text-gray-800">List Unpaid Pokok</h2>
             </div>
             <div class="flex flex-wrap">
-                <div class="mr-4 mb-2">
-                    <input wire:model.lazy="dateStart" type="date" class="bg-gray-200 border-0 py-2 px-4 pr-8 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:bg-white" placeholder="Start Date">
-                    <input wire:model.lazy="dateEnd" type="date" class="bg-gray-200 border-0 py-2 px-4 pr-8 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:bg-white" placeholder="End Date">
-                </div>
                 <div class="flex items-center mb-4">
                     <label for="search" class="sr-only">Search</label>
                     <div class="relative w-full">
@@ -64,24 +60,20 @@
                         </th>
                         <th class="py-3 px-6 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Total Pokok Deposited</th>
                         <th class="py-3 px-6 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Status Pokok</th>
-                        <th class="py-3 px-6 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Total Wajib Deposited</th>
-                        <th class="py-3 px-6 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Status Wajib</th>
                         <th class="text-center text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Action</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                     @forelse($reports as $report)
-                    @if ($report->status_pokok == 'Unpaid' || $report->status_wajib == 'Unpaid')
-                    <tr class="animate__animated animate__fadeInUp">
+                    @if ($report->status_pokok == 'Unpaid')
+                    <tr wire:key='{{$report->id}}' class="animate__animated animate__fadeInUp">
                         <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{ $report->id }}</td>
                         <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">{{ $report->name }}</td>
                         <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">{{ $report->no_hp }}</td>
                         <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">Rp.{{ number_format($report->total_pokok,2) }}</td>
                         <td class="text-center text-sm text-gray-500 whitespace-nowrap border-b @switch($report->status_pokok) @case('Paid') bg-green-100 text-green-700 @break @case('Unpaid') bg-red-100 text-red-700 @default @endswitch">{{ $report->status_pokok }}</td>
-                        <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">Rp.{{ number_format($report->total_wajib,2) }}</td>
-                        <td class="text-center text-sm text-gray-500 whitespace-nowrap border-b @switch($report->status_wajib) @case('Paid') bg-green-100 text-green-700 @break @case('Unpaid') bg-red-100 text-red-700 @default @endswitch">{{ $report->status_wajib }}</td>
                         <td>
-                            <button class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-colors duration-200 mx-2 my-4 shadow-md font-open-sans" wire:click="sendWhatsAppMessage('{{ $report->status_pokok }}', '{{number_format($report->total_pokok,2)}}', '{{ $report->status_wajib }}', '{{number_format($report->total_wajib,2)}}', '{{$report->no_hp}}', '{{$report->name}}', '{{$report->nik}}')">
+                            <button class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-colors duration-200 mx-2 my-4 shadow-md font-open-sans" wire:click="sendWhatsAppMessage('{{ $report->status_pokok }}', '{{number_format($report->total_pokok,2)}}', '{{$report->no_hp}}', '{{$report->name}}', '{{$report->nik}}')">
                                 Kirim Notifikasi
                             </button>
                         </td>
