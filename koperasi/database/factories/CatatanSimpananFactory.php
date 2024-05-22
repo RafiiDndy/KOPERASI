@@ -23,7 +23,8 @@ class CatatanSimpananFactory extends Factory
             'jumlah' => $this->faker->numberBetween(1000,1000000000),
             'jenis_simpanan' => $this->faker->randomKey(['Pokok' => 1,'Wajib' => 2,'Sukarela' => 3]),
             'status' => $this->faker->randomKey(['menunggu verifikasi' => 1,'Verified' => 2,'Rejected' => 3]),
-            'bukti_transfer' =>  'bukti_transfer/'.$this->faker->image('public/storage/bukti_transfer',640,480,null,false)
+            'bukti_transfer' =>  'bukti_transfer/'.$this->faker->image('public/storage/bukti_transfer',640,480,null,false),
+            'bulan' =>  $this->faker->date('Y-m-d'),
         ];
     }
 }

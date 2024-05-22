@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('jenis_simpanan');
             $table->string('status');
             $table->string('bukti_transfer');
+            $table->date('bulan');
             $table->timestamps();
         });
     }

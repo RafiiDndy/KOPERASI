@@ -3,13 +3,11 @@
 namespace App\Livewire\Simpanan;
 use App\Models\CatatanSimpanan;
 use Livewire\Component;
-use Illuminate\Http\Request;
 use Livewire\WithPagination;
 
 class Catatan extends Component
 {
     public $id;
-    public $simpanan;
 
     public $sortColumn = 'created_at';
     public $sortDirection = 'desc';
@@ -22,6 +20,11 @@ class Catatan extends Component
         if (!(auth()->user())) {
             abort(403, 'Kamu bukan '. auth()->user()->name);
         }
+    }
+
+    public function updatingsearch(): void
+    {
+        $this->gotoPage(1);
     }
 
     public function sort($column)
