@@ -2,7 +2,7 @@
     <div class="bg-white shadow-md rounded p-6 animate__animated animate__zoomIn">
         <div class="flex flex-col md:flex-row justify-between items-center mb-4">
             <div class="mb-4 md:mb-0">
-                <h2 class="text-2xl font-bold text-gray-800">Report Wajib</h2>
+                <h2 class="text-2xl font-bold text-gray-800">List Unpaid Wajib</h2>
             </div>
             <div class="flex flex-wrap">
                 <div class="mr-4 mb-2">
@@ -103,9 +103,9 @@
                             </a>
                         </th>
                         <th class="py-3 px-6 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
-                            <a wire:click.prevent="sort('email')" class="cursor-pointer">
-                                Email
-                                @if($sortColumn === 'email')
+                            <a wire:click.prevent="sort('no_hp')" class="cursor-pointer">
+                                No Handphone
+                                @if($sortColumn === 'no_hp')
                                 @if($sortDirection === 'asc')
                                 &#8593;
                                 @else
@@ -116,18 +116,30 @@
                         </th>
                         <th class="py-3 px-6 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Total Wajib Deposited</th>
                         <th class="py-3 px-6 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Status Wajib</th>
+                        <th class="text-center text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Action</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach($reports as $report)
-                    <tr class="hover:bg-gray-100">
+                    @forelse($reports as $report)
+                    @if ($report->status_wajib == 'Unpaid')
+                    <tr wire:key='{{$report->id}}' class="animate__animated animate__fadeInUp">
                         <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{ $report->id }}</td>
                         <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">{{ $report->name }}</td>
-                        <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">{{ $report->email }}</td>
+                        <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">{{ $report->no_hp }}</td>
                         <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">Rp.{{ number_format($report->total_wajib,2) }}</td>
-                        <td class="py-4 px-6 text-sm whitespace-nowrap @switch($report->status_wajib) @case('Paid') text-green-500 @break @case('Unpaid') text-red-500 @default @endswitch">{{ $report->status_wajib }}</td>
+                        <td class="text-center text-sm text-gray-500 whitespace-nowrap border-b @switch($report->status_wajib) @case('Paid') bg-green-100 text-green-700 @break @case('Unpaid') bg-red-100 text-red-700 @default @endswitch">{{ $report->status_wajib }}</td>
+                        <td>
+                            <button class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-colors duration-200 mx-2 my-4 shadow-md font-open-sans" wire:click="sendWhatsAppMessage('{{ $report->status_wajib }}', '{{number_format($report->total_wajib,2)}}', '{{$report->no_hp}}', '{{$report->name}}', '{{$report->nik}}')">
+                                Kirim Notifikasi
+                            </button>
+                        </td>
                     </tr>
-                    @endforeach
+                    @endif
+                    @empty
+                    <tr>
+                        <td colspan="8" class="py-4 px-6 text-center">No records found.</td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>

@@ -58,6 +58,7 @@
                         <th class="py-2 px-4 text-left"> <a wire:click.prevent="sort('jumlah')" class="cursor-pointer"> Jumlah @if($sortColumn === 'jumlah') @if($sortDirection === 'asc') &#8593; @else &#8595; @endif @endif </a> </th>
                         <th class="py-2 px-4 text-left"> <a wire:click.prevent="sort('jenis_simpanan')" class="cursor-pointer"> Jenis Simpanan @if($sortColumn === 'jenis_simpanan') @if($sortDirection === 'asc') &#8593; @else &#8595; @endif @endif </a> </th>
                         <th class="py-2 px-4 text-left"> <a wire:click.prevent="sort('status')" class="cursor-pointer"> Status @if($sortColumn === 'status') @if($sortDirection === 'asc') &#8593; @else &#8595; @endif @endif </a> </th>
+                        <th class="py-2 px-4 text-left"> <a wire:click.prevent="sort('bulan')" class="cursor-pointer"> Bulan @if($sortColumn === 'bulan') @if($sortDirection === 'asc') &#8593; @else &#8595; @endif @endif </a> </th>
                         <th class="py-2 px-4 text-left"> <a wire:click.prevent="sort('created_at')" class="cursor-pointer"> Tanggal Transaksi @if($sortColumn === 'created_at') @if($sortDirection === 'asc') &#8593; @else &#8595; @endif @endif </a> </th>
                     </tr>
                 </thead>
@@ -70,6 +71,7 @@
                             <td>Rp.{{ number_format($recap->jumlah,2) }}</td>
                             <td>{{ $recap->jenis_simpanan }}</td>
                             <td>{{ $recap->status }}</td>
+                            <td>{{ \Carbon\Carbon::parse($recap->bulan)->format('F Y') }}</td>
                             <td>{{ $recap->created_at }}</td>
                         </tr>
                     @endforeach

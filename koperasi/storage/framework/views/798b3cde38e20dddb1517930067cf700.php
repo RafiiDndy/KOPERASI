@@ -33,7 +33,23 @@
                     <div class="notiglow-card-dashboard"></div>
                     <div class="notiborderglow-card-dashboard"></div>
                     <div class="notititle-card-dashboard">Total Simpanan</div>
+                    <div class="notibody-card-dashboard mt-3">Rp.<?php echo e(number_format(@App\Models\CatatanSimpanan::query()->where('user_id', Auth::user()->id)->where('status','Verified')->sum('jumlah'))); ?></div>
+                </div>
+            </div>
+            <div>
+                <div class="notification-card-dashboard">
+                    <div class="notiglow-card-dashboard"></div>
+                    <div class="notiborderglow-card-dashboard"></div>
+                    <div class="notititle-card-dashboard">Total Simpanan Keseluruhan</div>
                     <div class="notibody-card-dashboard mt-3">Rp.<?php echo e(number_format(@App\Models\CatatanSimpanan::query()->where('status','Verified')->sum('jumlah'))); ?></div>
+                </div>
+            </div>
+            <div>
+                <div class="notification-card-dashboard">
+                    <div class="notiglow-card-dashboard"></div>
+                    <div class="notiborderglow-card-dashboard"></div>
+                    <div class="notititle-card-dashboard">Total SHU</div>
+                    <div class="notibody-card-dashboard mt-3">Rp.<?php echo e(number_format($shu)); ?></div>
                 </div>
             </div>
             <div>
@@ -59,4 +75,5 @@
 <?php if (isset($__componentOriginal9ac128a9029c0e4701924bd2d73d7f54)): ?>
 <?php $component = $__componentOriginal9ac128a9029c0e4701924bd2d73d7f54; ?>
 <?php unset($__componentOriginal9ac128a9029c0e4701924bd2d73d7f54); ?>
-<?php endif; ?><?php /**PATH D:\PROJECT RPL\Koperasi Main\koperasi\resources\views/dashboard.blade.php ENDPATH**/ ?>
+<?php endif; ?>
+<?php /**PATH D:\PROJECT RPL\Koperasi Main\koperasi\resources\views/dashboard.blade.php ENDPATH**/ ?>

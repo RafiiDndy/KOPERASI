@@ -23,7 +23,7 @@
           <label for="yearStart" class="block text-sm font-medium text-gray-700">Year Start:</label>
           <div class="relative">
             <select wire:model.lazy="yearStart" class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-              @for ($i = 2022; $i <= date('Y'); $i++) <option value="{{ $i }}">{{ $i }}</option>
+              @for ($i = 2020; $i <= date('Y'); $i++) <option value="{{ $i }}">{{ $i }}</option>
                 @endfor
             </select>
             <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
@@ -51,7 +51,7 @@
           <label for="yearEnd" class="block text-sm font-medium text-gray-700">Year End:</label>
           <div class="relative">
             <select wire:model.lazy="yearEnd" class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-              @for ($i = 2022; $i <= date('Y'); $i++) <option value="{{ $i }}">{{ $i }}</option>
+              @for ($i = 2020; $i <= date('Y'); $i++) <option value="{{ $i }}">{{ $i }}</option>
                 @endfor
             </select>
             <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">

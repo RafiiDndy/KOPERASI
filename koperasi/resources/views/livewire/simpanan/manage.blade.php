@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                     @foreach ($catatanSimpananUsers as $user)
-                    <tr class="border-b">
+                    <tr wire:key='{{$user->id}}' class="border-b">
                         <td class="py-2 px-4">{{ $user->id }}</td>
                         <td class="py-2 px-4">{{ $user->name }}</td>
                         <td class="py-2 px-4">Rp.{{ number_format($user->jumlah,2) }}</td>
