@@ -39,6 +39,11 @@ class ReportWajib extends Component
         $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
     }
 
+    public function updatingsearch(): void
+    {
+        $this->gotoPage(1);
+    }
+
     public function render()
     {
         $this->dateStart = Carbon::parse($this->yearStart."-".$this->monthStart)->startOfMonth()->format('Y-m-d');
@@ -49,7 +54,7 @@ class ReportWajib extends Component
         ->leftJoinSub(
             DB::table('catatan_simpanans AS cs')
                 ->select('user_id', 
-                   DB::raw('SUM(CASE WHEN cs.status = "Verified" AND cs.jenis_simpanan = "Wajib" AND cs.created_at BETWEEN ? AND ? THEN cs.jumlah ELSE 0 END) AS total_wajib')
+                   DB::raw('SUM(CASE WHEN cs.status = "Verified" AND cs.jenis_simpanan = "Wajib" AND cs.bulan BETWEEN ? AND ? THEN cs.jumlah ELSE 0 END) AS total_wajib')
                 )
                 ->whereRaw('cs.status = "Verified"')
                 ->groupBy('user_id'),

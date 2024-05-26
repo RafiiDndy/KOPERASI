@@ -26,6 +26,11 @@ class Show extends Component
         $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
     }
 
+    public function updatingsearch(): void
+    {
+        $this->gotoPage(1);
+    }
+
     public function render()
     {
         $users = User::where('id','!=',auth()->id())->

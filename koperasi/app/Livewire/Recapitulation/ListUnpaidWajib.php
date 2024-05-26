@@ -8,7 +8,7 @@ use Livewire\WithPagination;
 use Carbon\Carbon;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
-class UnpaidList extends Component
+class ListUnpaidWajib extends Component
 {
     use LivewireAlert;
     use WithPagination;
@@ -16,6 +16,10 @@ class UnpaidList extends Component
     public $sortColumn = 'id';
     public $sortDirection = 'desc';
     public $search = '';
+    public $monthStart = '';
+    public $yearStart = '';
+    public $monthEnd = '';
+    public $yearEnd = '';
     public $dateStart = '';
     public $dateEnd = '';
 
@@ -25,8 +29,10 @@ class UnpaidList extends Component
             abort(403, 'Kamu bukan pengurus!');
         }
 
-        $this->dateStart = Carbon::now()->subDays(30)->format('Y-m-d');
-        $this->dateEnd = Carbon::now()->format('Y-m-d');
+        $this->yearStart = Carbon::now()->year;
+        $this->monthStart = Carbon::now()->month;
+        $this->yearEnd = Carbon::now()->year;
+        $this->monthEnd = Carbon::now()->month;
     }
 
     public function sort($column)
@@ -35,13 +41,9 @@ class UnpaidList extends Component
         $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
     }
 
-    public function sendWhatsAppMessage($pokok, $total_pokok, $wajib, $total_wajib, $no_hp, $nama, $nik)
+    public function sendWhatsAppMessage($wajib, $total_wajib, $no_hp, $nama, $nik)
     {
-        if ($pokok == 'Unpaid' && $wajib == 'Unpaid') {
-            $message = "> ⓘ Halo *".$nama ."* dengan NIK: *".$nik ."*, kami ingin menginformasikan bahwa anda memiliki tagihan pada koperasi sebagai berikut: *Tagihan Pokok Tersisa: Rp." . number_format((1000000 - number_format($total_pokok, 2)), 2) . "* dan *Tagihan Wajib Tersisa: Rp." . number_format((100000 - number_format($total_wajib, 2)), 2)."*";
-        } else if ($pokok == 'Unpaid') {
-            $message = "> ⓘ Halo *".$nama ."* dengan NIK: *".$nik ."*, kami ingin menginformasikan bahwa anda memiliki tagihan pada koperasi sebagai berikut: *Tagihan Pokok Tersisa: Rp." . number_format((1000000 - number_format($total_pokok, 2)), 2)."*";
-        } else if ($wajib == 'Unpaid') {
+        if ($wajib == 'Unpaid') {
             $message = "> ⓘ Halo *".$nama ."* dengan NIK: *".$nik ."*, kami ingin menginformasikan bahwa anda memiliki tagihan pada koperasi sebagai berikut: *Tagihan Wajib Tersisa: Rp." . number_format((100000 - number_format($total_wajib, 2)), 2)."*";
         }
 
@@ -90,15 +92,22 @@ class UnpaidList extends Component
         return redirect(request()->header('Referer'));
     }
 
+    public function updatingsearch(): void
+    {
+        $this->gotoPage(1);
+    }
+
     public function render()
     {
+        $this->dateStart = Carbon::parse($this->yearStart."-".$this->monthStart)->startOfMonth()->format('Y-m-d');
+        $this->dateEnd = Carbon::parse($this->yearEnd."-".$this->monthEnd)->endOfMonth()->format('Y-m-d');
+
         $reports = DB::table('users AS u')
             ->leftJoinSub(
                 DB::table('catatan_simpanans AS cs')
                     ->select(
                         'user_id',
-                        DB::raw('SUM(CASE WHEN cs.status = "Verified" AND cs.jenis_simpanan = "Pokok" THEN cs.jumlah ELSE 0 END) AS total_pokok'),
-                        DB::raw('SUM(CASE WHEN cs.status = "Verified" AND cs.jenis_simpanan = "Wajib" AND cs.created_at BETWEEN ? AND ? THEN cs.jumlah ELSE 0 END) AS total_wajib')
+                        DB::raw('SUM(CASE WHEN cs.status = "Verified" AND cs.jenis_simpanan = "Wajib" AND cs.bulan BETWEEN ? AND ? THEN cs.jumlah ELSE 0 END) AS total_wajib')
                     )
                     ->whereRaw('cs.status = "Verified"')
                     ->groupBy('user_id'),
@@ -109,12 +118,7 @@ class UnpaidList extends Component
             )
             ->select(
                 'u.*',
-                DB::raw('COALESCE(cs.total_pokok, 0) AS total_pokok'),
                 DB::raw('COALESCE(cs.total_wajib, 0) AS total_wajib'),
-                DB::raw('CASE
-                WHEN COALESCE(cs.total_pokok, 0) >= 1000000 THEN "Paid"
-                ELSE "Unpaid"
-            END AS status_pokok'),
                 DB::raw('CASE
                 WHEN COALESCE(cs.total_wajib, 0) >= 100000 THEN "Paid"
                 ELSE "Unpaid"
@@ -128,6 +132,6 @@ class UnpaidList extends Component
             })
             ->paginate(10);
 
-        return view('livewire.recapitulation.unpaid-list', compact('reports'));
+        return view('livewire.recapitulation.list-unpaid-wajib', compact('reports'));
     }
 }

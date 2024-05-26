@@ -23,6 +23,11 @@ class Verifikasi extends Component
 
     }
 
+    public function updatingsearch(): void
+    {
+        $this->gotoPage(1);
+    }
+
     public function verify_anggota($id)
     {
         $user = User::findOrFail($id);
