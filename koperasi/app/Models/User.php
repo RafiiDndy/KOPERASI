@@ -78,4 +78,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(AnggotaActivity::class);
     }
+
+    public function shu()
+    {
+        return $this->hasMany(ShuAnggota::class);
+    }
 }
