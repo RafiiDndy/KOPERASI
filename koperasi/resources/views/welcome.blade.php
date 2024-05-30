@@ -313,11 +313,7 @@ a2:active:before {
         <div class="md:order-first h-full overflow-hidden bg-transparent border-2 border-gray-200 shadow-lg rounded-2xl p-8">
           <h1 class="text-4xl font-semibold tracking-tighter text-gray-900 text-balance">
             <span id="typed-text" class="inline-block mb-5"></span><span class="typing-animation"></span><br>
-<<<<<<< HEAD
-            <span class="text-gray-700">Wadah Ekonomi Kerakyatan yang Terpercaya dan Menguntungkan</span>
-=======
             <span class="text-3xl text-gray-700">Wadah Ekonomi Kerakyatan yang Terpercaya dan Menguntungkan</span>
->>>>>>> e8ecb12f621dc0e0edd540bc76b27f2c27401713
           </h1>
           <p class="mt-4 text-base font-medium text-gray-500 text-justify">
             Bergabunglah bersama ribuan anggota lainnya dalam membangun kekuatan ekonomi bersama. Tumbuh dan berkembang bersama kami dengan menjadi anggota hari ini juga!
@@ -356,93 +352,6 @@ a2:active:before {
 
     <!-- Section 2 -->
     <section class="scroll-mt-24" id="features">
-<<<<<<< HEAD
-      <div class="px-8 py-24 mx-auto text-center md:px-12 lg:px-32 max-w-7xl">
-        <div>
-          <p class="mt-12 mb-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
-            Wujudkan Kesejahteraan Finansial dengan Fitur Unggulan
-          </p>
-        </div>
-        <div class="max-w-xl py-12 mx-auto lg:max-w-7xl">
-          <div>
-            <div class="grid grid-cols-2 gap-12 md:grid-cols-3 lg:space-y-0">
-              <div>
-                <div>
-                  <div class="flex items-center justify-center size-12 mx-auto text-black overflow-hidden border-2 border-gray-100 shadow-lg rounded-xl">
-                    1
-                  </div>
-                  <p class="mt-4 font-medium text-gray-900">Simpanan Pokok</p>
-                </div>
-                <div class="mt-4 text-sm text-gray-900 text-justify">
-                  Simpanan pokok adalah syarat utama untuk bergabung menjadi anggota Koperasi. Dengan membayar simpanan ini, Anda resmi menjadi bagian dari keluarga besar kami dan berhak menikmati semua keuntungan yang ditawarkan.
-                </div>
-              </div>
-              <div>
-                <div>
-                  <div class="flex items-center justify-center size-12 mx-auto text-black overflow-hidden border-2 border-gray-100 shadow-lg rounded-xl">
-                    2
-                  </div>
-                  <p class="mt-4 font-medium text-gray-900">Simpanan Wajib</p>
-                </div>
-                <div class="mt-4 text-sm text-gray-900 text-justify">
-                  Sebagai anggota, Anda diwajibkan untuk membayar simpanan wajib secara rutin. Simpanan ini bertujuan untuk mengembangkan modal koperasi dan memperkuat basis keuangan bersama.
-                </div>
-              </div>
-              <div>
-                <div>
-                  <div class="flex items-center justify-center size-12 mx-auto text-black overflow-hidden border-2 border-gray-100 shadow-lg rounded-xl">
-                    3
-                  </div>
-                  <p class="mt-4 font-medium text-gray-900">Simpanan Sukarela</p>
-                </div>
-                <div class="mt-4 text-sm text-gray-900 text-justify">
-                  Tidak ada batasan untuk mewujudkan impian finansial Anda. Melalui simpanan sukarela, Anda dapat menambah tabungan sesuai keinginan dan kemampuan.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<!-- Section 3 -->         
-    <section>
-      <div class="px-8 py-12 mx-auto space-y-24 md:px-12 lg:px-32 max-w-7xl">
-        <div class="grid items-center grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
-          <div>
-            <p class="mt-8 text-4xl font-semibold tracking-tight text-gray-900">
-              User Interface
-              <span class="lg:block lg:text-gray-700">Ramah Pengguna</span>
-            </p>
-            <p class="mt-4 text-base text-gray-600 text-justify">
-              Koperasi dipersembahkan dengan antarmuka pengguna (UI) yang intuitif dan modern, dirancang untuk memberikan pengalaman digital yang mulus dan menyenangkan. Dengan tampilan yang bersih dan navigasi yang sederhana, Anda dapat dengan mudah mengakses semua fitur dan layanan koperasi kami.
-            </p>
-          </div>
-          <div class="p-2 overflow-hidden border-2 border-gray-100 shadow-lg rounded-3xl">
-            <div class="h-full overflow-hidden bg-white border shadow-lg rounded-3xl">
-              <img alt="Lexingtøn thumbnail" class="relative w-full rounded-2xl drop-shadow-2xl" src="{{ asset('img/UI.png') }}">
-            </div>
-          </div>
-        </div>
-        <div class="grid items-center grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
-          <div>
-            <p class="mt-8 text-4xl font-semibold tracking-tight text-gray-900">
-              Pendaftaran Online
-              <span class="lg:block lg:text-gray-700">yang Cepat</span>
-            </p>
-            <p class="mt-4 text-base text-gray-600 text-justify">
-              Tidak perlu repot mengisi formulir panjang atau mengantri di kantor kami. Proses pendaftaran sepenuhnya dapat dilakukan secara online dengan mengisi beberapa informasi dasar.
-            </p>
-          </div>
-          <div class="p-2 overflow-hidden border-2 border-gray-100 shadow-lg rounded-3xl lg:order-first">
-            <div class="h-full overflow-hidden bg-white border shadow-lg rounded-3xl">
-              <img alt="Lexingtøn thumbnail" class="relative w-full rounded-2xl drop-shadow-2xl" src="{{ asset('img/Register.png') }}">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-=======
     <div class="px-8 py-24 mx-auto text-center md:px-12 lg:px-32 max-w-7xl">
         <div>
             <p class="mt-12 mb-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
@@ -541,21 +450,14 @@ a2:active:before {
     </div>
 </section>
 
->>>>>>> e8ecb12f621dc0e0edd540bc76b27f2c27401713
 
 <!-- Section 4 -->
     <section>
       <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl">
         <div>
-<<<<<<< HEAD
-          <p class="mt-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
-            Our customers pretend
-            <span class="text-gray-500 md:block">they love us and our app</span>
-=======
           <p class="mt-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-4xl">
               Pelanggan kami memberikan ulasan positif
             <span class="text-gray-500 md:block">tentang kami dan aplikasi kami</span>
->>>>>>> e8ecb12f621dc0e0edd540bc76b27f2c27401713
           </p>
         </div>
         <ul role="list" class="grid max-w-2xl grid-cols-1 gap-6 mx-auto mt-12 sm:gap-4 lg:max-w-none lg:grid-cols-3">
