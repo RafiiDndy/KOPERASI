@@ -174,6 +174,9 @@ a2:active:before {
   color: #777;
   line-height: 1.4;
 }
+.transition-transform {
+            transition: transform 0.5s ease-in-out;
+}
 
 </style>
 <head>
@@ -310,7 +313,11 @@ a2:active:before {
         <div class="md:order-first h-full overflow-hidden bg-transparent border-2 border-gray-200 shadow-lg rounded-2xl p-8">
           <h1 class="text-4xl font-semibold tracking-tighter text-gray-900 text-balance">
             <span id="typed-text" class="inline-block mb-5"></span><span class="typing-animation"></span><br>
+<<<<<<< HEAD
             <span class="text-gray-700">Wadah Ekonomi Kerakyatan yang Terpercaya dan Menguntungkan</span>
+=======
+            <span class="text-3xl text-gray-700">Wadah Ekonomi Kerakyatan yang Terpercaya dan Menguntungkan</span>
+>>>>>>> e8ecb12f621dc0e0edd540bc76b27f2c27401713
           </h1>
           <p class="mt-4 text-base font-medium text-gray-500 text-justify">
             Bergabunglah bersama ribuan anggota lainnya dalam membangun kekuatan ekonomi bersama. Tumbuh dan berkembang bersama kami dengan menjadi anggota hari ini juga!
@@ -349,6 +356,7 @@ a2:active:before {
 
     <!-- Section 2 -->
     <section class="scroll-mt-24" id="features">
+<<<<<<< HEAD
       <div class="px-8 py-24 mx-auto text-center md:px-12 lg:px-32 max-w-7xl">
         <div>
           <p class="mt-12 mb-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
@@ -434,14 +442,120 @@ a2:active:before {
         </div>
       </div>
     </section>
+=======
+    <div class="px-8 py-24 mx-auto text-center md:px-12 lg:px-32 max-w-7xl">
+        <div>
+            <p class="mt-12 mb-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
+                Wujudkan Kesejahteraan Finansial dengan Fitur Unggulan
+            </p>
+        </div>
+        <div class="max-w-xl py-12 mx-auto lg:max-w-7xl">
+            <div>
+                <div class="grid grid-cols-2 gap-12 md:grid-cols-3 lg:space-y-0">
+                    <div class="text-center">
+                        <div class="rounded-full flex items-center justify-center w-12 h-12 mx-auto overflow-hidden shadow-lg">
+                            <span class="text-xl">1</span>
+                        </div>
+                        <p class="mt-4 font-medium text-gray-900">Simpanan Pokok</p>
+                        <p class="mt-4 text-sm text-gray-900 text-justify">
+                            Simpanan pokok adalah syarat utama untuk bergabung menjadi anggota Koperasi. Dengan membayar simpanan ini, Anda resmi menjadi bagian dari keluarga besar kami dan berhak menikmati semua keuntungan yang ditawarkan.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="rounded-full flex items-center justify-center w-12 h-12 mx-auto overflow-hidden shadow-lg">
+                            <span class="text-xl">2</span>
+                        </div>
+                        <p class="mt-4 font-medium text-gray-900">Simpanan Wajib</p>
+                        <p class="mt-4 text-sm text-gray-900 text-justify">
+                            Sebagai anggota, Anda diwajibkan untuk membayar simpanan wajib secara rutin. Simpanan ini bertujuan untuk mengembangkan modal koperasi dan memperkuat basis keuangan bersama.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="rounded-full flex items-center justify-center w-12 h-12 mx-auto overflow-hidden shadow-lg">
+                            <span class="text-xl">3</span>
+                        </div>
+                        <p class="mt-4 font-medium text-gray-900">Simpanan Sukarela</p>
+                        <p class="mt-4 text-sm text-gray-900 text-justify">
+                            Tidak ada batasan untuk mewujudkan impian finansial Anda. Melalui simpanan sukarela, Anda dapat menambah tabungan sesuai keinginan dan kemampuan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Section 3 -->         
+<section>
+    <div class="px-8 py-12 mx-auto space-y-24 md:px-12 lg:px-32 max-w-7xl">
+        <div class="grid items-center grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
+            <div>
+                <p class="mt-8 text-4xl font-semibold tracking-tight text-gray-900">
+                    User Interface
+                    <span class="lg:block lg:text-gray-700">Ramah Pengguna</span>
+                </p>
+                <p class="mt-4 text-base text-gray-600 text-justify">
+                    Koperasi dipersembahkan dengan antarmuka pengguna (UI) yang intuitif dan modern, dirancang untuk memberikan pengalaman digital yang mulus dan menyenangkan. Dengan tampilan yang bersih dan navigasi yang sederhana, Anda dapat dengan mudah mengakses semua fitur dan layanan koperasi kami.
+                </p>
+            </div>
+            <div id="slider1" class="relative overflow-hidden rounded-lg p-1 shadow-lg rounded-2xl">
+                <div class="slides flex transition-transform duration-500">
+                    <div class="slide min-w-full h-64 bg-center bg-cover">
+                        <img alt="Lexingtøn thumbnail" class="drop-shadow-2xl rounded-lg" src="{{ asset('img/landingpage.png') }}">
+                    </div>
+                    <div class="slide min-w-full h-64 bg-center bg-cover">
+                        <img alt="Lexingtøn thumbnail" class="drop-shadow-2xl rounded-lg" src="{{ asset('img/User.dashboard.png') }}">
+                    </div>
+                    <div class="slide min-w-full h-64 bg-center bg-cover">
+                        <img alt="Lexingtøn thumbnail" class="drop-shadow-2xl rounded-lg" src="{{ asset('img/user.simpanan.png') }}">
+                    </div>
+                </div>
+                <button id="prev1" class="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full ml-2">◀</button>
+                <button id="next1" class="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full mr-2">▶</button>
+            </div>
+        </div>
+        <div class="grid items-center grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
+            <div id="slider2" class="relative overflow-hidden rounded-lg p-1 shadow-lg rounded-2xl">
+                <div class="slides flex transition-transform duration-500">
+                    <div class="slide min-w-full h-64 bg-center bg-cover">
+                        <img alt="Lexingtøn thumbnail" class="drop-shadow-2xl rounded-lg" src="{{ asset('img/signup.png') }}">
+                    </div>
+                    <div class="slide min-w-full h-64 bg-center bg-cover">
+                        <img alt="Lexingtøn thumbnail" class="drop-shadow-2xl rounded-lg" src="{{ asset('img/verified.png') }}">
+                    </div>
+                </div>
+                <button id="prev2" class="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full ml-2">◀</button>
+                <button id="next2" class="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full mr-2">▶</button>
+            </div>
+            <div>
+                <p class="mt-8 text-4xl font-semibold tracking-tight text-gray-900">
+                    Pendaftaran Online
+                    <span class="lg:block lg:text-gray-700">yang Cepat</span>
+                </p>
+                <p class="mt-4 text-base text-gray-600 text-justify">
+                    Tidak perlu repot mengisi formulir panjang atau mengantri di kantor kami. Proses pendaftaran sepenuhnya dapat dilakukan secara online dengan mengisi beberapa informasi dasar.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+>>>>>>> e8ecb12f621dc0e0edd540bc76b27f2c27401713
 
 <!-- Section 4 -->
     <section>
       <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl">
         <div>
+<<<<<<< HEAD
           <p class="mt-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
             Our customers pretend
             <span class="text-gray-500 md:block">they love us and our app</span>
+=======
+          <p class="mt-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-4xl">
+              Pelanggan kami memberikan ulasan positif
+            <span class="text-gray-500 md:block">tentang kami dan aplikasi kami</span>
+>>>>>>> e8ecb12f621dc0e0edd540bc76b27f2c27401713
           </p>
         </div>
         <ul role="list" class="grid max-w-2xl grid-cols-1 gap-6 mx-auto mt-12 sm:gap-4 lg:max-w-none lg:grid-cols-3">
@@ -635,7 +749,7 @@ a2:active:before {
                                 <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="" alt="">
                                 <div class="space-y-1">
                                 <h3 class="text-lg font-medium leading-6 text-black">
-                                    Subhil Ma'ruf
+                                    Subhil Ma'ruf L. Bilondatu
                                 </h3>
                                 <p class="text-base text-gray-500">---</p>
                                 </div>
@@ -693,6 +807,29 @@ a2:active:before {
             }
         }
         document.addEventListener("DOMContentLoaded", typeWriter);
+        function initSlider(sliderId, prevBtnId, nextBtnId) {
+        let currentIndex = 0;
+        const slider = document.getElementById(sliderId);
+        const slides = slider.querySelector('.slides');
+        const totalSlides = slider.querySelectorAll('.slide').length;
+
+        document.getElementById(nextBtnId).addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlidePosition();
+        });
+
+        document.getElementById(prevBtnId).addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlidePosition();
+        });
+
+        function updateSlidePosition() {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+          }
+        }
+
+        initSlider('slider1', 'prev1', 'next1');
+        initSlider('slider2', 'prev2', 'next2');
     </script>
 </body>
 </html>
