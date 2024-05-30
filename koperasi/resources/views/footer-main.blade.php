@@ -56,7 +56,7 @@
                     </li>
                     <li>
                         <a href="" class="hover:text-black">
-                            @
+                            @Rafii Dandy Adithya
                         </a>
                     </li>
                     <li>
@@ -66,17 +66,17 @@
                     </li>
                     <li>
                         <a href="" class="hover:text-black">
-                            @
+                            @Subhil Ma'ruf L. Bilondatu
                         </a>
                     </li>
                     <li>
                         <a href="" class="hover:text-black">
-                            @
+                            @Zulfa Ikhsanuddin Hakim
                         </a>
                     </li>
                     <li>
                         <a href="" class="hover:text-black">
-                            @
+                            @Tasya Ramdani
                         </a>
                     </li>
                 </ul>

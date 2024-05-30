@@ -174,6 +174,9 @@ a2:active:before {
   color: #777;
   line-height: 1.4;
 }
+.transition-transform {
+            transition: transform 0.5s ease-in-out;
+}
 
 </style>
 <head>
@@ -305,36 +308,40 @@ a2:active:before {
 
     <!-- Section 1 -->
     <section>
-      <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
-        <div class="grid items-center grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-19">
-          <div class="md:order-first h-full overflow-hidden bg-tranpare border shadow-lg rounded-2xl p-8 mb-15">
-            <h1 class="text-4xl font-semibold tracking-tighter text-gray-900 text-balance">
-              <span id="typed-text" class="inline-block mb-5"></span><span class="typing-animation"></span><br>
-              <span class="text-gray-600">Explore our services, and let's grow together</span>
-            </h1>
-            <p class="mt-4 text-base font-medium text-gray-500">
-              Sebuah aplikasi yang dapat membantu membantu manajemen dan operasi koperasi serta memfasilitasi berbagai aspek kegiatan koperasi, seperti manajemen anggota, pengelolaan simpanan, pembiayaan, pelacakan transaksi, pelaporan keuangan, dan lain sebagainya.
-            </p>
+    <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
+      <div class="grid items-center grid-cols-2 gap-2 lg:grid-cols-2">
+        <div class="md:order-first h-full overflow-hidden bg-transparent border-2 border-gray-200 shadow-lg rounded-2xl p-8">
+          <h1 class="text-4xl font-semibold tracking-tighter text-gray-900 text-balance">
+            <span id="typed-text" class="inline-block mb-5"></span><span class="typing-animation"></span><br>
+            <span class="text-3xl text-gray-700">Wadah Ekonomi Kerakyatan yang Terpercaya dan Menguntungkan</span>
+          </h1>
+          <p class="mt-4 text-base font-medium text-gray-500 text-justify">
+            Bergabunglah bersama ribuan anggota lainnya dalam membangun kekuatan ekonomi bersama. Tumbuh dan berkembang bersama kami dengan menjadi anggota hari ini juga!
+          </p>
+        </div>
+
+        <div class="order-last w-full lg:order-none lg:w-auto">
+          <div class="h-full p-2 overflow-hidden">
+            <img alt="#" class="relative w-64 ml-20 mr-0" src="<?php echo e(asset('img/logokoperasi.jpg')); ?>">
           </div>
-          <div class="order-first block w-full mt-12 aspect-square lg:mt-20">
-            <div class="h-full p-2 overflow-hidden mt-20">
-              <img alt="#" class="relative w-64 ml-20 mb-20" src="<?php echo e(asset('img/logokoperasi.jpg')); ?>">
-            </div>
-          </div>
-          <div class="md:order-first h-full overflow-hidden bg-tranpare border shadow-lg rounded-2xl p-8">
-            <dl class="grid grid-cols-2 gap-4 mt-12 list-none lg:gap-6 text-pretty">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2 lg:grid-cols-2">
+        <div class="md:order-first overflow-hidden border-2 border-gray-200 shadow-lg rounded-2xl p-8 mt-8 w-full mx-15">
+            <dl class="grid grid-cols-2 gap-4 list-none text-pretty">
               <div>
-                <div class="flex items-center justify-center">❖</div>
-                <dt class="mt-4 font-medium text-gray-900">Secure Your Future with Our Savings Plans</dt>
-                <dd class="mt-2 text-sm text-gray-500">
-                  Koperasi kami menawarkan berbagai pilihan simpanan yang disesuaikan dengan tujuan keuangan Anda. Mulai dari simpanan pokok, simpanan wajib, hingga simpanan sukarela, kami menyediakan jalur yang aman dan dapat diandalkan bagi Anda untuk mengembangkan kekayaan dan menjamin masa depan Anda.
+                <div class="flex items-center justify-center text-justify">❖</div>
+                <dt class="mt-4 font-medium text-gray-900">Kesejahteraan Finansial yang Berkelanjutan</dt>
+                <dd class="mt-2 text-sm text-gray-600 text-justify">
+                Bergabung dengan Koperasi berarti Anda memilih jalan menuju kesejahteraan finansial yang berkelanjutan. Dengan berbagai skema simpanan dan peluang investasi yang ditawarkan, Anda dapat membangun kekayaan secara perlahan tapi pasti. Selain itu, Anda juga berhak menerima Sisa Hasil Usaha (SHU) yang dibagikan setiap tahunnya, memberikan Anda keuntungan lebih dari keanggotaan Anda.
                 </dd>
               </div>
               <div>
                 <div class="flex items-center justify-center">❖</div>
-                <dt class="mt-4 font-medium text-gray-900">Commercial use allowed</dt>
-                <dd class="mt-2 text-sm text-gray-500">
-                  You are allowed to use the licensed work for both non-commercial and commercial purposes.
+                <dt class="mt-4 font-medium text-gray-900">Kekuatan Bersama untuk Mencapai Tujuan</dt>
+                <dd class="mt-2 text-sm text-gray-600 text-justify">
+                Koperasi adalah organisasi yang dibangun atas dasar kerjasama dan saling membantu. Dengan bergabung di Koperasi, Anda bersatu dengan ribuan anggota lainnya yang memiliki visi dan tujuan yang sama: mencapai kemakmuran bersama. Kekuatan ini memungkinkan koperasi untuk tumbuh dan berkembang, serta memberikan manfaat yang lebih besar bagi Anda dan anggota lainnya.
                 </dd>
               </div>
             </dl>
@@ -345,316 +352,237 @@ a2:active:before {
 
     <!-- Section 2 -->
     <section class="scroll-mt-24" id="features">
-                  <div class="px-8 py-24 mx-auto text-center md:px-12 lg:px-32 max-w-7xl">
-                    <div>
-                      <p class="mt-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
-                        Another feature section
-                        <span class="text-gray-500 md:block">to write some features or benefits</span>
-                      </p>
-                      <p class="mt-4 text-sm text-gray-500">
-                        The fastest method for working together
-                        <span class="md:block"> on staging and temporary environments.</span>
-                      </p>
-                    </div>
-                    <div class="max-w-xl py-12 mx-auto lg:max-w-7xl">
-                      <div>
-                        <div class="grid grid-cols-2 gap-12 md:grid-cols-4 lg:space-y-0">
-                          <div>
-                            <div>
-                              <div class="flex items-center justify-center size-12 mx-auto text-black bg-gray-100 rounded-xl">
-                                1
-                              </div>
-                              <p class="mt-4 font-medium text-gray-900">Authentication</p>
-                            </div>
-                            <div class="mt-4 text-sm text-gray-500">
-                              You must give appropriate credit to the original creator of the
-                              work. This typically includes providing the name.
-                            </div>
-                          </div>
-                          <div>
-                            <div>
-                              <div class="flex items-center justify-center size-12 mx-auto text-black bg-gray-100 rounded-xl">
-                                2
-                              </div>
-                              <p class="mt-4 font-medium text-gray-900">
-                                Serverless Functions
-                              </p>
-                            </div>
-                            <div class="mt-4 text-sm text-gray-500">
-                              You may not impose any additional legal terms or technological
-                              measures on the work.
-                            </div>
-                          </div>
-                          <div>
-                            <div>
-                              <div class="flex items-center justify-center size-12 mx-auto text-black bg-gray-100 rounded-xl">
-                                3
-                              </div>
-                              <p class="mt-4 font-medium text-gray-900">Payments</p>
-                            </div>
-                            <div class="mt-4 text-sm text-gray-500">
-                              The CC BY 3.0 License does not include a "Share Alike" (SA)
-                              provision.
-                            </div>
-                          </div>
-                          <div>
-                            <div>
-                              <div class="flex items-center justify-center size-12 mx-auto text-black bg-gray-100 rounded-xl">
-                                4
-                              </div>
-                              <p class="mt-4 font-medium text-gray-900">
-                                Database with GraphQL
-                              </p>
-                            </div>
-                            <div class="mt-4 text-sm text-gray-500">
-                              You are allowed to use the licensed work for both non-commercial
-                              and commercial purposes.
-                            </div>
-                          </div>
+    <div class="px-8 py-24 mx-auto text-center md:px-12 lg:px-32 max-w-7xl">
+        <div>
+            <p class="mt-12 mb-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
+                Wujudkan Kesejahteraan Finansial dengan Fitur Unggulan
+            </p>
+        </div>
+        <div class="max-w-xl py-12 mx-auto lg:max-w-7xl">
+            <div>
+                <div class="grid grid-cols-2 gap-12 md:grid-cols-3 lg:space-y-0">
+                    <div class="text-center">
+                        <div class="rounded-full flex items-center justify-center w-12 h-12 mx-auto overflow-hidden shadow-lg">
+                            <span class="text-xl">1</span>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-                <section>
-                  <div class="px-8 py-12 mx-auto space-y-24 md:px-12 lg:px-32 max-w-7xl">
-                    <div class="grid items-center grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
-                      <div>
-                        <span class="text-xs font-bold tracking-wide text-gray-500 uppercase">tokens</span>
-                        <p class="mt-8 text-4xl font-semibold tracking-tight text-gray-900">
-                          A sustainable approach to
-                          <span class="lg:block lg:text-gray-600">blockchain validation</span>
+                        <p class="mt-4 font-medium text-gray-900">Simpanan Pokok</p>
+                        <p class="mt-4 text-sm text-gray-900 text-justify">
+                            Simpanan pokok adalah syarat utama untuk bergabung menjadi anggota Koperasi. Dengan membayar simpanan ini, Anda resmi menjadi bagian dari keluarga besar kami dan berhak menikmati semua keuntungan yang ditawarkan.
                         </p>
-                        <p class="mt-4 text-base text-gray-500">
-                          Control and added security. With decentralization, users have more
-                          control over their data and transactions, and the platform is less
-                          susceptible to malicious attacks.
+                    </div>
+                    <div class="text-center">
+                        <div class="rounded-full flex items-center justify-center w-12 h-12 mx-auto overflow-hidden shadow-lg">
+                            <span class="text-xl">2</span>
+                        </div>
+                        <p class="mt-4 font-medium text-gray-900">Simpanan Wajib</p>
+                        <p class="mt-4 text-sm text-gray-900 text-justify">
+                            Sebagai anggota, Anda diwajibkan untuk membayar simpanan wajib secara rutin. Simpanan ini bertujuan untuk mengembangkan modal koperasi dan memperkuat basis keuangan bersama.
                         </p>
-                      </div>
-                      <div class="p-2 border bg-gray-50 rounded-3xl">
-                        <div class="h-full overflow-hidden bg-white border shadow-lg rounded-3xl">
-                          <img alt="Lexingtøn thumbnail" class="relative w-full rounded-2xl drop-shadow-2xl" src="/images/appify/phone.png">
-                        </div>
-                      </div>
                     </div>
-                    <div class="grid items-center grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
-                      <div>
-                        <span class="text-xs font-bold tracking-wide text-gray-500 uppercase">data</span>
-                        <p class="mt-8 text-4xl font-semibold tracking-tight text-gray-900">
-                          Empowering users
-                          <span class="lg:block lg:text-gray-600">with data control</span>
-                        </p>
-                        <p class="mt-4 text-base text-gray-500">
-                          Control and added security. With decentralization, users have more
-                          control over their data and transactions, and the platform is less
-                          susceptible to malicious attacks.
-                        </p>
-                      </div>
-                      <div class="p-2 border bg-gray-50 rounded-3xl lg:order-first">
-                        <div class="h-full overflow-hidden bg-white border shadow-lg rounded-3xl">
-                          <img alt="Lexingtøn thumbnail" class="relative w-full rounded-2xl drop-shadow-2xl" src="/images/appify/phone.png">
+                    <div class="text-center">
+                        <div class="rounded-full flex items-center justify-center w-12 h-12 mx-auto overflow-hidden shadow-lg">
+                            <span class="text-xl">3</span>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-                <section>
-                  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl">
-                    <div>
-                      <p class="mt-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
-                        Our customers pretend
-                        <span class="text-gray-500 md:block">they love us and our app</span>
-                      </p>
-                    </div>
-                    <ul role="list" class="grid max-w-2xl grid-cols-1 gap-6 mx-auto mt-12 sm:gap-4 lg:max-w-none lg:grid-cols-3">
-                      <li class="p-2 border bg-gray-50 rounded-3xl">
-                        <figure class="relative flex flex-col justify-between h-full p-6 bg-white border shadow-lg rounded-2xl">
-                          <blockquote class="relative">
-                            <p class="text-base text-gray-500">
-                              Being in the financial industry, we were always looking for ways
-                              to enhance our transactions' security and efficiency.
-                            </p>
-                          </blockquote>
-                          <figcaption class="relative flex items-center justify-between pt-6 mt-6">
-                            <div>
-                              <div class="font-medium text-gray-900">Michael Andreuzza</div>
-                              <div class="mt-1 text-sm text-gray-500">
-                                Creator of Windstatic.com
-                              </div>
-                            </div>
-                            <div class="overflow-hidden rounded-full bg-gray-50">
-                              <img alt="" src="/images/appify/avatar1.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
-                            </div>
-                          </figcaption>
-                        </figure>
-                      </li>
-                      <li class="p-2 border bg-gray-50 rounded-3xl">
-                        <figure class="relative flex flex-col justify-between h-full p-6 bg-white border shadow-lg rounded-2xl">
-                          <blockquote class="relative">
-                            <p class="text-base text-gray-500">
-                              Implementing Semplice's blockchain technology has been a
-                              game-changer for our supply chain management.
-                            </p>
-                          </blockquote>
-                          <figcaption class="relative flex items-center justify-between pt-6 mt-6">
-                            <div>
-                              <div class="font-medium text-gray-900">Michael Andreuzza</div>
-                              <div class="mt-1 text-sm text-gray-500">
-                                Creator of Lexington Themes
-                              </div>
-                            </div>
-                            <div class="overflow-hidden rounded-full bg-gray-50">
-                              <img alt="" src="/images/appify/avatar2.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
-                            </div>
-                          </figcaption>
-                        </figure>
-                      </li>
-                      <li class="p-2 border bg-gray-50 rounded-3xl">
-                        <figure class="relative flex flex-col justify-between h-full p-6 bg-white border shadow-lg rounded-2xl">
-                          <blockquote class="relative">
-                            <p class="text-base text-gray-500">
-                              We were initially hesitant about integrating blockchain
-                              technology into our existing systems, fearing the complexity of
-                              the process.
-                            </p>
-                          </blockquote>
-                          <figcaption class="relative flex items-center justify-between pt-6 mt-6">
-                            <div>
-                              <div class="font-medium text-gray-900">Jenson Button</div>
-                              <div class="mt-1 text-sm text-gray-500">
-                                Founder of Benji and Tom
-                              </div>
-                            </div>
-                            <div class="overflow-hidden rounded-full bg-gray-50">
-                              <img alt="" src="/images/appify/avatar3.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
-                            </div>
-                          </figcaption>
-                        </figure>
-                      </li>
-                    </ul>
-                  </div>
-                </section>
-                <section>
-                  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl">
-                    <div class="p-2 border bg-gray-50 rounded-3xl">
-                      <div class="p-10 text-center bg-white border shadow-lg md:p-20 rounded-3xl">
-                        <p class="text-4xl font-semibold tracking-tighter text-black">
-                          Download our app today
-                        </p>
-                        <p class="mt-4 text-base text-gray-500">
-                          The fastest method for working together
-                          <span class="md:block">
-                            on staging and temporary environments.</span>
-                        </p>
-                        <div class="flex flex-col items-center justify-center gap-2 mx-auto mt-8 md:flex-row">
-                          <button class="inline-flex items-center justify-center w-full h-12 gap-3 px-5 py-3 bg-gray-100 md:w-auto rounded-xl hover:bg-gray-200 focus:outline-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="size-4" viewBox="0 0 512 512">
-                              <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path></svg><span class="text-xs text-gray-600">Download on Google Play</span></button><button class="inline-flex items-center justify-center w-full h-12 gap-3 px-5 py-3 bg-gray-100 md:w-auto rounded-xl hover:bg-gray-200 focus:outline-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="size-4" viewBox="0 0 305 305">
-                              <path d="M40.74 112.12c-25.79 44.74-9.4 112.65 19.12 153.82C74.09 286.52 88.5 305 108.24 305c.37 0 .74 0 1.13-.02 9.27-.37 15.97-3.23 22.45-5.99 7.27-3.1 14.8-6.3 26.6-6.3 11.22 0 18.39 3.1 25.31 6.1 6.83 2.95 13.87 6 24.26 5.81 22.23-.41 35.88-20.35 47.92-37.94a168.18 168.18 0 0021-43l.09-.28a2.5 2.5 0 00-1.33-3.06l-.18-.08c-3.92-1.6-38.26-16.84-38.62-58.36-.34-33.74 25.76-51.6 31-54.84l.24-.15a2.5 2.5 0 00.7-3.51c-18-26.37-45.62-30.34-56.73-30.82a50.04 50.04 0 00-4.95-.24c-13.06 0-25.56 4.93-35.61 8.9-6.94 2.73-12.93 5.09-17.06 5.09-4.64 0-10.67-2.4-17.65-5.16-9.33-3.7-19.9-7.9-31.1-7.9l-.79.01c-26.03.38-50.62 15.27-64.18 38.86z"></path>
-                              <path d="M212.1 0c-15.76.64-34.67 10.35-45.97 23.58-9.6 11.13-19 29.68-16.52 48.38a2.5 2.5 0 002.29 2.17c1.06.08 2.15.12 3.23.12 15.41 0 32.04-8.52 43.4-22.25 11.94-14.5 17.99-33.1 16.16-49.77A2.52 2.52 0 00212.1 0z"></path></svg><span class="text-xs text-gray-600">Download on App Store</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-                <footer>
-                  <div class="h-full px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
-                    <div class="pt-12 border-t border-gray-300 xl:grid xl:grid-cols-3 xl:gap-8">
-                      <div class="text-black">
-                        <div class="inline-flex items-center gap-3">
-                          <p class="text-2xl font-bold uppercase">Appify</p>
-                        </div>
-                        <p class="mt-2 text-sm text-gray-500 lg:w-4/5">
-                          Windstatic, basic and sturdy themes under the creative commons
-                          license.
-                        </p>
-                      </div>
-                      <div class="grid grid-cols-2 gap-8 mt-12 lg:grid-cols-3 lg:mt-0 xl:col-span-2">
-                        <div>
-                          <h3 class="text-black">Information</h3>
-                          <ul role="list" class="mt-4 space-y-2">
-                            <li>
-                              <a href="#_" class="text-sm text-gray-500 hover:text-black">
-                                License
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h3 class="text-black">Socials</h3>
-                          <ul role="list" class="mt-4 space-y-2">
-                            <li>
-                              <a href="https://twitter.com/lexingtonthemes" class="text-sm text-gray-500 hover:text-black">
-                                @lexingtonthemes
-                              </a>
-                            </li>
-                            <li>
-                              <a href="https://twitter.com/Mike_Andreuzza" class="text-sm text-gray-500 hover:text-black">
-                                @Mike_Andreuzza
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="mt-12 md:mt-0">
-                          <h3 class="text-black">Premium Themes</h3>
-                          <ul role="list" class="mt-4 space-y-2">
-                            <li>
-                              <a href="https://lexingtonthemes.com/" class="text-sm text-gray-500 hover:text-black">
-                                Lexington Themes
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex flex-col pt-12 md:flex-row md:items-center md:justify-between">
-                      <p class="text-left">
-                        <span class="mx-auto mt-2 text-sm text-gray-500 lg:mx-0">
-                          © Windstatic. By:
-                          <a class="text-accent-500 hover:text-accent-600" href="https://michaelandreuzza.com/">Michael Andreuzza</a>
-                          Demo Images: Respective owners.
-                        </span>
-                      </p>
-                    </div>
-
-    <!-- Section 3 -->
-    <section>
-        <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
-            <div class="text-center">
-                <h1 class="text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl text-balance">
-                <span class="text-gray-600">Roles</span>
-                </h1>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="flex justify-center items-center text-sm font-medium text-center text-gray-500 gap-x-20 text-balance">
-                <div class="kartu">
-                    <p>Anggota</p>
-                        <div class="konten">
-                        <br>
-                        <p class="deskripsi">Anggota dapat melakukan simpanan, melihat jumlah simpanan yang telah dilakukan, dan memeriksa status dari data simpanan tersebut.</p>
-                    </div>
-                </div>
-
-                <div class="kartu">
-                    <p>Pengurus</p>
-                        <div class="konten">
-                        <br>
-                        <p class="deskripsi">
-                            Pengurus dapat melakukan simpanan ke dalam sistem, memantau rekapitulasi lengkap, dan mengelola informasi anggota yang terdaftar di dalamnya.
+                        <p class="mt-4 font-medium text-gray-900">Simpanan Sukarela</p>
+                        <p class="mt-4 text-sm text-gray-900 text-justify">
+                            Tidak ada batasan untuk mewujudkan impian finansial Anda. Melalui simpanan sukarela, Anda dapat menambah tabungan sesuai keinginan dan kemampuan.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-    <section>
+    </div>
+</section>
 
-    <!-- Section 4 -->
+
+<!-- Section 3 -->         
+<section>
+    <div class="px-8 py-12 mx-auto space-y-24 md:px-12 lg:px-32 max-w-7xl">
+        <div class="grid items-center grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
+            <div>
+                <p class="mt-8 text-4xl font-semibold tracking-tight text-gray-900">
+                    User Interface
+                    <span class="lg:block lg:text-gray-700">Ramah Pengguna</span>
+                </p>
+                <p class="mt-4 text-base text-gray-600 text-justify">
+                    Koperasi dipersembahkan dengan antarmuka pengguna (UI) yang intuitif dan modern, dirancang untuk memberikan pengalaman digital yang mulus dan menyenangkan. Dengan tampilan yang bersih dan navigasi yang sederhana, Anda dapat dengan mudah mengakses semua fitur dan layanan koperasi kami.
+                </p>
+            </div>
+            <div id="slider1" class="relative overflow-hidden rounded-lg p-1 shadow-lg rounded-2xl">
+                <div class="slides flex transition-transform duration-500">
+                    <div class="slide min-w-full h-64 bg-center bg-cover">
+                        <img alt="Lexingtøn thumbnail" class="drop-shadow-2xl rounded-lg" src="<?php echo e(asset('img/landingpage.png')); ?>">
+                    </div>
+                    <div class="slide min-w-full h-64 bg-center bg-cover">
+                        <img alt="Lexingtøn thumbnail" class="drop-shadow-2xl rounded-lg" src="<?php echo e(asset('img/User.dashboard.png')); ?>">
+                    </div>
+                    <div class="slide min-w-full h-64 bg-center bg-cover">
+                        <img alt="Lexingtøn thumbnail" class="drop-shadow-2xl rounded-lg" src="<?php echo e(asset('img/user.simpanan.png')); ?>">
+                    </div>
+                </div>
+                <button id="prev1" class="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full ml-2">◀</button>
+                <button id="next1" class="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full mr-2">▶</button>
+            </div>
+        </div>
+        <div class="grid items-center grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
+            <div id="slider2" class="relative overflow-hidden rounded-lg p-1 shadow-lg rounded-2xl">
+                <div class="slides flex transition-transform duration-500">
+                    <div class="slide min-w-full h-64 bg-center bg-cover">
+                        <img alt="Lexingtøn thumbnail" class="drop-shadow-2xl rounded-lg" src="<?php echo e(asset('img/signup.png')); ?>">
+                    </div>
+                    <div class="slide min-w-full h-64 bg-center bg-cover">
+                        <img alt="Lexingtøn thumbnail" class="drop-shadow-2xl rounded-lg" src="<?php echo e(asset('img/verified.png')); ?>">
+                    </div>
+                </div>
+                <button id="prev2" class="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full ml-2">◀</button>
+                <button id="next2" class="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full mr-2">▶</button>
+            </div>
+            <div>
+                <p class="mt-8 text-4xl font-semibold tracking-tight text-gray-900">
+                    Pendaftaran Online
+                    <span class="lg:block lg:text-gray-700">yang Cepat</span>
+                </p>
+                <p class="mt-4 text-base text-gray-600 text-justify">
+                    Tidak perlu repot mengisi formulir panjang atau mengantri di kantor kami. Proses pendaftaran sepenuhnya dapat dilakukan secara online dengan mengisi beberapa informasi dasar.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Section 4 -->
+    <section>
+      <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl">
+        <div>
+          <p class="mt-12 text-4xl font-semibold tracking-tighter text-gray-900 lg:text-4xl">
+              Pelanggan kami memberikan ulasan positif
+            <span class="text-gray-500 md:block">tentang kami dan aplikasi kami</span>
+          </p>
+        </div>
+        <ul role="list" class="grid max-w-2xl grid-cols-1 gap-6 mx-auto mt-12 sm:gap-4 lg:max-w-none lg:grid-cols-3">
+          <li class="p-2 border bg-gray-50 rounded-3xl">
+            <figure class="relative flex flex-col justify-between h-full p-6 bg-white border shadow-lg rounded-2xl">
+              <blockquote class="relative">
+                <p class="text-base text-gray-500">
+                Sebagai seorang milenial yang terbiasa dengan teknologi, saya benar-benar terkesan dengan antarmuka pengguna Koperasi yang modern dan intuitif. Navigasi yang mudah membuat saya dapat mengakses semua fitur dengan cepat dan efisien. Ditambah dengan proses registrasi online yang cepat, bergabung dengan koperasi ini benar-benar menyenangkan!
+                </p>
+              </blockquote>
+              <figcaption class="relative flex items-center justify-between pt-6 mt-6">
+                <div>
+                  <div class="font-medium text-gray-900">Kairi</div>
+                  <div class="mt-1 text-sm text-gray-500">
+                    Pro Player Mobile Legends
+                  </div>
+                </div>
+                <div class="overflow-hidden rounded-full bg-gray-50">
+                  <img alt="" src="/images/appify/avatar1.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="p-2 border bg-gray-50 rounded-3xl">
+            <figure class="relative flex flex-col justify-between h-full p-6 bg-white border shadow-lg rounded-2xl">
+              <blockquote class="relative">
+                <p class="text-base text-gray-500">
+                Saya telah menjadi anggota Koperasi selama beberapa tahun, dan saya sangat puas dengan layanan yang mereka tawarkan. Fitur simpanan yang lengkap, mulai dari simpanan pokok hingga sukarela, memungkinkan saya untuk mengelola keuangan dengan fleksibilitas yang besar. Selain itu, transparansi dalam pelaporan pengeluaran koperasi juga membuat saya merasa yakin bahwa dana saya dikelola dengan baik.
+                </p>
+              </blockquote>
+              <figcaption class="relative flex items-center justify-between pt-6 mt-6">
+                <div>
+                  <div class="font-medium text-gray-900">Anon</div>
+                  <div class="mt-1 text-sm text-gray-500">
+                    Creator of Lexington Themes
+                  </div>
+                </div>
+                <div class="overflow-hidden rounded-full bg-gray-50">
+                  <img alt="" src="/images/appify/avatar2.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="p-2 border bg-gray-50 rounded-3xl">
+            <figure class="relative flex flex-col justify-between h-full p-6 bg-white border shadow-lg rounded-2xl">
+              <blockquote class="relative">
+                <p class="text-base text-gray-500">
+                Apa yang saya sukai dari Koperasi adalah kemampuan mereka untuk memberikan peluang investasi yang menguntungkan bagi anggotanya. Dengan bergabung, saya dapat memanfaatkan berbagai sumber pemasukan koperasi dan menerima Sisa Hasil Usaha (SHU) yang menarik setiap tahunnya. Ini benar-benar membantu meningkatkan kekayaan saya secara berkelanjutan.
+                </p>
+              </blockquote>
+              <figcaption class="relative flex items-center justify-between pt-6 mt-6">
+                <div>
+                  <div class="font-medium text-gray-900">Jenson Button</div>
+                  <div class="mt-1 text-sm text-gray-500">
+                    Founder of Benji and Tom
+                  </div>
+                </div>
+                <div class="overflow-hidden rounded-full bg-gray-50">
+                  <img alt="" src="/images/appify/avatar3.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="p-2 border bg-gray-50 rounded-3xl">
+            <figure class="relative flex flex-col justify-between h-full p-6 bg-white border shadow-lg rounded-2xl">
+              <blockquote class="relative">
+                <p class="text-base text-gray-500">
+                Sebagai seorang wirausahawan, saya sangat menghargai kontribusi Koperasi dalam mendukung pembangunan ekonomi kerakyatan. Dengan bergabung, saya merasa bahwa saya tidak hanya mengejar keuntungan pribadi, tetapi juga berkontribusi pada kemajuan bersama. Semangat gotong royong dan kerjasama yang dianut koperasi ini benar-benar menginspirasi.                </p>
+              </blockquote>
+              <figcaption class="relative flex items-center justify-between pt-6 mt-6">
+                <div>
+                  <div class="font-medium text-gray-900">Kairi</div>
+                  <div class="mt-1 text-sm text-gray-500">
+                    Pro Player Mobile Legends
+                  </div>
+                </div>
+                <div class="overflow-hidden rounded-full bg-gray-50">
+                  <img alt="" src="/images/appify/avatar1.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="p-2 border bg-gray-50 rounded-3xl">
+            <figure class="relative flex flex-col justify-between h-full p-6 bg-white border shadow-lg rounded-2xl">
+              <blockquote class="relative">
+                <p class="text-base text-gray-500">
+                Saya baru saja bergabung dengan Koperasi, dan saya sangat terkesan dengan kelebihan yang mereka tawarkan. Akses terhadap layanan keuangan terpadu, seperti simpanan, pinjaman, dan asuransi, benar-benar memudahkan saya dalam mengelola keuangan. Dengan satu pintu layanan, saya tidak perlu repot mencari solusi keuangan di tempat lain.                </p>
+              </blockquote>
+              <figcaption class="relative flex items-center justify-between pt-6 mt-6">
+                <div>
+                  <div class="font-medium text-gray-900">Kairi</div>
+                  <div class="mt-1 text-sm text-gray-500">
+                    Pro Player Mobile Legends
+                  </div>
+                </div>
+                <div class="overflow-hidden rounded-full bg-gray-50">
+                  <img alt="" src="/images/appify/avatar1.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="p-2 border bg-gray-50 rounded-3xl">
+            <figure class="relative flex flex-col justify-between h-full p-6 bg-white border shadow-lg rounded-2xl">
+              <blockquote class="relative">
+                <p class="text-base text-gray-500">
+                Apa yang membuat saya terus setia menjadi anggota Koperasi adalah kekuatan bersama yang kami miliki. Dengan bersatu bersama ribuan anggota lainnya, kami dapat mencapai tujuan finansial yang lebih besar dan berkelanjutan. Saya merasa bahwa saya tidak hanya mengejar kesejahteraan pribadi, tetapi juga berkontribusi pada kesuksesan koperasi secara keseluruhan.                </p>
+              </blockquote>
+              <figcaption class="relative flex items-center justify-between pt-6 mt-6">
+                <div>
+                  <div class="font-medium text-gray-900">Kairi</div>
+                  <div class="mt-1 text-sm text-gray-500">
+                    Pro Player Mobile Legends
+                  </div>
+                </div>
+                <div class="overflow-hidden rounded-full bg-gray-50">
+                  <img alt="" src="/images/appify/avatar1.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 6 -->
     
     <section>
                 <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
@@ -723,7 +651,7 @@ a2:active:before {
                                 <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="" alt="">
                                 <div class="space-y-1">
                                 <h3 class="text-lg font-medium leading-6 text-black">
-                                    Subhil Ma'ruf
+                                    Subhil Ma'ruf L. Bilondatu
                                 </h3>
                                 <p class="text-base text-gray-500">---</p>
                                 </div>
@@ -781,6 +709,29 @@ a2:active:before {
             }
         }
         document.addEventListener("DOMContentLoaded", typeWriter);
+        function initSlider(sliderId, prevBtnId, nextBtnId) {
+        let currentIndex = 0;
+        const slider = document.getElementById(sliderId);
+        const slides = slider.querySelector('.slides');
+        const totalSlides = slider.querySelectorAll('.slide').length;
+
+        document.getElementById(nextBtnId).addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlidePosition();
+        });
+
+        document.getElementById(prevBtnId).addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlidePosition();
+        });
+
+        function updateSlidePosition() {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+          }
+        }
+
+        initSlider('slider1', 'prev1', 'next1');
+        initSlider('slider2', 'prev2', 'next2');
     </script>
 </body>
 </html><?php /**PATH D:\PROJECT RPL\Koperasi Main\koperasi\resources\views/welcome.blade.php ENDPATH**/ ?>
