@@ -74,4 +74,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(CatatanSimpanan::class);
     }
+    public function anggota_activities()
+    {
+        return $this->hasMany(AnggotaActivity::class);
+    }
 }

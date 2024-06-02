@@ -9,7 +9,7 @@ class CatatanSimpanan extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id','jumlah', 'jenis_simpanan', 'status', 'bukti_transfer'];
+    protected $fillable = ['user_id','jumlah', 'jenis_simpanan', 'status', 'bukti_transfer','bulan'];
 
     public function user()
     {

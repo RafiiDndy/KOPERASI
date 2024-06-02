@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Livewire\Simpanan;
+
 use App\Models\CatatanSimpanan;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\WithFileUploads;
+use Carbon\Carbon;
 
 class Add extends Component
 {
@@ -13,7 +15,10 @@ class Add extends Component
     public $jenis_simpanan;
     public $bukti_transfer;
     public $path_bukti_transfer;
-    
+    public $year = '';
+    public $month = '';
+    public $date = '';
+
     public $isWajibPaid;
     public $isPokokPaid;
 
@@ -27,20 +32,25 @@ class Add extends Component
     public function mount()
     {
         if (!(auth()->user())) {
-            abort(403, 'Kamu bukan '.auth()->user()->name);
+            abort(403, 'Kamu bukan ' . auth()->user()->name);
         }
         $this->isWajibPaid = CatatanSimpanan::where('user_id', $this->id)
-                                                ->where('jenis_simpanan', 'Wajib')
-                                                ->where('status','Verified')
-                                                ->whereMonth('created_at', now()->month)
-                                                ->sum('jumlah') >= 100000;
+            ->where('jenis_simpanan', 'Wajib')
+            ->where('status', 'Verified')
+            ->whereMonth('created_at', now()->month)
+            ->sum('jumlah') >= 100000;
         $this->isPokokPaid = CatatanSimpanan::where('user_id', $this->id)
-                                        ->where('jenis_simpanan', 'Pokok')
-                                        ->where('status','Verified')
-                                        ->sum('jumlah') >= 1000000;
-    }
+            ->where('jenis_simpanan', 'Pokok')
+            ->where('status', 'Verified')
+            ->sum('jumlah') >= 1000000;
+        $this->year = Carbon::now()->year;
+        $this->month = Carbon::now()->month;
+    }   
 
-    public function deposit(){
+    public function deposit()
+    {
+        $this->date = Carbon::parse($this->year."-".$this->month)->startOfMonth()->format('Y-m-d');
+
         $this->validate([
             'jumlah' => 'required|digits_between:1,16',
             'jenis_simpanan' => 'required|string',
@@ -48,16 +58,16 @@ class Add extends Component
         ]);
 
         if ($this->bukti_transfer->isValid()) {
-            $this->path_bukti_transfer = $this->bukti_transfer->store('bukti_transfer','public');
+            $this->path_bukti_transfer = $this->bukti_transfer->store('bukti_transfer', 'public');
         } else {
-            $this->flash('error','Invalid file uploaded!', [
+            $this->flash('error', 'Invalid file uploaded!', [
                 'position' => 'center',
                 'timer' => '2000',
                 'toast' => false,
                 'timerProgressBar' => true,
-                ]);
+            ]);
         }
-            
+
         $this->alert('info', 'Confirm Deposit?', [
             'position' => 'center',
             'timer' => '',
@@ -67,10 +77,10 @@ class Add extends Component
             'showCancelButton' => true,
             'onDismissed' => '',
             'confirmButtonText' => 'Confirm',
-            'text' => 'Are you sure to deposit Rp.'.$this->jumlah,
+            'text' => 'Are you sure to deposit Rp.' . $this->jumlah,
             'cancelButtonText' => 'Cancel',
             'width' => '320',
-            ]);
+        ]);
     }
 
     public function confirmed()
@@ -80,22 +90,24 @@ class Add extends Component
             'jenis_simpanan' => $this->jenis_simpanan,
             'user_id' => $this->id,
             'status' => 'menunggu verifikasi',
-            'bukti_transfer' => $this->path_bukti_transfer
+            'bukti_transfer' => $this->path_bukti_transfer,
+            'bulan' => $this->date,
         ]);
 
-        $this->flash('success','Deposit Rp.'.$this->jumlah.' Success!', [
+        $this->flash('success', 'Deposit Rp.' . $this->jumlah . ' Success!', [
             'position' => 'center',
             'timer' => '2000',
             'toast' => false,
             'timerProgressBar' => true,
-            ]);
+        ]);
 
         $this->reset(['jumlah', 'jenis_simpanan']);
-        
+
         return redirect(request()->header('Referer'));
     }
 
-    public function render(){
-        return view('livewire.simpanan.add',['isWajibPaid' => $this->isWajibPaid, 'isPokokPaid'=>$this->isPokokPaid]);
+    public function render()
+    {
+        return view('livewire.simpanan.add', ['isWajibPaid' => $this->isWajibPaid, 'isPokokPaid' => $this->isPokokPaid]);
     }
 }
