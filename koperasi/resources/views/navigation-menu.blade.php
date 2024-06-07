@@ -24,10 +24,14 @@
                     </a>
                 </li>
                 <li>
+                    
                     <a href="{{ route('Simpanan.index') }}" :active="request()->routeIs('Simpanan.index')" class="inline-flex items-center w-full px-4 py-2 mt-1 text-sm text-white-500 transition duration-200 ease-in-out transform rounded-lg focus:shadow-outline hover:bg-gray-100 hover:scale-95 hover:text-blue-500" >
+                    <button dusk="simpanan">
                     <ion-icon class="size-4 md hydrated" name="wallet-outline" role="img" aria-label="trending up outline"></ion-icon>
                     <span class="ml-4"> Simpanan </span>
+                    </button>
                     </a>
+                    
                 </li>
                 <li>
                     <div x-data="{ open: false }">
@@ -70,7 +74,7 @@
                 <ul>
                 <li>
                     <div x-data="{ open: false }">
-                    <button class="inline-flex items-center justify-between w-full px-4 py-2 mt-1 text-sm text-white-500 transition duration-200 ease-in-out transform rounded-lg focus:shadow-outline hover:bg-gray-100 hover:scale-95 hover:text-blue-500 group" @click="open = ! open">
+                    <button dusk="manage" class="inline-flex items-center justify-between w-full px-4 py-2 mt-1 text-sm text-white-500 transition duration-200 ease-in-out transform rounded-lg focus:shadow-outline hover:bg-gray-100 hover:scale-95 hover:text-blue-500 group" @click="open = ! open">
                         <span class="inline-flex items-center text-base font-light">
                         <ion-icon class="size-4 md hydrated" name="pie-chart-outline" role="img" aria-label="pie chart outline"></ion-icon>
                         <span class="ml-4"> Manage </span>
@@ -83,13 +87,15 @@
                         <ul>
                         <li>
                             <a href="{{ route('Anggota.index') }} " :active="request()->routeIs('Anggota.index')" title="#" class="inline-flex items-center w-full p-2 pl-3 text-sm font-light text-white-500 rounded-lg hover:text-blue-500 group hover:bg-gray-50">
+                            <button dusk="anggota">
                             <span class="inline-flex items-center w-full">
                                 <ion-icon class="size-4 md hydrated" name="people-outline" role="img" aria-label="flower outline"></ion-icon>
-                                <span class="ml-4"> Anggota </span>
+                                <span  class="ml-4"> Anggota </span>
                                 <span class="inline-flex ml-auto items-center rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-500">
                                 {{ @App\Models\User::query()->where('status_anggota','Not_verified')->count() }}
                                 </span>
                             </span>
+                            </button>
                             </a>
                         </li>
                         <li>
