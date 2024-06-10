@@ -10,7 +10,7 @@ class RegisterTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
-     * @group Register
+
      */
     public function testExample(): void
     {
@@ -18,16 +18,17 @@ class RegisterTest extends DuskTestCase
             $browser->visit('/')
                     ->clickLink('Sign Up')
                     ->assertPathIs('/register')
-                    ->type('name', 'Pandu')
-                    ->type('email', 'pandu@mail.com')
-                    ->type('nik', '12312244')
-                    ->type('no_hp', '082211212122')
-                    ->type('tanggal_lahir', '2000-12-12')
-                    ->attach('foto_ktp', 'C:/Users/lenovo/Downloads/2.jpg')
-                    ->type('password', '12345678')
-                    ->type('password_confirmation', '12345678')
+                    ->type('name','admin')
+                    ->type('email','admin@mail.co')
+                    ->type('nik','123456789101112')
+                    ->type('no_hp','081234567891')
+                    ->type('tanggal_lahir','2024-01-05')
+                    ->attach('foto_ktp','C:\Users\Dandy\Downloads\Screenshot 2024-05-22 221344.png')
+                    ->type('password','12345678')
+                    ->type('password_confirmation','12345678')
                     ->check('terms')
-                    ->click('@signup');
+                    ->press('Sign up');
+
         });
     }
 }
