@@ -476,7 +476,7 @@ a2:active:before {
                   </div>
                 </div>
                 <div class="overflow-hidden rounded-full bg-gray-50">
-                  <img alt="" src="/images/appify/avatar1.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                  <img alt="" src="{{ asset('img/kairi.jpg') }}" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
                 </div>
               </figcaption>
             </figure>
@@ -490,13 +490,13 @@ a2:active:before {
               </blockquote>
               <figcaption class="relative flex items-center justify-between pt-6 mt-6">
                 <div>
-                  <div class="font-medium text-gray-900">Anon</div>
+                  <div class="font-medium text-gray-900">Aldean Tegar</div>
                   <div class="mt-1 text-sm text-gray-500">
-                    Creator of Lexington Themes
+                    ex Regional VP EVOS Esports
                   </div>
                 </div>
                 <div class="overflow-hidden rounded-full bg-gray-50">
-                  <img alt="" src="/images/appify/avatar2.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                  <img alt="" src="{{ asset('img/Dean.jpg') }}" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
                 </div>
               </figcaption>
             </figure>
@@ -510,13 +510,13 @@ a2:active:before {
               </blockquote>
               <figcaption class="relative flex items-center justify-between pt-6 mt-6">
                 <div>
-                  <div class="font-medium text-gray-900">Jenson Button</div>
+                  <div class="font-medium text-gray-900">Arief Muhammad</div>
                   <div class="mt-1 text-sm text-gray-500">
-                    Founder of Benji and Tom
+                    Influencer
                   </div>
                 </div>
                 <div class="overflow-hidden rounded-full bg-gray-50">
-                  <img alt="" src="/images/appify/avatar3.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                  <img alt="" src="{{ asset('img/arieff.jpg') }}" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
                 </div>
               </figcaption>
             </figure>
@@ -525,17 +525,16 @@ a2:active:before {
             <figure class="relative flex flex-col justify-between h-full p-6 bg-white border shadow-lg rounded-2xl">
               <blockquote class="relative">
                 <p class="text-base text-gray-500">
-                Sebagai seorang wirausahawan, saya sangat menghargai kontribusi Koperasi dalam mendukung pembangunan ekonomi kerakyatan. Dengan bergabung, saya merasa bahwa saya tidak hanya mengejar keuntungan pribadi, tetapi juga berkontribusi pada kemajuan bersama. Semangat gotong royong dan kerjasama yang dianut koperasi ini benar-benar menginspirasi.                </p>
-              </blockquote>
+                Pengalaman saya menggunakan web koperasi ini luar biasa. Fitur simpanan pokok, wajib, dan sukarela membuat saya lebih disiplin dalam menabung. Interface yang sederhana dan informatif membuat saya bisa melacak tabungan saya dengan mudah.              </blockquote>
               <figcaption class="relative flex items-center justify-between pt-6 mt-6">
                 <div>
-                  <div class="font-medium text-gray-900">Kairi</div>
+                  <div class="font-medium text-gray-900">Raffi Farid Ahmad</div>
                   <div class="mt-1 text-sm text-gray-500">
-                    Pro Player Mobile Legends
+                    Aktor
                   </div>
                 </div>
                 <div class="overflow-hidden rounded-full bg-gray-50">
-                  <img alt="" src="/images/appify/avatar1.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                  <img alt="" src="{{ asset('img/rafi.jpg') }}" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
                 </div>
               </figcaption>
             </figure>
@@ -548,13 +547,13 @@ a2:active:before {
               </blockquote>
               <figcaption class="relative flex items-center justify-between pt-6 mt-6">
                 <div>
-                  <div class="font-medium text-gray-900">Kairi</div>
+                  <div class="font-medium text-gray-900">Hokky Caraka Bintang Brilliant</div>
                   <div class="mt-1 text-sm text-gray-500">
-                    Pro Player Mobile Legends
+                    Pemain sepak bola
                   </div>
                 </div>
                 <div class="overflow-hidden rounded-full bg-gray-50">
-                  <img alt="" src="/images/appify/avatar1.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                  <img alt="" src="{{ asset('img/hokky.jpg') }}" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
                 </div>
               </figcaption>
             </figure>
@@ -567,13 +566,13 @@ a2:active:before {
               </blockquote>
               <figcaption class="relative flex items-center justify-between pt-6 mt-6">
                 <div>
-                  <div class="font-medium text-gray-900">Kairi</div>
+                  <div class="font-medium text-gray-900">Mawar Eva de Jongh</div>
                   <div class="mt-1 text-sm text-gray-500">
-                    Pro Player Mobile Legends
+                    Penyanyi
                   </div>
                 </div>
                 <div class="overflow-hidden rounded-full bg-gray-50">
-                  <img alt="" src="/images/appify/avatar1.png" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
+                  <img alt="" src="{{ asset('img/mawar.jpg') }}" width="56" height="56" decoding="async" data-nimg="future" class="object-cover h-14 w-14 grayscale" loading="lazy" style="color: transparent">
                 </div>
               </figcaption>
             </figure>
@@ -590,16 +589,13 @@ a2:active:before {
                     <div>
                         <h1 class="text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl text-center">
                         Meet Our Team
-                        <span class="block text-gray-600">Diverse. Skilled. United.</span>
                         </h1>
                         <p class="mt-4 text-base font-medium text-gray-500 text-center">
-                        A group of passionate individuals working together to innovate and
-                        excel in our industry.
+                        Sekelompok developer yang penuh semangat bekerja sama untuk berinovasi dan unggul dalam koperasi kami.
                         </p>
                     </div>
                 </div>
 
-                    <br>
                     <br>
                     <br>
 
@@ -608,24 +604,24 @@ a2:active:before {
                         <ul role="list" class="flex flex-col gap-12">
                             <li>
                             <div class="flex items-center space-x-4 lg:space-x-6">
-                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="" alt="">
+                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="{{ asset('img/dandy.png') }}" alt="">
                                 <div class="space-y-1">
                                 <h3 class="text-lg font-medium leading-6 text-black">
                                     Rafii Dandy Adithya
                                 </h3>
-                                <p class="text-base text-gray-500">---</p>
+                                <p class="text-base text-gray-500"></p>
                                 </div>
                             </div>
                             </li>
 
                             <li>
                             <div class="flex items-center space-x-4 lg:space-x-6">
-                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="" alt="">
+                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="{{ asset('img/abi.png') }}" alt="">
                                 <div class="space-y-1">
                                 <h3 class="text-lg font-medium leading-6 text-black">
                                     Abiyoga Dhaniswara
                                 </h3>
-                                <p class="text-base text-gray-500">---</p>
+                                <p class="text-base text-gray-500"></p>
                                 </div>
                             </div>
                             </li>
@@ -636,24 +632,24 @@ a2:active:before {
                         <ul role="list" class="flex flex-col gap-12">
                             <li>
                             <div class="flex items-center space-x-4 lg:space-x-6">
-                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="" alt="">
+                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="{{ asset('img/pandu.png') }}" alt="">
                                 <div class="space-y-1">
                                 <h3 class="text-lg font-medium leading-6 text-black">
                                     Pandu Daniel
                                 </h3>
-                                <p class="text-base text-gray-500">---</p>
+                                <p class="text-base text-gray-500"></p>
                                 </div>
                             </div>
                             </li>
 
                             <li>
                             <div class="flex items-center space-x-4 lg:space-x-6">
-                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="" alt="">
+                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="{{ asset('img/subhil.png') }}" alt="">
                                 <div class="space-y-1">
                                 <h3 class="text-lg font-medium leading-6 text-black">
                                     Subhil Ma'ruf L. Bilondatu
                                 </h3>
-                                <p class="text-base text-gray-500">---</p>
+                                <p class="text-base text-gray-500"></p>
                                 </div>
                             </div>
                             </li>
@@ -664,24 +660,24 @@ a2:active:before {
                         <ul role="list" class="flex flex-col gap-12">
                             <li>
                             <div class="flex items-center space-x-4 lg:space-x-6">
-                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="" alt="">
+                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="{{ asset('img/tasya.png') }}" alt="">
                                 <div class="space-y-1">
                                 <h3 class="text-lg font-medium leading-6 text-black">
                                     Tasya Ramdhani
                                 </h3>
-                                <p class="text-base text-gray-500">---</p>
+                                <p class="text-base text-gray-500"></p>
                                 </div>
                             </div>
                             </li>
 
                             <li>
                             <div class="flex items-center space-x-4 lg:space-x-6">
-                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="" alt="">
+                                <img class="object-cover w-16 h-16 rounded-full lg:h-20 lg:w-20" src="{{ asset('img/zulfa.png') }}" alt="">
                                 <div class="space-y-1">
                                 <h3 class="text-lg font-medium leading-6 text-black">
                                     Zulfa Ikhsanudin
                                 </h3>
-                                <p class="text-base text-gray-500">---</p>
+                                <p class="text-base text-gray-500"></p>
                                 </div>
                             </div>
                             </li>
