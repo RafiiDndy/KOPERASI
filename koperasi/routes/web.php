@@ -5,6 +5,8 @@ use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\SimpananController;
 use App\Http\Controllers\RecapitulationController;
 use App\Http\Controllers\SHUController;
+use App\Http\Controllers\TopicController;
+use App\Http\Controllers\SupportController;
 
 // Route for the welcome page
 Route::get('/', function () {
@@ -27,15 +29,8 @@ Route::middleware([
     Route::get('/recapitulation', [RecapitulationController::class, 'index'])->name('Recapitulation.index');
     Route::get('/expense', [AnggotaController::class, 'expense'])->name('Anggota.expense');
 
-    Route::get('/support', [SupportController::class, 'index'])->name('support.index');
-    Route::get('/support/{id}', [SupportController::class, 'detail'])->name('Support.detail');
-    Route::get('/support/helpdesk', [SupportController::class, 'helpdesk'])->name('support.helpdesk');
-    Route::get('/recapitulation', [RecapitulationController::class, 'index'])->name('Recapitulation.index');
-    Route::get('/expense', [AnggotaController::class, 'expense'])->name('Anggota.expense');
-
     Route::get('/topic/create', [TopicController::class, 'create'])->name('Topic.create');
     Route::post('/topic/save', [TopicController::class, 'save'])->name('Topic.save');
-    Route::get('/', [TopicController::class, 'index'])->name('Topic.index');
     Route::get('/topic/index', [TopicController::class, 'index'])->name('Topic.index');
     Route::get('/topic/detail/{id}',[TopicController::class, 'detail'])->name('Topic.detail');
     Route::post('/reply/save', [TopicController::class, 'ReplySave'])->name('ReplySave.save');

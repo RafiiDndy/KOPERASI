@@ -54,16 +54,7 @@
                             </span>
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ route('support.index') }}" :active="request()->routeIs('support.index')" title="#" class="inline-flex items-center w-full p-2 pl-3 text-sm font-light text-white-500 rounded-lg hover:text-blue-500 group hover:bg-gray-50">
-                            <span class="inline-flex items-center w-full">
-                                <ion-icon class="size-4 md hydrated" name="albums-outline" role="img" aria-label="notifications outline"></ion-icon>
-                                <span class="ml-4"> Support </span>
-                            </span>
-                            </a>
-                        </li>
                         </ul>
-                    </div>
                     </div>
                 </li>
                 @if(Auth::user()->role === 'Pengurus')
@@ -75,9 +66,9 @@
                 <li>
                     <div x-data="{ open: false }">
                     <button dusk="manage" class="inline-flex items-center justify-between w-full px-4 py-2 mt-1 text-sm text-white-500 transition duration-200 ease-in-out transform rounded-lg focus:shadow-outline hover:bg-gray-100 hover:scale-95 hover:text-blue-500 group" @click="open = ! open">
-                        <span class="inline-flex items-center text-base font-light">
                         <ion-icon class="size-4 md hydrated" name="pie-chart-outline" role="img" aria-label="pie chart outline"></ion-icon>
                         <span class="ml-4"> Manage </span>
+                        <span class="inline-flex items-center text-base font-light">
                         </span>
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline size-5 ml-auto transition-transform duration-200 transform group-hover:text-accent rotate-0">
                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -86,8 +77,7 @@
                     <div class="p-2 pl-6 -px-px" x-show="open" @click.outside="open = false" style="display: none;">
                         <ul>
                         <li>
-                            <a href="{{ route('Anggota.index') }} " :active="request()->routeIs('Anggota.index')" title="#" class="inline-flex items-center w-full p-2 pl-3 text-sm font-light text-white-500 rounded-lg hover:text-blue-500 group hover:bg-gray-50">
-                            <button dusk="anggota">
+                            <a href="{{ route('Anggota.index') }} " :active="request()->routeIs('Anggota.index')" class="inline-flex items-center w-full p-2 pl-3 text-sm font-light text-white-500 rounded-lg hover:text-blue-500 group hover:bg-gray-50">
                             <span class="inline-flex items-center w-full">
                                 <ion-icon class="size-4 md hydrated" name="people-outline" role="img" aria-label="flower outline"></ion-icon>
                                 <span  class="ml-4"> Anggota </span>
@@ -95,11 +85,10 @@
                                 {{ @App\Models\User::query()->where('status_anggota','Not_verified')->count() }}
                                 </span>
                             </span>
-                            </button>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('Simpanan.manage') }}" :active="request()->routeIs('Simpanan.manage')" title="#" class="inline-flex items-center w-full p-2 pl-3 text-sm font-light text-white-500 rounded-lg hover:text-blue-500 group hover:bg-gray-50">
+                            <a href="{{ route('Simpanan.manage') }}" :active="request()->routeIs('Simpanan.manage')" class="inline-flex items-center w-full p-2 pl-3 text-sm font-light text-white-500 rounded-lg hover:text-blue-500 group hover:bg-gray-50">
                             <span class="inline-flex items-center w-full">
                                 <ion-icon class="size-4 md hydrated" name="albums-outline" role="img" aria-label="notifications outline"></ion-icon>
                                 <span class="ml-4"> Simpanan </span>

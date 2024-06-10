@@ -12,11 +12,7 @@ class Topic extends Model
     protected $table = 'topics';
 
     protected $fillable = [
-        'topic_cat', 'topic_subject', 'topic_message', 'topic_by'
-    ];
-
-    protected $casts = [
-        'topic_date' => 'datetime'
+        'topic_cat', 'topic_subject', 'topic_message', 'topic_by', 'topic_date'
     ];
 
     protected $primaryKey = 'topic_id';
