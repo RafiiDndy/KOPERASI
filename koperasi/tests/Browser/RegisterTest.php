@@ -10,6 +10,7 @@ class RegisterTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
+
      */
     public function testExample(): void
     {
@@ -27,6 +28,7 @@ class RegisterTest extends DuskTestCase
                     ->type('password_confirmation','12345678')
                     ->check('terms')
                     ->press('Sign up');
+
         });
     }
 }
