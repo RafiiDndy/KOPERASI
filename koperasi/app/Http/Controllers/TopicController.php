@@ -32,12 +32,14 @@ class TopicController extends Controller
             'topic_cat' => request()->input('topic_cat'),
             'topic_subject' => request()->input('topic_subject'),
             'topic_by' => $user->id,
+            'topic_date' => date('Y-m-d'),
         ]);
 
         $post = Post::create([
             'post_content' => request()->input('topic_message'),
-            'post_topic' => $topic->id,
+            'post_topic' => $topic->getKey(),
             'post_by' => $user->id,
+            'post_date' => date('Y-m-d'),
         ]);
 
         return redirect()->to('topic/index')
@@ -88,7 +90,8 @@ class TopicController extends Controller
         $post = Post::create([
             'post_content' => request()->input('post_message'),
             'post_topic' => request()->input('topic_id'),
-            'post_by' => $user->id
+            'post_by' => $user->id,
+            'post_date' => date('Y-m-d'),
         ]);
 
         return redirect()->to('topic/detail/' . request()->input('topic_id'))

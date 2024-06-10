@@ -10,15 +10,20 @@
             Silahkan Lakukan Deposit Simpanan Wajib Sebesar Rp.100.000 untuk bulan ini!
         </div>
         @endif
+<<<<<<< HEAD
+        <form enctype="multipart/form-data" class="text-body-deposit mt-4">
+            <div class="mb-4">
+=======
         <form enctype="multipart/form-data" class="text-body-deposit mt-6">
             <div dusk="jumlah" class="mb-4">
+>>>>>>> 0d3dae29cd276b033af984a353ef544837f60732
                 <label for="jumlah" class="block text-sm font-medium text-gray-700">Jumlah:</label>
-                <input type="text" id="jumlah" wire:model="jumlah" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" >
+                <input type="text" id="jumlah" name="jumlah" wire:model="jumlah" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" >
                 @error('jumlah') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div class="mb-4">
                 <label for="jenis_simpanan" class="block text-sm font-medium text-gray-700">Jenis Simpanan:</label>
-                <select id="jenis_simpanan" wire:model="jenis_simpanan" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                <select id="jenis_simpanan" name="jenis_simpanan" wire:model="jenis_simpanan" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
                     <option hidden>Silahkan pilih jenis simpanan!</option>
                     @if (Auth::user()->status_anggota != 'Tidak Aktif')
                     @if (!$isPokokPaid)
@@ -34,7 +39,7 @@
                 <div class="flex mt-4">
                     <div class="mr-4 w-1/2">
                         <label for="month" class="block text-sm font-medium text-gray-700">Bulan</label>
-                        <select id="month" wire:model="month" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                        <select id="month" name="month" wire:model="month" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
                             <option hidden>Untuk Bulan</option>
                             <option value="1">Januari</option>
                             <option value="2">Februari</option>
@@ -53,7 +58,7 @@
                     </div>
                     <div class="w-1/2">
                         <label for="year" class="block text-sm font-medium text-gray-700">Tahun</label>
-                        <select id="year" wire:model="year" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                        <select id="year" name="year" wire:model="year" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
                             <option hidden>Untuk Tahun</option>
                             @for ($i = 2020; $i <= date('Y'); $i++)
                             <option value="{{$i}}">{{$i}}</option>
@@ -66,7 +71,7 @@
             </div>
             <div class="mb-4" x-data="{ isUploading: false, progress: 0 }" x-on:livewire-upload-start="isUploading = true" x-on:livewire-upload-finish="isUploading = false" x-on:livewire-upload-error="isUploading = false" x-on:livewire-upload-progress="progress = $event.detail.progress">
                 <label for="bukti_transfer" class="block text-sm font-medium text-gray-700">Upload Bukti Transfer:</label>
-                <input type="file" id="bukti_transfer" wire:model="bukti_transfer" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                <input type="file" name="bukti_transfer" id="bukti_transfer" wire:model="bukti_transfer" class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
                 @error('bukti_transfer') <span class="error">{{ $message }}</span> @enderror
                 <div x-show="isUploading">
                     <progress max="100" x-bind:value="progress"></progress>

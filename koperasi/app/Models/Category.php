@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Support extends Model
+class Category extends Model
 {
     use HasFactory;
 
-    protected $table = 'support';
-
     protected $fillable = [
-        'nama_support', 'detail'
+        'cat_id', 'cat_name', 'cat_description'
     ];
 }
