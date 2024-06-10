@@ -26,4 +26,21 @@ Route::middleware([
     Route::get('/manage-simpanan', [SimpananController::class, 'manage'])->name('Simpanan.manage');
     Route::get('/recapitulation', [RecapitulationController::class, 'index'])->name('Recapitulation.index');
     Route::get('/expense', [AnggotaController::class, 'expense'])->name('Anggota.expense');
+
+    Route::get('/support', [SupportController::class, 'index'])->name('support.index');
+    Route::get('/support/{id}', [SupportController::class, 'detail'])->name('Support.detail');
+    Route::get('/support/helpdesk', [SupportController::class, 'helpdesk'])->name('support.helpdesk');
+    Route::get('/recapitulation', [RecapitulationController::class, 'index'])->name('Recapitulation.index');
+    Route::get('/expense', [AnggotaController::class, 'expense'])->name('Anggota.expense');
+
+    Route::get('/topic/create', [TopicController::class, 'create'])->name('Topic.create');
+    Route::post('/topic/save', [TopicController::class, 'save'])->name('Topic.save');
+    Route::get('/', [TopicController::class, 'index'])->name('Topic.index');
+    Route::get('/topic/index', [TopicController::class, 'index'])->name('Topic.index');
+    Route::get('/topic/detail/{id}',[TopicController::class, 'detail'])->name('Topic.detail');
+    Route::post('/reply/save', [TopicController::class, 'ReplySave'])->name('ReplySave.save');
+
+    Route::get('topic/edit/{id}', [TopicController::class, 'edit'])->name('topic.edit');
+    Route::put('topic/update/{id}', [TopicController::class, 'update'])->name('topic.update');
+    Route::delete('topic/delete/{id}', [TopicController::class, 'delete'])->name('topic.delete');
 });
