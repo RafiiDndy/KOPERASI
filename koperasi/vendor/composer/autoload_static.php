@@ -609,10 +609,7 @@ class ComposerStaticInitb36a247e481f84a5fcf089bc8358f051
         'App\\Factories\\ConfigurationResolverFactory' => __DIR__ . '/..' . '/laravel/pint/app/Factories/ConfigurationResolverFactory.php',
         'App\\Http\\Controllers\\AnggotaController' => __DIR__ . '/../..' . '/app/Http/Controllers/AnggotaController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-<<<<<<< HEAD
         'App\\Http\\Controllers\\RecapitulationController' => __DIR__ . '/../..' . '/app/Http/Controllers/RecapitulationController.php',
-=======
->>>>>>> 0d3dae29cd276b033af984a353ef544837f60732
         'App\\Http\\Controllers\\SHUController' => __DIR__ . '/../..' . '/app/Http/Controllers/SHUController.php',
         'App\\Http\\Controllers\\SimpananController' => __DIR__ . '/../..' . '/app/Http/Controllers/SimpananController.php',
         'App\\Kernel' => __DIR__ . '/..' . '/laravel/pint/app/Kernel.php',
