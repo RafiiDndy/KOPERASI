@@ -10,13 +10,8 @@
             Silahkan Lakukan Deposit Simpanan Wajib Sebesar Rp.100.000 untuk bulan ini!
         </div>
         <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
-<<<<<<< HEAD
         <form enctype="multipart/form-data" class="text-body-deposit mt-4">
             <div class="mb-4">
-=======
-        <form enctype="multipart/form-data" class="text-body-deposit mt-6">
-            <div dusk="jumlah" class="mb-4">
->>>>>>> 0d3dae29cd276b033af984a353ef544837f60732
                 <label for="jumlah" class="block text-sm font-medium text-gray-700">Jumlah:</label>
                 <input type="text" id="jumlah" name="jumlah" wire:model="jumlah" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" >
                 <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['jumlah'];
